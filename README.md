@@ -19,10 +19,10 @@ This is a zero-build static site. You can preview it using any local web server:
 
 ```bash
 # Using Python
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory public
 
 # Or using npx serve
-npx serve .
+npx serve public
 ```
 
 Then open `http://localhost:8000` in your browser.
@@ -31,10 +31,10 @@ Then open `http://localhost:8000` in your browser.
 
 ## Deployment
 
-The website automatically deploys to **GitHub Pages** on every push to the `main` branch via GitHub Actions (`.github/workflows/deploy.yml`).
+Every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker (`wrangler.jsonc`, `.github/workflows/deploy.yml`). It has no public address of its own: **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
 
-### Custom Domain Setup
+Links into the app: **Sign In** is `/login` (`https://tenwise.app/login`); signing out happens in the app (`/logout`) and lands back here.
 
-When ready to point `tenwise.app` directly to this website:
-1. Set the custom domain in repository settings or add a `CNAME` file containing `tenwise.app`.
-2. Configure DNS in Cloudflare to route root/subdomains to GitHub Pages, with `/login` routing to the app worker.
+The workflow needs two secrets on the repository's `production` environment: `CLOUDFLARE_API_TOKEN` (a token with **Workers Scripts: Edit** on the account) and `CLOUDFLARE_ACCOUNT_ID`.
+
+The site lives in `public/`, and only that folder is published. To deploy by hand: `npx wrangler@4.151.3 deploy` (after `npx wrangler login`).
