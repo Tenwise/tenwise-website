@@ -199,7 +199,7 @@ function switchStory(index, animate = true) {
 }
 
 /**
- * Interactive Enterprise Publisher Showcase (Benchmark, B2B, Media)
+ * Interactive Enterprise Publisher Showcase (Education, B2B, Media)
  */
 function initPublisherExperience() {
   const buttons = document.querySelectorAll('.publisher-tab-btn');
@@ -219,27 +219,27 @@ function initPublisherExperience() {
       desc: 'Give districts, educators, and researchers an interactive workspace on top of your catalog. Readers explore curated topic collections, highlight key evidence, capture structured notes, and generate accurate citations automatically.',
       outcome1: 'Turn static libraries into active research and curriculum workspaces',
       outcome2: 'Editorial AI operates strictly within your rubrics and trusted content',
-      masthead: 'Benchmark Literacy & Research Review',
+      masthead: 'National Literacy Review',
       edition: 'CURRICULUM & EVIDENCE DOSSIER · 4 SOURCES CITED',
       headline: 'Evidence-Based Reading Comprehension Across Secondary Classrooms',
       note: 'Instructional Lead Note: Share this curated dossier and reference list at Tuesday’s district workshop.'
     },
     b2b: {
-      title: 'B2B Intelligence, Market Benchmarks & Trade Media',
+      title: 'B2B Intelligence, Market Research & Trade Media',
       desc: 'Stop losing corporate seat renewals to unread inbox clutter. Empower enterprise subscribers to compare reports across your archive, synthesize multi-source briefings, and share co-branded PDF digests with leadership.',
       outcome1: 'Increase seat utilization and drive expansion across client teams',
       outcome2: 'Every exported executive briefing carries your brand and masthead',
-      masthead: 'The Benchmark Executive Brief',
+      masthead: 'Global Markets Executive Brief',
       edition: 'Q4 MARKET INTELLIGENCE · SYNTHESIZED FROM 6 REPORTS',
       headline: 'North American Supply Chain & Capital Allocation Outlook: 2026–2027',
-      note: 'VP Strategy Note: Key margin benchmarks highlighted—attach to Friday’s board briefing.'
+      note: 'VP Strategy Note: Key margin trends highlighted—attach to Friday’s board briefing.'
     },
     media: {
       title: 'Specialist Journalism, Policy Desks & Newsletters',
       desc: 'Give your most loyal subscribers a dedicated reading sanctuary where your reporting lives permanently—complete with topic timelines, synthesis in your newsroom’s house voice, and printable weekend editions.',
       outcome1: 'Deepen subscriber retention by becoming their daily research habit',
       outcome2: 'Keep subscriber research and synthesis inside your trusted environment',
-      masthead: 'The Capitol & Markets Evening Edition',
+      masthead: 'Capitol & Policy Evening Edition',
       edition: 'SUBSCRIBER BRIEFING · 5 ARCHIVE DISPATCHES',
       headline: 'Global Semiconductor Policy & Foundry Capacity: Six-Month Synthesis',
       note: 'Policy Desk Note: Contrasts recent export filings with European manufacturing commitments.'
@@ -302,7 +302,7 @@ function initVoicePreview() {
     },
     editorial: {
       tag: 'Publisher House Style · Objective & Cited',
-      text: '“A synthesis of recent industry benchmarks indicates a decisive shift toward reader-curated briefings, with cited source collections replacing static bookmarking across enterprise teams.”'
+      text: '“A synthesis of recent industry reports indicates a decisive shift toward reader-curated briefings, with cited source collections replacing static bookmarking across enterprise teams.”'
     }
   };
 
