@@ -1,0 +1,129 @@
+/* Tenwise Custom Styling & Tokens */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap');
+
+:root {
+  /* Default: Dark Theme */
+  --bg-primary: #121315;
+  --bg-secondary: #18191c;
+  --bg-tertiary: #1e2023;
+  --bg-card: #191a1e;
+  --bg-card-hover: #222429;
+  --bg-modal: #1a1b1f;
+  --border-subtle: #272a2f;
+  --border-active: #383d45;
+
+  --text-primary: #e8e6e1;
+  --text-secondary: #b4b1aa;
+  --text-muted: #78756f;
+
+  --accent: #f59e0b;
+  --accent-hover: #fbbf24;
+  --accent-muted: rgba(245, 158, 11, 0.12);
+  --accent-border: rgba(245, 158, 11, 0.28);
+  --accent-glow: rgba(245, 158, 11, 0.2);
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: 'Newsreader', Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html.light {
+  --bg-primary: #fcfbf9;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f3f1ec;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f7f6f2;
+  --bg-modal: #ffffff;
+  --border-subtle: #e5e2da;
+  --border-active: #cac6bc;
+
+  --text-primary: #0b1e36;
+  --text-secondary: #475569;
+  --text-muted: #8a8880;
+
+  --accent: #d97706;
+  --accent-hover: #b45309;
+  --accent-muted: rgba(217, 119, 6, 0.1);
+  --accent-border: rgba(217, 119, 6, 0.25);
+  --accent-glow: rgba(217, 119, 6, 0.15);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+  overflow-x: hidden;
+}
+
+.font-serif-read {
+  font-family: var(--font-serif);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-active);
+}
+
+/* Glass & Glow utilities */
+.glass-nav {
+  background-color: rgba(18, 19, 21, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+html.light .glass-nav {
+  background-color: rgba(252, 251, 249, 0.88);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.glow-card {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.glow-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+  box-shadow: 0 12px 30px -10px var(--accent-glow);
+}
+
+.hero-glow-bg {
+  background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.12) 0%, rgba(18, 19, 21, 0) 70%);
+}
+html.light .hero-glow-bg {
+  background: radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.08) 0%, rgba(252, 251, 249, 0) 70%);
+}
+
+/* Keyboard badge */
+.kbd {
+  font-family: var(--font-mono);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  padding: 0.15rem 0.4rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal styles */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+}

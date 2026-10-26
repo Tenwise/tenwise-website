@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenwise — The Reading Workspace & Engagement Layer for Publishers</title>
+  <meta name="description" content="Scan hundreds of feeds in dense rows. Read in a calm docked reader with private on-device AI. Active curation for power consumers — and an intelligent engagement layer for publishers.">
+  <meta name="author" content="CodeStrata, Inc.">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tenwise.app">
+  <meta property="og:title" content="Tenwise — Reading Workspace & Publisher Engagement Layer">
+  <meta property="og:description" content="The reading workspace for people who read to think, and the intelligent engagement layer for publishers.">
+  <meta property="og:image" content="assets/images/screenshots/01-saved-reader-dark.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tenwise — Reading Workspace & Publisher Engagement Layer">
+  <meta name="twitter:description" content="Scan dense rows, read in docked comfort, save with notes, and synthesize with 100% on-device AI.">
+  <meta name="twitter:image" content="assets/images/screenshots/01-saved-reader-dark.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/brand/tenwise-icon.svg">
+  <link rel="apple-touch-icon" href="assets/images/brand/tenwise-icon-square.svg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            amber: {
+              400: '#fbbf24',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            dark: {
+              bg: '#121315',
+              surface: '#18191c',
+              tertiary: '#1e2023',
+              card: '#191a1e',
+              border: '#272a2f',
+              text: '#e8e6e1',
+              muted: '#b4b1aa',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-500/30 selection:text-amber-500">
+
+  <!-- Top Sticky Navigation -->
+  <header class="sticky top-0 z-40 glass-nav transition-colors duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Tenwise Home">
+        <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise Sun" class="w-8 h-8 transition-transform group-hover:scale-105">
+        <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-5 w-auto">
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-[var(--text-secondary)]">
+        <a href="#readers" class="hover:text-[var(--text-primary)] transition-colors">For Readers</a>
+        <a href="#publishers" class="hover:text-[var(--text-primary)] transition-colors">For Publishers</a>
+        <a href="#features" class="hover:text-[var(--text-primary)] transition-colors">Features</a>
+        <a href="#pricing" class="hover:text-[var(--text-primary)] transition-colors">Pricing</a>
+        <a href="#faq" class="hover:text-[var(--text-primary)] transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Desktop Action CTAs -->
+      <div class="hidden md:flex items-center space-x-3">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors" aria-label="Toggle dark/light theme" title="Toggle theme">
+          <!-- Sun Icon (for light mode) -->
+          <svg id="theme-icon-light" class="w-5 h-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon (for dark mode) -->
+          <svg id="theme-icon-dark" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
+
+        <!-- Talk to Us (Enterprise) -->
+        <button class="open-enterprise-modal px-3.5 py-1.5 text-xs font-semibold rounded-md border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] hover:border-[var(--border-active)] transition-all">
+          Talk to Us
+        </button>
+
+        <!-- Launch Free App CTA -->
+        <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 text-xs font-semibold rounded-md bg-amber-500 hover:bg-amber-400 text-dark-bg transition-colors shadow-sm flex items-center gap-1.5">
+          <span>Log In</span>
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-[var(--text-secondary)] hover:text-[var(--text-primary)] focus:outline-none" aria-label="Open mobile menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Mobile Menu Slideout -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[var(--bg-primary)]/95 backdrop-blur-md flex flex-col p-6">
+    <div class="flex items-center justify-between pb-6 border-b border-[var(--border-subtle)]">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-8 h-8">
+        <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-5 w-auto">
+      </div>
+      <button id="mobile-menu-close" class="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="flex flex-col space-y-4 pt-6 text-lg font-medium">
+      <a href="#readers" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500 py-2">For Readers</a>
+      <a href="#publishers" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500 py-2">For Publishers</a>
+      <a href="#features" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500 py-2">Features</a>
+      <a href="#pricing" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500 py-2">Pricing</a>
+      <a href="#faq" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500 py-2">FAQ</a>
+      <hr class="border-[var(--border-subtle)] my-2">
+      <button class="open-enterprise-modal w-full text-left py-2 font-semibold text-amber-500">Talk to Us (Enterprise)</button>
+      <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 bg-amber-500 text-dark-bg font-semibold rounded-lg shadow-md mt-4">
+        Log In / Launch App
+      </a>
+    </div>
+  </div>
+
+  <main class="flex-grow">
+    
+    <!-- Hero Section -->
+    <section class="relative pt-16 pb-24 md:pt-24 md:pb-32 hero-glow-bg border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        
+        <!-- Eyebrow Pill -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium border border-amber-500/30 bg-amber-500/10 text-amber-500 mb-8">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          <span>Read Deeply • Keep What Matters</span>
+        </div>
+
+        <!-- Main Headline -->
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-[1.12]">
+          The reading workspace for people who read to think
+          <span class="block font-serif font-normal italic text-amber-500 mt-2">— and the engagement layer for publishers.</span>
+        </h1>
+
+        <!-- Subheading -->
+        <p class="mt-6 text-lg sm:text-xl text-[var(--text-secondary)] max-w-3xl mx-auto font-normal leading-relaxed">
+          Scan hundreds of articles in dense rows. Read in a calm docked reader with private on-device AI that never leaks your data. Active curation for power consumers — and an intelligent reading layer that turns passive readers into retained subscribers.
+        </p>
+
+        <!-- Hero CTAs -->
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-dark-bg font-semibold text-base shadow-lg hover:shadow-amber-500/20 transition-all flex items-center justify-center gap-2">
+            <span>Start Reading Free</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
+
+          <a href="#publishers" class="w-full sm:w-auto px-7 py-3.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] hover:border-[var(--border-active)] text-[var(--text-primary)] font-semibold text-base transition-all flex items-center justify-center gap-2">
+            <span>Tenwise for Publishers</span>
+            <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+
+        <p class="mt-3 text-xs text-[var(--text-muted)]">
+          Free forever for individual readers • No credit card required • Passwordless email sign-in
+        </p>
+
+        <!-- Trust Badges Bar -->
+        <div class="mt-12 pt-8 border-t border-[var(--border-subtle)] grid grid-cols-2 md:grid-cols-4 gap-4 text-xs font-medium text-[var(--text-secondary)]">
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            <span>100% On-Device AI (Gemini Nano)</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7zM9 9h6M9 13h4" /></svg>
+            <span>Auto APA 7 Citations</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+            <span>NotebookLM & Studio Print Export</span>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            <span>Zero Third-Party Tracking</span>
+          </div>
+        </div>
+
+        <!-- Interactive App Preview Showcase -->
+        <div class="mt-14 max-w-6xl mx-auto text-left">
+          
+          <!-- Tab Navigation -->
+          <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+            <button class="preview-tab-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg border border-amber-500/50 bg-amber-500/20 text-amber-500 transition-all" data-target="saved-reader">
+              1. Saved & Docked Reader
+            </button>
+            <button class="preview-tab-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg border border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-all" data-target="rows-scanner">
+              2. Dense Rows Scanner
+            </button>
+            <button class="preview-tab-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg border border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-all" data-target="collections-notebook">
+              3. Collections & NotebookLM
+            </button>
+            <button class="preview-tab-btn px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg border border-transparent text-[var(--text-secondary)] hover:bg-[var(--bg-tertiary)] transition-all" data-target="studio-print">
+              4. Studio Print Newsletters
+            </button>
+          </div>
+
+          <!-- Screenshot Frame Container -->
+          <div class="relative rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] shadow-2xl overflow-hidden transition-all">
+            
+            <!-- Window Titlebar Mockup -->
+            <div class="h-9 px-4 bg-[var(--bg-tertiary)] border-b border-[var(--border-subtle)] flex items-center justify-between text-xs text-[var(--text-muted)]">
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+              </div>
+              <span class="font-mono text-[11px]">tenwise.app — workspace</span>
+              <div class="w-12"></div>
+            </div>
+
+            <!-- Main App Image -->
+            <div class="relative aspect-[16/10] bg-[var(--bg-primary)] overflow-hidden">
+              <img id="preview-active-img" src="assets/images/screenshots/01-saved-reader-dark.png" alt="Tenwise Saved Articles and Docked Reader" class="w-full h-full object-cover object-top transition-opacity duration-200">
+            </div>
+
+            <!-- Dynamic Caption Footer -->
+            <div class="p-4 bg-[var(--bg-surface)] border-t border-[var(--border-subtle)] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs">
+              <div>
+                <p id="preview-caption-title" class="font-semibold text-[var(--text-primary)]">Active Curation with In-Context Notes & On-Device Summaries</p>
+                <p id="preview-caption-desc" class="text-[var(--text-secondary)] mt-0.5">Save any article with a note explaining why it caught your eye. Read with distraction-free typography alongside on-device Gemini Nano summaries.</p>
+              </div>
+              <div class="flex items-center gap-2 self-end sm:self-auto shrink-0">
+                <span class="kbd">b</span> <span>Save</span>
+                <span class="kbd">n</span> <span>Note</span>
+                <span class="kbd">⌘K</span> <span>Palette</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Audience Split Navigator (Two Clear Tracks) -->
+    <section class="py-16 bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Two Paths. One Purpose.</h2>
+          <p class="mt-3 text-sm text-[var(--text-secondary)]">Whether you are an individual researcher curating signal or a publisher seeking deeper subscriber engagement, Tenwise is engineered for you.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Path 1: For Readers -->
+          <div class="glow-card rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 text-xs font-semibold rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">Free Forever</span>
+                <svg class="w-6 h-6 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--text-primary)]">For Power Consumers of Content</h3>
+              <p class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+                For researchers, executives, analysts, and writers who read hundreds of articles every week and want an active workspace to retain and synthesize what matters.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Dense Rows, Grid, List & Compact scanner views</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Save with a note (<span class="font-mono text-xs">n</span>) & APA 7 citations</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>100% On-device Gemini Nano & Ollama AI</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Direct export to NotebookLM & Studio Print Newsletters</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-[var(--border-subtle)] flex items-center justify-between">
+              <span class="text-xs text-[var(--text-muted)]">$0 / Free Workspace</span>
+              <a href="#readers" class="inline-flex items-center gap-1.5 text-sm font-semibold text-amber-500 hover:text-amber-400">
+                <span>Explore Reader Features</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Path 2: For Publishers -->
+          <div class="glow-card rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-8 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-2.5 py-1 text-xs font-semibold rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Enterprise</span>
+                <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                </svg>
+              </div>
+              <h3 class="text-2xl font-bold text-[var(--text-primary)]">For Publishers & Media Houses</h3>
+              <p class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
+                Transform passive headline-skimming into active subscriber retention. Give your readers an intelligent, branded reading layer directly on top of your publication.
+              </p>
+              <ul class="mt-6 space-y-3 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Branded, distraction-free desktop reader hubs</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Curated investigative dossiers & thematic collections</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Editorial AI grounded strictly in your house voice & ethics</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Studio print syndication & reader engagement telemetry</span>
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8 pt-6 border-t border-[var(--border-subtle)] flex items-center justify-between">
+              <span class="text-xs text-[var(--text-muted)]">Custom Deployment & SLA</span>
+              <a href="#publishers" class="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 hover:text-blue-300">
+                <span>Explore Publisher Solutions</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: FOR POWER CONSUMERS (FREE WORKSPACE) -->
+    <section id="readers" class="py-24 border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">For Heavy Readers & Researchers</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Built for keeping, not just skimming.</h2>
+          <p class="mt-4 text-base sm:text-lg text-[var(--text-secondary)]">
+            Most RSS readers are disposable firehoses. Tenwise is a dedicated research environment that turns your reading habit into a compound asset of notes, citations, and synthesized intelligence.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Feature 1: High Density Scanning & Docked Reader -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Dense Rows & Docked Reader</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Review hundreds of headlines effortlessly in two-line rows with day headings. When you open an article, the docked 3-pane reader delivers full text with beautiful Newsreader serif typography, focus mode (<span class="kbd">f</span>), and remembered scroll positions.
+            </p>
+          </div>
+
+          <!-- Feature 2: In-Context Notes & Collections -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Save with a Note (<span class="font-mono text-xs">n</span>)</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Never wonder why you bookmarked an article six months later. Press <span class="kbd">n</span> to record your reaction right away. The Saved view displays your notes front and center, with an Unsorted queue for quick triage into thematic collections.
+            </p>
+          </div>
+
+          <!-- Feature 3: Automatic APA 7 Citations -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Ready-to-Paste APA 7 Citations</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Every save automatically formats an APA 7 citation. Hover over any row to copy, or copy an entire collection’s bibliography with one click. Preprints are detected and cited with their arXiv IDs; messy author fields are cleanly formatted.
+            </p>
+          </div>
+
+          <!-- Feature 4: Private On-Device AI -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Private On-Device AI</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Summaries, analysis, and article Q&A run on <strong>Gemini Nano</strong> directly inside Google Chrome or via local <strong>Ollama</strong>. Your reading text never leaves your device. No API keys, no subscription tiers, and no cloud data leakage.
+            </p>
+          </div>
+
+          <!-- Feature 5: Editorial Voice & Multi-Article Actions -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Your Voice & Multi-Article Actions</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Nine reading personas (e.g. Critical Analyst, Skeptic, Executive) shape every AI output. Select 2–15 articles to Compare Sources, generate an Executive Briefing, or compile a Daily Digest exportable to Word or Markdown.
+            </p>
+          </div>
+
+          <!-- Feature 6: Studio & NotebookLM -->
+          <div class="rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] p-7 glow-card">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 mb-5">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+            </div>
+            <h3 class="text-lg font-bold text-[var(--text-primary)]">Studio & Send to NotebookLM</h3>
+            <p class="mt-2 text-sm text-[var(--text-secondary)] leading-relaxed">
+              Turn any collection into a grounded knowledge source for Google NotebookLM with one click. Or open <strong>Studio</strong> to format articles into newspaper-style print editions and export to high-res PNG or print-ready A4 PDF.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Reader CTA Bar -->
+        <div class="mt-12 text-center">
+          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3 rounded-lg bg-amber-500 hover:bg-amber-400 text-dark-bg font-semibold text-sm transition-all shadow-md">
+            <span>Open Tenwise Reader (Free)</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: FOR PUBLISHERS & ENTERPRISE (ENGAGEMENT LAYER) -->
+    <section id="publishers" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-semibold uppercase tracking-wider text-blue-400">Enterprise & Media Solutions</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">The Engagement Layer for Publishers</h2>
+          <p class="mt-4 text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+            Readers skim three paragraphs, get distracted, and leave tabs to die in browser graveyards. Tenwise bridges your publication with an active, high-retention desktop reading experience where subscribers actually read, synthesize, and keep your journalism.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-16">
+          
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-1">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Branded Reading Hubs</h3>
+                <p class="mt-1 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Provide your subscribers with a bespoke, zero-distraction reading workspace carrying your typography, logos, and curation. Keep your audience immersed in your ecosystem rather than lost in generic aggregator feeds.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-1">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Curated Topic Dossiers & Deep-Dives</h3>
+                <p class="mt-1 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Package complex investigative stories, industry briefs, and historical archives into interactive collections. Subscribers can study them with ready-made citations and export them into research notebooks.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-1">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Editorial AI in Your House Voice</h3>
+                <p class="mt-1 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Standard AI models dilute your editorial nuances. With Tenwise Enterprise, configure custom reading personas and prompt guardrails so automated summaries, comparisons, and briefings match your publication's voice and rigor.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-1">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Privacy-Preserving Curation Telemetry</h3>
+                <p class="mt-1 text-sm text-[var(--text-secondary)] leading-relaxed">
+                  Understand which articles drive genuine engagement (saves, notes, quotes, and highlights) without third-party surveillance scripts. Discover which investigative pieces generate true utility.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Publisher Showcase Card -->
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-8 shadow-xl">
+            <div class="border-b border-[var(--border-subtle)] pb-6 mb-6">
+              <span class="text-xs font-semibold text-blue-400 uppercase tracking-wider">Enterprise Pilot Program</span>
+              <h4 class="text-2xl font-bold mt-1 text-[var(--text-primary)]">Build Your Reading Layer</h4>
+              <p class="text-sm text-[var(--text-secondary)] mt-2">
+                We work directly with media companies, newsletters, think tanks, and research desks to deploy customized Tenwise workspaces.
+              </p>
+            </div>
+
+            <div class="space-y-4 text-sm text-[var(--text-secondary)]">
+              <div class="p-3.5 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] flex items-center justify-between">
+                <span>Custom Domain & Brand Integration</span>
+                <span class="text-xs font-mono text-blue-400">reader.yourbrand.com</span>
+              </div>
+              <div class="p-3.5 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] flex items-center justify-between">
+                <span>Direct Subscriber Single Sign-On (SSO)</span>
+                <span class="text-xs font-mono text-blue-400">OAuth / SAML</span>
+              </div>
+              <div class="p-3.5 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] flex items-center justify-between">
+                <span>Full Archive & Paywall Bypassing Bridge</span>
+                <span class="text-xs font-mono text-blue-400">Authenticated API</span>
+              </div>
+              <div class="p-3.5 rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] flex items-center justify-between">
+                <span>Studio Print Newsletter Syndication</span>
+                <span class="text-xs font-mono text-blue-400">A4 PDF & PNG</span>
+              </div>
+            </div>
+
+            <div class="mt-8">
+              <button class="open-enterprise-modal w-full py-3.5 px-6 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shadow-md flex items-center justify-center gap-2">
+                <span>Request Enterprise Demo & Pricing</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
+              <p class="text-[11px] text-center text-[var(--text-muted)] mt-2">
+                Or email us directly at <a href="mailto:satish@tenwise.app" class="underline hover:text-[var(--text-primary)]">satish@tenwise.app</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: FEATURE MATRIX / COMPARISON TABLE -->
+    <section id="features" class="py-24 border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Why Tenwise is Different</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">How Tenwise Compares</h2>
+          <p class="mt-4 text-base sm:text-lg text-[var(--text-secondary)]">
+            Designed for those who have outgrown ephemeral algorithmic feeds and passive read-it-later bookmark dumps.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse text-sm">
+            <thead>
+              <tr class="border-b border-[var(--border-subtle)] bg-[var(--bg-secondary)] text-[var(--text-primary)] font-semibold">
+                <th class="p-4 w-1/3">Capability</th>
+                <th class="p-4 w-1/6 text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)] font-bold">Tenwise</th>
+                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Classic RSS</th>
+                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Read-It-Later Apps</th>
+                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Cloud AI Readers</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-[var(--border-subtle)] text-[var(--text-secondary)]">
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">AI Privacy & Data Security</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">100% On-Device (No cloud tokens)</td>
+                <td class="p-4">None</td>
+                <td class="p-4">Sent to cloud LLMs</td>
+                <td class="p-4">Sent to external servers</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">High-Speed Scanning</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">Dense Rows, Grid, Compact</td>
+                <td class="p-4">List only</td>
+                <td class="p-4">Card feed only</td>
+                <td class="p-4">Chat interface</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">Save with Context Note</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">Yes (<span class="kbd">n</span> key)</td>
+                <td class="p-4">Basic star only</td>
+                <td class="p-4">Delayed note popup</td>
+                <td class="p-4">Separate chat</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">Automatic APA 7 Citations</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">Built-in (Articles & Preprints)</td>
+                <td class="p-4">No</td>
+                <td class="p-4">No</td>
+                <td class="p-4">Prompt required</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">NotebookLM Integration</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">One-Click Collection Export</td>
+                <td class="p-4">No</td>
+                <td class="p-4">Manual copy-paste</td>
+                <td class="p-4">No</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">Studio Print Publishing</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">Live Newspaper Layout & PDF</td>
+                <td class="p-4">No</td>
+                <td class="p-4">No</td>
+                <td class="p-4">Raw text only</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-medium text-[var(--text-primary)]">Publisher Engagement Layer</td>
+                <td class="p-4 font-bold text-amber-500 bg-amber-500/5 border-x border-[var(--border-subtle)]">Branded Hubs & Voice AI</td>
+                <td class="p-4">Unbranded feed</td>
+                <td class="p-4">Isolated pocket</td>
+                <td class="p-4">Generic summarizer</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: PRICING -->
+    <section id="pricing" class="py-24 bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Transparent Plans</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Free for Readers. Tailored for Publishers.</h2>
+          <p class="mt-4 text-base sm:text-lg text-[var(--text-secondary)]">
+            Everything individual researchers need to scan, read, and synthesize is completely free. Publishers and organizations can partner with us for dedicated engagement hubs.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- Plan 1: Personal (Free) -->
+          <div class="rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] p-8 flex flex-col justify-between glow-card">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Personal Workspace</h3>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded bg-amber-500/10 text-amber-500 border border-amber-500/20">Free Forever</span>
+              </div>
+              <p class="text-sm text-[var(--text-secondary)]">The complete reading, curation, and synthesis environment for power readers.</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-4xl font-extrabold text-[var(--text-primary)]">$0</span>
+                <span class="text-xs text-[var(--text-muted)]">/ forever</span>
+              </div>
+
+              <ul class="mt-8 space-y-3.5 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Unlimited RSS, Atom & Google News feeds</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Rows, Grid, List and Compact scanning layouts</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Automatic full-text extraction & docked reader</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Save with note, collections & Unsorted triage queue</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>APA 7 academic citations for articles & arXiv</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>100% On-device Gemini Nano & Ollama AI</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>One-click send to Google NotebookLM</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-amber-500 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Studio print newsletter drafting & PDF export</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-[var(--border-subtle)]">
+              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-lg bg-amber-500 hover:bg-amber-400 text-dark-bg font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                <span>Start Reading Now</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Plan 2: Enterprise (Publishers) -->
+          <div class="rounded-2xl border border-blue-500/40 bg-[var(--bg-primary)] p-8 flex flex-col justify-between glow-card relative overflow-hidden">
+            <div class="absolute -right-12 -top-12 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl"></div>
+
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-xl font-bold text-[var(--text-primary)]">Publisher & Enterprise</h3>
+                <span class="px-2.5 py-1 text-xs font-semibold rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">Custom Deployment</span>
+              </div>
+              <p class="text-sm text-[var(--text-secondary)]">Create an intelligent reading and research engagement layer for your audience.</p>
+              
+              <div class="mt-6 flex items-baseline gap-1">
+                <span class="text-3xl font-extrabold text-[var(--text-primary)]">Custom</span>
+                <span class="text-xs text-[var(--text-muted)]">/ contact for pricing</span>
+              </div>
+
+              <ul class="mt-8 space-y-3.5 text-sm text-[var(--text-secondary)]">
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span><strong>Everything in Personal</strong>, plus:</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Custom publication domain (<span class="font-mono text-xs">reader.yourbrand.com</span>)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Curated subscriber dossiers & topic collections</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Editorial AI personas tuned to house voice & ethics</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Subscriber Single Sign-On (SSO) integration</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Priority full archive ingestion & indexing</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <svg class="w-4 h-4 text-blue-400 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                  <span>Dedicated technical account manager & 99.9% SLA</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-[var(--border-subtle)]">
+              <button class="open-enterprise-modal w-full py-3 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-md flex items-center justify-center gap-2">
+                <span>Contact for Enterprise Pricing</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: FAQ -->
+    <section id="faq" class="py-24 border-b border-[var(--border-subtle)]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center mb-16">
+          <span class="text-xs font-semibold uppercase tracking-wider text-amber-500">Answers</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+          
+          <div class="faq-item rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] overflow-hidden">
+            <button class="faq-trigger w-full p-5 text-left font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors">
+              <span>How is Tenwise AI completely private?</span>
+              <svg class="faq-icon w-5 h-5 text-[var(--text-muted)] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-content hidden p-5 pt-0 text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)]/50">
+              Unlike other AI readers that transmit your articles to cloud API providers, Tenwise runs AI directly on your own device using desktop Google Chrome’s built-in Gemini Nano model (Chrome Prompt API) or an optional local Ollama instance. The hosted server has no AI model and transmits no article text to external AI services.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] overflow-hidden">
+            <button class="faq-trigger w-full p-5 text-left font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors">
+              <span>What browser do I need for on-device Gemini Nano?</span>
+              <svg class="faq-icon w-5 h-5 text-[var(--text-muted)] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-content hidden p-5 pt-0 text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)]/50">
+              Desktop Google Chrome 148+ has built-in Gemini Nano support requiring zero setup or API keys. If you use Safari, Firefox, or other browsers, you can connect a local Ollama instance (Llama 3.2, Gemma, DeepSeek R1) with our built-in detection wizard.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] overflow-hidden">
+            <button class="faq-trigger w-full p-5 text-left font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors">
+              <span>How does Tenwise help publishers?</span>
+              <svg class="faq-icon w-5 h-5 text-[var(--text-muted)] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-content hidden p-5 pt-0 text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)]/50">
+              Publishers lose readers to social media feeds and endless open browser tabs. Tenwise Enterprise creates a dedicated, high-retention reading workspace for your publication where readers can study, highlight, save notes, generate academic citations, and synthesize your reporting without leaving your ecosystem.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] overflow-hidden">
+            <button class="faq-trigger w-full p-5 text-left font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors">
+              <span>Is there an open-source version?</span>
+              <svg class="faq-icon w-5 h-5 text-[var(--text-muted)] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-content hidden p-5 pt-0 text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)]/50">
+              Yes. The core Tenwise Engine is licensed under the GNU AGPL v3 and runs entirely on your own machine with a local SQLite database and no accounts needed. You can run it as a background macOS service or via Node.js.
+            </div>
+          </div>
+
+          <div class="faq-item rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)] overflow-hidden">
+            <button class="faq-trigger w-full p-5 text-left font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors">
+              <span>How do I get started as an individual reader?</span>
+              <svg class="faq-icon w-5 h-5 text-[var(--text-muted)] transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="faq-content hidden p-5 pt-0 text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border-subtle)]/50">
+              Visit <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="text-amber-500 hover:underline">tenwise.app/login</a>, enter your email, and click the magic code/link sent to your inbox. Each person gets a private, persistent workspace backed up to Cloudflare R2.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: BOTTOM CALL TO ACTION -->
+    <section class="py-20 hero-glow-bg">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          Ready to turn reading into research?
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-[var(--text-secondary)] max-w-2xl mx-auto">
+          Join researchers, journalists, executives, and knowledge workers who curate their intellectual diet with Tenwise.
+        </p>
+
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-dark-bg font-semibold text-base shadow-lg transition-all flex items-center justify-center gap-2">
+            <span>Start Reading Free</span>
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+          </a>
+
+          <button class="open-enterprise-modal w-full sm:w-auto px-8 py-3.5 rounded-lg border border-[var(--border-subtle)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-semibold text-base transition-all">
+            Talk to Us for Publishers
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] py-12 text-sm text-[var(--text-secondary)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="md:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-7 h-7">
+            <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-4.5 w-auto">
+          </div>
+          <p class="text-xs text-[var(--text-muted)] max-w-sm leading-relaxed">
+            The reading workspace for people who read a lot and want to keep what matters — and the engagement layer for publishers. Built by CodeStrata, Inc.
+          </p>
+          <p class="text-xs text-[var(--text-muted)]">
+            Hosted at <a href="https://tenwise.app" class="underline hover:text-[var(--text-primary)]">tenwise.app</a>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-[var(--text-primary)] text-xs uppercase tracking-wider mb-3">Product</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors">Sign In to App</a></li>
+            <li><a href="#readers" class="hover:text-amber-500 transition-colors">For Power Consumers</a></li>
+            <li><a href="#publishers" class="hover:text-amber-500 transition-colors">For Publishers</a></li>
+            <li><a href="#pricing" class="hover:text-amber-500 transition-colors">Pricing</a></li>
+            <li><a href="#faq" class="hover:text-amber-500 transition-colors">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-[var(--text-primary)] text-xs uppercase tracking-wider mb-3">Open Source & Company</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="https://github.com/Tenwise/tenwise-platform" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors">GitHub Repository</a></li>
+            <li><a href="https://github.com/socraticsurge/atlas-pulse" target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors">Atlas Pulse Heritage</a></li>
+            <li><button class="open-enterprise-modal hover:text-amber-500 transition-colors text-left">Enterprise Inquiry</button></li>
+            <li><a href="mailto:satish@tenwise.app" class="hover:text-amber-500 transition-colors">Contact Support</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-[var(--border-subtle)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+        <div>
+          © 2026 CodeStrata, Inc. Tenwise is a product of CodeStrata, Inc. All rights reserved.
+        </div>
+        <div class="flex items-center space-x-4">
+          <span class="inline-flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+            <span>All Systems Normal</span>
+          </span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ENTERPRISE INQUIRY MODAL -->
+  <div id="enterprise-modal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4">
+    <div class="relative w-full max-w-lg rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-modal)] p-6 sm:p-8 shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+      
+      <!-- Close button -->
+      <button id="close-modal-btn" class="absolute top-5 right-5 p-1.5 rounded-lg text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors" aria-label="Close modal">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+      </button>
+
+      <div class="mb-6">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2">
+          Enterprise & Publisher Pilot
+        </div>
+        <h3 class="text-xl font-bold text-[var(--text-primary)]">Talk to the Tenwise Team</h3>
+        <p class="text-xs text-[var(--text-secondary)] mt-1">
+          Tell us about your publication or organization. We will arrange a tailored demo and discuss pilot engagement options.
+        </p>
+      </div>
+
+      <!-- Inquiry Form -->
+      <form id="enterprise-form" class="space-y-4">
+        <div>
+          <label for="form-name" class="block text-xs font-semibold text-[var(--text-primary)] mb-1">Your Name</label>
+          <input type="text" id="form-name" name="name" required class="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-colors" placeholder="Jane Doe">
+        </div>
+
+        <div>
+          <label for="form-email" class="block text-xs font-semibold text-[var(--text-primary)] mb-1">Work Email</label>
+          <input type="email" id="form-email" name="email" required class="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-colors" placeholder="jane@publication.com">
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div>
+            <label for="form-org" class="block text-xs font-semibold text-[var(--text-primary)] mb-1">Organization / Publication</label>
+            <input type="text" id="form-org" name="organization" required class="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-colors" placeholder="The Daily Wire">
+          </div>
+          <div>
+            <label for="form-role" class="block text-xs font-semibold text-[var(--text-primary)] mb-1">Role</label>
+            <input type="text" id="form-role" name="role" required class="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-colors" placeholder="Editor-in-Chief / CTO">
+          </div>
+        </div>
+
+        <div>
+          <label for="form-message" class="block text-xs font-semibold text-[var(--text-primary)] mb-1">How can Tenwise help your readers?</label>
+          <textarea id="form-message" name="message" rows="3" required class="w-full px-3.5 py-2 text-sm rounded-lg bg-[var(--bg-tertiary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-blue-500 transition-colors resize-none" placeholder="We publish daily investigative reports and want to provide subscribers with branded research collections..."></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-3 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-colors shadow-md mt-2 flex items-center justify-center gap-2">
+          <span>Send Inquiry</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+        </button>
+
+        <p class="text-[11px] text-[var(--text-muted)] text-center">
+          Submitting opens an email dispatch to <span class="font-mono">satish@tenwise.app</span>.
+        </p>
+      </form>
+
+      <!-- Success State -->
+      <div id="form-success-state" class="hidden text-center py-8">
+        <div class="w-12 h-12 rounded-full bg-green-500/20 text-green-500 flex items-center justify-center mx-auto mb-4">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        </div>
+        <h4 class="text-lg font-bold text-[var(--text-primary)]">Inquiry Prepared!</h4>
+        <p class="text-xs text-[var(--text-secondary)] mt-2 max-w-xs mx-auto">
+          Thank you! If your email client did not automatically launch, you can directly email us at <a href="mailto:satish@tenwise.app" class="text-blue-400 underline">satish@tenwise.app</a>.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
