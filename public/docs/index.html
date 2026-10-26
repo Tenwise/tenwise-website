@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Using Tenwise · Tenwise</title>
+  <meta name="description" content="How to use Tenwise: sign in, follow feeds, read, save with notes, build collections with citations, use AI on your device, and make newsletters in Studio.">
+  <meta name="author" content="CodeStrata, Inc.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/tenwise-icon.svg">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    // The website's own theme choice (assets/js/main.js keeps it under the same key).
+    try { if (localStorage.getItem('tenwise-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) { /* storage blocked */ }
+  </script>
+  <style>
+    body { margin: 0; background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.65; }
+    a { color: var(--accent); }
+    .top { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--border-subtle); background: var(--bg-glass); backdrop-filter: blur(12px); }
+    .top-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .top-inner img { height: 30px; width: auto; display: block; }
+    .top nav { display: flex; align-items: center; gap: 22px; font-size: 14px; }
+    .top nav a { color: var(--text-secondary); text-decoration: none; }
+    .top nav a:hover, .top nav a[aria-current] { color: var(--text-primary); }
+    .top nav .signin { padding: 8px 16px; border-radius: 999px; background: var(--accent); color: #0b0c0e; font-weight: 600; }
+    .theme { border: 1px solid var(--border-strong); background: transparent; color: var(--text-secondary); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 15px; }
+    .top-inner .logo-light, html.light .top-inner .logo-dark { display: none; }
+    html.light .top-inner .logo-light { display: block; }
+    .layout { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+    .toc { position: sticky; top: 100px; align-self: start; font-size: 14px; }
+    .toc p { margin: 0 0 10px; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+    .toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--border-subtle); }
+    .toc a { display: block; padding: 5px 0 5px 14px; color: var(--text-secondary); text-decoration: none; }
+    .toc a:hover { color: var(--text-primary); }
+    main { max-width: 760px; }
+    .eyebrow { margin: 0 0 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    h1 { margin: 0 0 16px; font-family: var(--font-serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; letter-spacing: -.01em; }
+    .lede { margin: 0 0 48px; font-size: 18px; color: var(--text-secondary); }
+    section { padding-top: 24px; margin-bottom: 40px; scroll-margin-top: 88px; }
+    h2 { margin: 0 0 14px; font-family: var(--font-serif); font-weight: 500; font-size: 30px; line-height: 1.2; }
+    h3 { margin: 26px 0 8px; font-size: 16.5px; }
+    p, li { color: var(--text-secondary); }
+    strong { color: var(--text-primary); font-weight: 600; }
+    ol.steps, ul.points { padding-left: 22px; }
+    ol.steps li, ul.points li { margin: 6px 0; }
+    kbd { display: inline-block; min-width: 1.6em; padding: 1px 7px; border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-primary); font: 600 12.5px/1.6 ui-monospace, Menlo, monospace; text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; font-size: 14.5px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+    th { color: var(--text-primary); font-weight: 600; }
+    td { color: var(--text-secondary); }
+    .note { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--accent-border); border-radius: 12px; background: var(--accent-soft); color: var(--text-primary); font-size: 14.5px; }
+    .note p { margin: 0; color: var(--text-primary); }
+    footer { border-top: 1px solid var(--border-subtle); padding: 28px 24px; text-align: center; font-size: 13px; color: var(--text-muted); }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+      .toc { position: static; }
+      .top nav .hide-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a href="/" aria-label="Tenwise home">
+        <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise">
+        <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise">
+      </a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="/">Home</a>
+        <a href="/docs/" aria-current="page">Docs</a>
+        <button type="button" class="theme" id="docs-theme" aria-label="Switch theme">◐</button>
+        <a class="signin" href="/login">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="toc" aria-label="On this page">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#start">Get started</a></li>
+        <li><a href="#feeds">Follow sources</a></li>
+        <li><a href="#reading">Read</a></li>
+        <li><a href="#saving">Save and organize</a></li>
+        <li><a href="#citations">Cite and export</a></li>
+        <li><a href="#ai">AI on your device</a></li>
+        <li><a href="#several">Work with several articles</a></li>
+        <li><a href="#studio">Studio newsletters</a></li>
+        <li><a href="#settings">Make it yours</a></li>
+        <li><a href="#shortcuts">Keyboard shortcuts</a></li>
+        <li><a href="#account">Your account and data</a></li>
+        <li><a href="#help">If something's not right</a></li>
+      </ol>
+    </aside>
+
+    <main>
+      <p class="eyebrow">Docs</p>
+      <h1>Using Tenwise</h1>
+      <p class="lede">Tenwise is a reading workspace: follow the sources that matter, read calmly, save what's worth keeping with a note on why, and turn it into cited briefings. This guide takes you from your first sign-in to your first newsletter.</p>
+
+      <section id="start">
+        <h2>Get started</h2>
+        <ol class="steps">
+          <li>Go to <a href="/login">tenwise.app/login</a> (or press <strong>Sign In</strong> on this site) and enter your email.</li>
+          <li>Tenwise emails you a <strong>6-digit code</strong> and a <strong>link</strong>. Enter the code, or open the link and press <strong>Sign in</strong>. Both work once, for 15 minutes. There's no password.</li>
+          <li>You land in your own <strong>library</strong>, private to your email. Add your first sources with <strong>+</strong> in the left rail.</li>
+        </ol>
+        <div class="note"><p>Use desktop <strong>Google Chrome 148 or later</strong>: it's the browser with Gemini Nano, the AI Tenwise uses (see <a href="#ai">AI on your device</a>). Everything else works in any modern browser.</p></div>
+        <p>You stay signed in for 30 days on that browser. Signing in with a different email gives you a different, separate library.</p>
+      </section>
+
+      <section id="feeds">
+        <h2>Follow sources</h2>
+        <p>Press <strong>+</strong> in the left rail (or <kbd>⌘</kbd> <kbd>K</kbd> → <em>Add feed</em>). There are several ways in:</p>
+        <table>
+          <thead><tr><th>Tab</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>URL</td><td>Paste any site's address; Tenwise finds its feed for you.</td></tr>
+            <tr><td>Search</td><td>Search a curated catalog of publications.</td></tr>
+            <tr><td>Popular</td><td>Browse well-known sources by topic.</td></tr>
+            <tr><td>Google News</td><td>Follow a Google News search, in any of 23 editions, optionally limited to one site, with search operators like quotes.</td></tr>
+            <tr><td>Google Alerts</td><td>Steps to turn a Google Alert into a feed.</td></tr>
+          </tbody>
+        </table>
+        <p>Already use another reader? Import your list as an <strong>OPML</strong> file in <strong>Settings → Data</strong>; the feeds start fetching right away. Group feeds into <strong>folders</strong> from the sidebar, and right-click a feed to refresh, move or remove it. Tenwise refreshes your feeds while you're using it: set how often in <strong>Settings → Reading</strong>, or press ↻ in the left rail to refresh them all now.</p>
+      </section>
+
+      <section id="reading">
+        <h2>Read</h2>
+        <ul class="points">
+          <li><strong>Scan fast.</strong> The list shows dense rows with day headings. Prefer something else? Switch to Grid, List or Compact in the list header.</li>
+          <li><strong>Read calmly.</strong> Open an article and it docks beside the list. Tenwise fetches the <strong>full text</strong> from the source when it can, and tells you when you're reading only the feed's summary.</li>
+          <li><strong>Make room.</strong> Hide the sidebar with <kbd>[</kbd> and the list with <kbd>]</kbd>, or press <kbd>f</kbd> for focus mode. The <strong>Aa</strong> menu sets font, size, spacing and width.</li>
+          <li><strong>Highlight.</strong> Select text in an article to highlight it in one of four colors. Find every highlight in <strong>Highlights</strong>.</li>
+          <li><strong>Find anything.</strong> Press <kbd>/</kbd> to search everything you've fetched, or <kbd>⌘</kbd> <kbd>K</kbd> to jump to any view, folder or feed and run commands.</li>
+        </ul>
+      </section>
+
+      <section id="saving">
+        <h2>Save and organize</h2>
+        <ul class="points">
+          <li><kbd>b</kbd> <strong>saves</strong> an article. <kbd>n</kbd> saves it and opens a <strong>note</strong>: a line on why it caught your eye. <strong>Saved</strong> lists your saves newest first, each with its note.</li>
+          <li><kbd>c</kbd> files an article into <strong>collections</strong>, or creates one as you type. A collection is a set of sources on a topic, ready to cite or share.</li>
+          <li><strong>Unsorted</strong> holds saves that aren't in a collection yet: a filing queue. File one with <kbd>c</kbd>, and <kbd>j</kbd> takes you to the next.</li>
+          <li>Removing a feed never removes your saves: they stay in Saved and your collections, notes included.</li>
+        </ul>
+      </section>
+
+      <section id="citations">
+        <h2>Cite and export</h2>
+        <ul class="points">
+          <li>Every saved article carries an <strong>APA 7 citation</strong>: under your note in the reader, and behind a copy button on saved rows. It pastes into a document with its italics.</li>
+          <li>A collection's <strong>Copy citations</strong> copies a reference list, A to Z.</li>
+          <li><strong>Download Markdown</strong> saves a collection as one file: each article's title, source, dates, citation, your note and its text.</li>
+          <li><strong>Send to NotebookLM</strong> on a collection downloads that file to upload as a source, copies the links to paste, or opens NotebookLM.</li>
+          <li>Export your feed list as OPML (<strong>Settings → Data</strong>), and your highlights as CSV from <strong>Highlights</strong>.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h2>AI on your device</h2>
+        <p>Tenwise's AI runs <strong>in your browser</strong>, using <strong>Gemini Nano</strong>, the model built into desktop Google Chrome. Article text isn't sent to an AI service.</p>
+        <ol class="steps">
+          <li>Use desktop Chrome 148 or later. Chrome needs about 22 GB of free disk space and a computer it supports; <code>chrome://on-device-internals</code> shows whether yours qualifies.</li>
+          <li>Open an article and press <kbd>a</kbd> for the <strong>AI rail</strong>.</li>
+          <li>Press <strong>Generate summary</strong>. The first time, Chrome downloads Gemini Nano once (a few GB); after that it's ready whenever you are.</li>
+        </ol>
+        <p>The AI rail has <strong>Summary</strong>, <strong>Analysis</strong> (sentiment, urgency, frame, tone, depth and topics), <strong>Chat</strong> about the article, and your <strong>Highlights</strong>. Save a summary to keep it in <strong>AI Summaries</strong>.</p>
+        <h3>Your voice</h3>
+        <p>In <strong>Settings → AI assistant</strong>, choose reading personas (several blend into one voice), a tone, and custom instructions. They apply to every summary, chat and briefing.</p>
+        <h3>Background processing</h3>
+        <p>Turn it on in <strong>Settings → AI engines</strong> to summarize and analyze new articles automatically while Tenwise is open in Chrome, or press ✨ in the list header to process recent articles now. Analyzed articles can then be filtered by sentiment, urgency and more with the <strong>Filters</strong> button.</p>
+        <div class="note"><p>Ollama, the other AI engine the open-source Tenwise Engine supports, needs Tenwise to run on your own computer, so it isn't available on tenwise.app.</p></div>
+      </section>
+
+      <section id="several">
+        <h2>Work with several articles</h2>
+        <p>Select articles with the circle on each row, then choose <strong>AI</strong> in the bar that appears:</p>
+        <table>
+          <thead><tr><th>Action</th><th>For</th><th>What you get</th></tr></thead>
+          <tbody>
+            <tr><td>Compare</td><td>2–5 articles</td><td>How the sources differ: angle, claims, what's missing, tone and evidence.</td></tr>
+            <tr><td>Newsletter</td><td>3–15 articles</td><td>A newsletter as a Daily Digest, Weekly Roundup or Executive Brief.</td></tr>
+            <tr><td>Briefing</td><td>2–15 articles</td><td>An answer to your question, drawn only from those articles.</td></tr>
+          </tbody>
+        </table>
+        <p>Export the result as Markdown or Word, email it, or save a newsletter to Studio.</p>
+      </section>
+
+      <section id="studio">
+        <h2>Studio newsletters</h2>
+        <p><strong>Studio</strong> (in the left rail) keeps your newsletters. Save one from a generated newsletter, or start a draft from any collection: each article becomes a section, with your note as "Why it matters" and a reference list at the end.</p>
+        <ul class="points">
+          <li>Edit the title and Markdown with a live preview; changes save as you type.</li>
+          <li>Pick a design: <strong>Broadsheet</strong>, <strong>Evening Edition</strong> or <strong>Quarterly</strong>.</li>
+          <li>Export as Markdown, Word, a <strong>PNG</strong> for sharing, or an <strong>A4 PDF</strong> with real text.</li>
+        </ul>
+      </section>
+
+      <section id="settings">
+        <h2>Make it yours</h2>
+        <ul class="points">
+          <li><strong>Theme:</strong> dark or light, from the sun and moon in the left rail or <strong>Settings → Appearance</strong>. The sign-in page follows your choice on that browser.</li>
+          <li><strong>Accent color, fonts and text color:</strong> <strong>Settings → Appearance</strong>.</li>
+          <li><strong>Simple and Power:</strong> Settings opens in Simple, with what most people need. Power shows everything, including the AI prompts, which you can read and edit.</li>
+          <li>Your settings follow you to any browser you sign in on.</li>
+        </ul>
+      </section>
+
+      <section id="shortcuts">
+        <h2>Keyboard shortcuts</h2>
+        <table>
+          <thead><tr><th>Key</th><th>Does</th></tr></thead>
+          <tbody>
+            <tr><td><kbd>⌘</kbd> <kbd>K</kbd> / <kbd>Ctrl</kbd> <kbd>K</kbd></td><td>Command palette</td></tr>
+            <tr><td><kbd>/</kbd></td><td>Search</td></tr>
+            <tr><td><kbd>j</kbd> / <kbd>k</kbd></td><td>Next / previous article</td></tr>
+            <tr><td><kbd>b</kbd></td><td>Save or unsave</td></tr>
+            <tr><td><kbd>n</kbd></td><td>Save with a note</td></tr>
+            <tr><td><kbd>c</kbd></td><td>Add to collections</td></tr>
+            <tr><td><kbd>o</kbd></td><td>Open the original</td></tr>
+            <tr><td><kbd>a</kbd></td><td>AI rail</td></tr>
+            <tr><td><kbd>f</kbd></td><td>Focus mode</td></tr>
+            <tr><td><kbd>[</kbd> / <kbd>]</kbd></td><td>Show or hide the sidebar / the article list</td></tr>
+            <tr><td><kbd>Esc</kbd></td><td>Clear the selection or search; in the reader, leave focus mode, then close the article</td></tr>
+          </tbody>
+        </table>
+        <p>None of them fire while you're typing.</p>
+      </section>
+
+      <section id="account">
+        <h2>Your account and data</h2>
+        <ul class="points">
+          <li><strong>Sign out:</strong> click your initial at the bottom of the left rail, then <strong>Sign out</strong>. From there you can also sign out on every device at once. <strong>Settings → Account</strong> has the same.</li>
+          <li><strong>Your library is private</strong> to your email: nobody else signing in can see your feeds, saves or notes.</li>
+          <li><strong>Where it's kept:</strong> your library lives in your own workspace on Tenwise's servers (on Cloudflare), with a continuous backup, so it's there on any browser you sign in on.</li>
+          <li><strong>AI stays on your device:</strong> Gemini Nano runs in Chrome; article text isn't sent to an AI service.</li>
+          <li><strong>No tracking:</strong> no third-party analytics or advertising.</li>
+        </ul>
+      </section>
+
+      <section id="help">
+        <h2>If something's not right</h2>
+        <h3>The sign-in email didn't arrive</h3>
+        <p>Check spam, then request a new one; each new email replaces the last. To stop abuse, Tenwise sends only a few sign-in emails per address in a short time, so if you're told to wait, wait a few minutes.</p>
+        <h3>"That code isn't right" or "expired"</h3>
+        <p>Codes work once, for 15 minutes, and five wrong tries end them. Request a new code.</p>
+        <h3>"No AI model available"</h3>
+        <p>Open Tenwise in desktop Google Chrome 148 or later. If it still says so, <code>chrome://on-device-internals</code> shows why Chrome can't run Gemini Nano on that computer.</p>
+        <h3>A feed won't add</h3>
+        <p>Some sites block automated requests. Try the feed's own address instead of the site's home page.</p>
+        <h3>The full article doesn't load</h3>
+        <p>The site blocked it. Press <kbd>o</kbd> to read it on the site.</p>
+        <p>Anything else: write to <a href="mailto:satish@tenwise.app">satish@tenwise.app</a>.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer>© CodeStrata, Inc. · <a href="/">tenwise.app</a> · <a href="/login">Sign In</a></footer>
+
+  <script>
+    // The theme switch: the same key and class as the rest of the website.
+    document.getElementById('docs-theme').addEventListener('click', function () {
+      var light = document.documentElement.classList.toggle('light');
+      try { localStorage.setItem('tenwise-theme', light ? 'light' : 'dark'); } catch (e) { /* storage blocked */ }
+    });
+  </script>
+</body>
+</html>
