@@ -1,67 +1,178 @@
-/* Tenwise Custom Styling & Tokens */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap');
+/* ===== Tenwise Website: "Editorial Instrument" Design System ===== */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap');
 
 :root {
-  /* Default: Dark Theme */
+  /* Dark theme (default): matched to Tenwise engine/src/styles/tokens.css */
   --bg-primary: #121315;
   --bg-secondary: #18191c;
   --bg-tertiary: #1e2023;
-  --bg-card: #191a1e;
-  --bg-card-hover: #222429;
-  --bg-modal: #1a1b1f;
-  --border-subtle: #272a2f;
-  --border-active: #383d45;
+  --bg-surface: #1b1c1f;
+  --bg-hover: #24262a;
+  --bg-active: #2a2c30;
+  --bg-modal: #18191c;
+  --rail-bg: #0d0e10;
 
   --text-primary: #e8e6e1;
   --text-secondary: #b4b1aa;
-  --text-muted: #78756f;
+  --text-tertiary: #96938d;
+  --text-muted: #6a6863;
 
   --accent: #f59e0b;
+  --accent-text: #f59e0b;
   --accent-hover: #fbbf24;
   --accent-muted: rgba(245, 158, 11, 0.12);
-  --accent-border: rgba(245, 158, 11, 0.28);
-  --accent-glow: rgba(245, 158, 11, 0.2);
+  --accent-border: rgba(245, 158, 11, 0.32);
+  --accent-foreground: #121315;
 
-  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: 'Newsreader', Georgia, Cambria, "Times New Roman", Times, serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --brand-navy: #0b3b6f;
+  --brand-ink: #f8fafc;
+
+  --border: #26282c;
+  --border-light: #2e3035;
+
+  /* Paper sheet colors for Studio Broadsheet live preview */
+  --paper-bg: #f8f6f0;
+  --paper-ink: #181715;
+  --paper-muted: #57534e;
+  --paper-rule: #d6d3cb;
+
+  --font-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --font-mono: 'IBM Plex Mono', monospace;
 }
 
 html.light {
-  --bg-primary: #fcfbf9;
+  /* Light theme: warm archival paper & Tenwise deep navy */
+  --bg-primary: #f6f5f2;
   --bg-secondary: #ffffff;
-  --bg-tertiary: #f3f1ec;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f7f6f2;
+  --bg-tertiary: #eeede9;
+  --bg-surface: #ffffff;
+  --bg-hover: #e7e5e0;
+  --bg-active: #dedcd6;
   --bg-modal: #ffffff;
-  --border-subtle: #e5e2da;
-  --border-active: #cac6bc;
+  --rail-bg: #14213d;
 
-  --text-primary: #0b1e36;
-  --text-secondary: #475569;
-  --text-muted: #8a8880;
+  --text-primary: #1c1b19;
+  --text-secondary: #55524c;
+  --text-tertiary: #63605a;
+  --text-muted: #8c8881;
 
-  --accent: #d97706;
-  --accent-hover: #b45309;
-  --accent-muted: rgba(217, 119, 6, 0.1);
-  --accent-border: rgba(217, 119, 6, 0.25);
-  --accent-glow: rgba(217, 119, 6, 0.15);
+  --accent: #f59e0b;
+  --accent-text: #9c4808; /* WCAG AA 4.5:1 on warm paper */
+  --accent-hover: #d97706;
+  --accent-muted: rgba(156, 72, 8, 0.09);
+  --accent-border: rgba(156, 72, 8, 0.28);
+  --accent-foreground: #121315;
+
+  --brand-ink: #14213d;
+
+  --border: #e2e0db;
+  --border-light: #d5d2cb;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
   font-family: var(--font-sans);
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  transition: background-color 0.25s ease, color 0.25s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Typography Utilities */
 .font-serif-read {
   font-family: var(--font-serif);
+  font-optical-sizing: auto;
 }
 
 .font-mono-code {
   font-family: var(--font-mono);
+}
+
+.text-accent-accessible {
+  color: var(--accent-text);
+}
+
+/* Subtle Architectural Grid Background */
+.instrument-grid-bg {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+html.light .instrument-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(20, 33, 61, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 33, 61, 0.03) 1px, transparent 1px);
+}
+
+/* Navigation Header */
+.glass-nav {
+  background-color: rgba(18, 19, 21, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+html.light .glass-nav {
+  background-color: rgba(246, 245, 242, 0.9);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Keycap / Shortcut Badge */
+.kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-light);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  padding: 0.1rem 0.42rem;
+  font-size: 0.72rem;
+  line-height: 1.2;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+/* Editorial Callout Left Rule (Matches Reader's SAVED · YOUR NOTE) */
+.reader-note-rule {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.125rem;
+}
+
+/* Interactive Card Transitions */
+.instrument-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+}
+.instrument-card:hover {
+  border-color: var(--border-light);
+}
+
+/* Studio Print Broadsheet Sheet */
+.broadsheet-page {
+  background-color: var(--paper-bg);
+  color: var(--paper-ink);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+html.light .broadsheet-page {
+  box-shadow: 0 16px 40px rgba(20, 33, 61, 0.12), 0 0 0 1px #d6d3cb;
+}
+
+/* Section Index Coordinate Pill */
+.section-coord {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-text);
 }
 
 /* Custom Scrollbar */
@@ -73,57 +184,12 @@ body {
   background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--border-subtle);
+  background: var(--border-light);
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--border-active);
-}
 
-/* Glass & Glow utilities */
-.glass-nav {
-  background-color: rgba(18, 19, 21, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border-subtle);
-}
-html.light .glass-nav {
-  background-color: rgba(252, 251, 249, 0.88);
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-.glow-card {
-  position: relative;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.glow-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent-border);
-  box-shadow: 0 12px 30px -10px var(--accent-glow);
-}
-
-.hero-glow-bg {
-  background: radial-gradient(circle at 50% 20%, rgba(245, 158, 11, 0.12) 0%, rgba(18, 19, 21, 0) 70%);
-}
-html.light .hero-glow-bg {
-  background: radial-gradient(circle at 50% 20%, rgba(217, 119, 6, 0.08) 0%, rgba(252, 251, 249, 0) 70%);
-}
-
-/* Keyboard badge */
-.kbd {
-  font-family: var(--font-mono);
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  padding: 0.15rem 0.4rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-}
-
-/* Modal styles */
+/* Modal Backdrop */
 .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(4px);
+  background-color: rgba(10, 11, 13, 0.75);
+  backdrop-filter: blur(6px);
 }
