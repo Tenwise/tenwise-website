@@ -31,10 +31,25 @@ Then open `http://localhost:8000` in your browser.
 
 ## Deployment
 
-Every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker (`wrangler.jsonc`, `.github/workflows/deploy.yml`). It has no public address of its own: **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
+Every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker (`wrangler.jsonc`, `.github/workflows/deploy.yml`). **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
 
-Links into the app: **Sign In** is `/login` (`https://tenwise.app/login`); signing out happens in the app (`/logout`) and lands back here.
+Links into the app: **Sign In** is `/login`; signing out happens in the app (`/logout`) and lands back here.
 
-The workflow needs two secrets on the repository's `production` environment: `CLOUDFLARE_API_TOKEN` (a token with **Workers Scripts: Edit** on the account) and `CLOUDFLARE_ACCOUNT_ID`.
+## Checks and previews
+
+Every pull request (`.github/workflows/ci.yml`):
+
+- **HTML is valid**: `npx html-validate@11.17.0 "public/**/*.html"`, with the rules in `.htmlvalidate.json`. Style rules are off; `<div>` inside `<button>` is a warning for now.
+- **Internal links resolve**: `node scripts/check-links.mjs` checks every `href`, `src` and CSS `url()` in `public/`, and every `#anchor`.
+- **A preview**: the PR's version of the site, uploaded but not live, at its own `workers.dev` address, linked in a comment on the PR and updated with each push. PRs from forks get the checks only.
+
+The deploy runs the same checks first, and fails, rather than skipping, if the Cloudflare secrets are missing.
+
+## Secrets
+
+Add two **repository** secrets (Settings → Secrets and variables → Actions), used by both the deploy and the previews:
+
+- `CLOUDFLARE_API_TOKEN`: a token with **Workers Scripts: Edit** on the account.
+- `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account id.
 
 The site lives in `public/`, and only that folder is published. To deploy by hand: `npx wrangler@4.151.3 deploy` (after `npx wrangler login`).
