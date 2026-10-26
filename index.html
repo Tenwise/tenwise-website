@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tenwise — The Reading Workspace & Publisher Engagement Layer</title>
-  <meta name="description" content="Scan hundreds of feeds in dense rows, read in a calm docked reader, save with notes and APA 7 citations, and synthesize with on-device AI. Free for power readers; built as an engagement layer for publishers.">
+  <title>Tenwise — Where Serious Reading Becomes Lasting Insight</title>
+  <meta name="description" content="A calm reading workspace for power consumers of content, and an intelligent engagement layer for publishers. Follow what matters, save with notes and citations, and turn reading into executive briefings.">
   <meta name="author" content="CodeStrata, Inc.">
 
   <!-- Open Graph / Social Sharing -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tenwise.app">
-  <meta property="og:title" content="Tenwise — Built for Keeping, Not Just Reading">
-  <meta property="og:description" content="The reading workspace for power consumers of content — and the intelligent engagement layer for publishers.">
+  <meta property="og:title" content="Tenwise — Where Serious Reading Becomes Lasting Insight">
+  <meta property="og:description" content="The reading workspace for power consumers of content — and the engagement layer for publishers.">
   <meta property="og:image" content="assets/images/screenshots/01-saved-reader-dark.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tenwise — Reading Workspace & Publisher Engagement Layer">
-  <meta name="twitter:description" content="Scan dense rows, read in docked comfort, save with notes & APA 7 citations, and synthesize with 100% on-device AI.">
+  <meta name="twitter:description" content="Read deeply, capture why it matters, and turn curated collections into cited briefings.">
   <meta name="twitter:image" content="assets/images/screenshots/01-saved-reader-dark.png">
 
   <!-- Favicon -->
@@ -37,10 +37,6 @@
               500: '#f59e0b',
               600: '#d97706',
               700: '#b45309',
-            },
-            navy: {
-              800: '#14213d',
-              900: '#0b3b6f',
             }
           }
         }
@@ -53,58 +49,50 @@
 </head>
 <body class="min-h-screen flex flex-col selection:bg-amber-500/25 selection:text-amber-500">
 
-  <!-- TOP STICKY NAVIGATION -->
-  <header class="sticky top-0 z-40 glass-nav">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
+  <!-- =====================================================================
+       NAVIGATION
+       ===================================================================== -->
+  <header class="sticky top-0 z-40 nav-glass">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 h-20 flex items-center justify-between">
       
-      <!-- Brand Identity -->
-      <div class="flex items-center gap-6">
-        <a href="#" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Tenwise Home">
-          <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise Sunrise" class="w-7 h-7 transition-transform duration-200 group-hover:scale-105">
-          <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-4 w-auto">
-        </a>
-        <span class="hidden lg:inline-block text-[11px] font-mono-code text-[var(--text-muted)] border-l border-[var(--border)] pl-4">
-          v0.1 · Local-First &amp; Cloud Workspace
-        </span>
-      </div>
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none" aria-label="Tenwise Home">
+        <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise Sunrise" class="w-8 h-8 transition-transform duration-300 group-hover:scale-105">
+        <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-5 w-auto">
+      </a>
 
-      <!-- Desktop Navigation Links -->
-      <nav class="hidden md:flex items-center space-x-6 text-xs font-medium text-[var(--text-secondary)]">
-        <a href="#workflow" class="hover:text-[var(--text-primary)] transition-colors"><span class="font-mono-code text-[10px] text-[var(--text-muted)] mr-1">01</span>Workflow</a>
-        <a href="#anatomy" class="hover:text-[var(--text-primary)] transition-colors"><span class="font-mono-code text-[10px] text-[var(--text-muted)] mr-1">02</span>Reader &amp; AI</a>
-        <a href="#publishers" class="hover:text-[var(--text-primary)] transition-colors"><span class="font-mono-code text-[10px] text-[var(--text-muted)] mr-1">03</span>For Publishers</a>
-        <a href="#comparison" class="hover:text-[var(--text-primary)] transition-colors"><span class="font-mono-code text-[10px] text-[var(--text-muted)] mr-1">04</span>Compare</a>
-        <a href="#pricing" class="hover:text-[var(--text-primary)] transition-colors"><span class="font-mono-code text-[10px] text-[var(--text-muted)] mr-1">05</span>Pricing</a>
+      <!-- Center Links -->
+      <nav class="hidden md:flex items-center space-x-10 text-sm font-medium text-[var(--text-secondary)]">
+        <a href="#readers" class="hover:text-[var(--text-primary)] transition-colors">For Readers</a>
+        <a href="#publishers" class="hover:text-[var(--text-primary)] transition-colors">For Publishers</a>
+        <a href="#studio" class="hover:text-[var(--text-primary)] transition-colors">Studio &amp; Synthesis</a>
+        <a href="#pricing" class="hover:text-[var(--text-primary)] transition-colors">Pricing</a>
       </nav>
 
-      <!-- Desktop Right Controls -->
-      <div class="hidden md:flex items-center space-x-2.5">
-        <!-- Theme Toggle -->
-        <button id="theme-toggle" class="px-2.5 py-1.5 rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-hover)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors flex items-center gap-1.5 text-xs font-mono-code" aria-label="Toggle dark or light theme" title="Switch between Graphite Dark and Archival Paper Light">
-          <svg id="theme-icon-light" class="w-3.5 h-3.5 hidden text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <!-- Right Actions -->
+      <div class="hidden md:flex items-center space-x-4">
+        <button id="theme-toggle" class="p-2.5 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:border-[var(--border-strong)] transition-all" aria-label="Toggle theme" title="Toggle light or dark appearance">
+          <svg id="theme-icon-light" class="w-4 h-4 hidden text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <svg id="theme-icon-dark" class="w-3.5 h-3.5 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg id="theme-icon-dark" class="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
-          <span id="theme-toggle-label">Dark</span>
         </button>
 
-        <!-- Enterprise Inquiry Trigger -->
-        <button class="open-enterprise-modal px-3 py-1.5 text-xs font-medium rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-primary)] hover:border-amber-500/50 transition-all">
-          Publisher Partnerships
+        <button class="open-enterprise-modal px-4 py-2 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
+          Contact Sales
         </button>
 
-        <!-- Primary Sign-In CTA -->
-        <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="px-3.5 py-1.5 text-xs font-semibold rounded-md bg-amber-500 hover:bg-amber-400 text-[#121315] transition-colors flex items-center gap-1.5">
-          <span>Sign In / Launch</span>
-          <span class="font-mono-code text-[10px] opacity-80">→</span>
+        <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="btn-primary-glow px-5 py-2.5 text-sm font-semibold rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] flex items-center gap-2">
+          <span>Sign In</span>
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Open menu">
-        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <!-- Mobile Menu Trigger -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Open menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
@@ -112,12 +100,12 @@
     </div>
   </header>
 
-  <!-- MOBILE DRAWER -->
-  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[var(--bg-primary)]/98 backdrop-blur-md flex flex-col p-6">
-    <div class="flex items-center justify-between pb-5 border-b border-[var(--border)]">
-      <div class="flex items-center gap-2.5">
-        <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-7 h-7">
-        <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-4 w-auto">
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-[var(--bg-primary)]/98 backdrop-blur-xl flex flex-col p-6">
+    <div class="flex items-center justify-between pb-6 border-b border-[var(--border-subtle)]">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-8 h-8">
+        <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-5 w-auto">
       </div>
       <button id="mobile-menu-close" class="p-2 text-[var(--text-secondary)] hover:text-[var(--text-primary)]" aria-label="Close menu">
         <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -125,18 +113,17 @@
         </svg>
       </button>
     </div>
-    <div class="flex flex-col space-y-3 pt-6 text-base font-medium">
-      <a href="#workflow" class="mobile-nav-link py-2 text-[var(--text-secondary)] hover:text-amber-500">01 · Reader Workflow</a>
-      <a href="#anatomy" class="mobile-nav-link py-2 text-[var(--text-secondary)] hover:text-amber-500">02 · Anatomy of a Save &amp; AI</a>
-      <a href="#publishers" class="mobile-nav-link py-2 text-[var(--text-secondary)] hover:text-amber-500">03 · For Publishers &amp; Enterprise</a>
-      <a href="#comparison" class="mobile-nav-link py-2 text-[var(--text-secondary)] hover:text-amber-500">04 · How Tenwise Compares</a>
-      <a href="#pricing" class="mobile-nav-link py-2 text-[var(--text-secondary)] hover:text-amber-500">05 · Pricing &amp; Plans</a>
-      <hr class="border-[var(--border)] my-3">
-      <button class="open-enterprise-modal w-full py-2.5 px-4 rounded-md border border-[var(--border)] text-left font-semibold text-[var(--text-primary)]">
-        Request Publisher Demo
+    <div class="flex flex-col space-y-5 pt-8 text-lg font-medium">
+      <a href="#readers" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500">For Readers</a>
+      <a href="#publishers" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500">For Publishers</a>
+      <a href="#studio" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500">Studio &amp; Synthesis</a>
+      <a href="#pricing" class="mobile-nav-link text-[var(--text-secondary)] hover:text-amber-500">Pricing</a>
+      <hr class="border-[var(--border-subtle)] my-2">
+      <button class="open-enterprise-modal w-full py-3 text-left font-semibold text-amber-500">
+        Talk to Us (Publishers &amp; Enterprise)
       </button>
-      <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3 bg-amber-500 text-[#121315] font-semibold rounded-md">
-        Sign In to Tenwise →
+      <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 bg-amber-500 text-[#0b0c0e] font-semibold rounded-full">
+        Sign In to Tenwise
       </a>
     </div>
   </div>
@@ -144,835 +131,492 @@
   <main class="flex-grow">
 
     <!-- =====================================================================
-         HERO SECTION: LITERARY EDITORIAL + INSTRUMENT PRECISION
+         HERO SECTION — SPACIOUS, INSPIRING, LIVING SHOWCASE
          ===================================================================== -->
-    <section class="relative pt-14 pb-20 md:pt-20 md:pb-24 instrument-grid-bg border-b border-[var(--border)]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section class="relative pt-20 pb-28 md:pt-28 md:pb-36 overflow-hidden border-b border-[var(--border-subtle)]">
+      <!-- Breathing Sunrise Glow -->
+      <div class="ambient-sunrise"></div>
 
-        <!-- Top Metadata Strip -->
-        <div class="flex flex-wrap items-center justify-between gap-4 pb-8 mb-10 border-b border-[var(--border)] text-xs">
-          <div class="flex items-center gap-2.5">
-            <span class="inline-block w-2 h-2 rounded-full bg-amber-500"></span>
-            <span class="font-mono-code uppercase tracking-wider text-accent-accessible font-medium">Tenwise Reading Workspace</span>
-            <span class="text-[var(--text-muted)]">·</span>
-            <span class="text-[var(--text-secondary)]">Built for keeping, not just skimming</span>
+      <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        
+        <!-- Centered Hero Narrative -->
+        <div class="max-w-4xl mx-auto text-center reveal is-visible">
+          <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-[var(--border-strong)] bg-[var(--bg-secondary)]/80 text-xs font-medium text-[var(--text-secondary)] mb-8">
+            <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span>The Reading Workspace &amp; Publisher Engagement Layer</span>
           </div>
-          <div class="hidden sm:flex items-center gap-3 font-mono-code text-[11px] text-[var(--text-tertiary)]">
-            <span><span class="kbd">j</span> <span class="kbd">k</span> navigate</span>
-            <span><span class="kbd">n</span> save with note</span>
-            <span><span class="kbd">c</span> collect</span>
-            <span><span class="kbd">⌘K</span> palette</span>
+
+          <h1 class="font-serif-display text-5xl sm:text-6xl lg:text-7xl font-normal tracking-tight leading-[1.06] text-[var(--text-primary)]">
+            Where serious reading becomes <span class="italic text-amber-500">lasting insight.</span>
+          </h1>
+
+          <p class="mt-8 text-lg sm:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto leading-relaxed font-normal">
+            Follow everything that matters, capture your thinking as you read, and turn curated collections into cited briefings and print-ready editions.
+          </p>
+
+          <!-- Primary & Enterprise CTAs -->
+          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="btn-primary-glow w-full sm:w-auto px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] font-semibold text-base flex items-center justify-center gap-2.5">
+              <span>Start Reading Free</span>
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+            </a>
+            <a href="#publishers" class="w-full sm:w-auto px-8 py-4 rounded-full border border-[var(--border-strong)] bg-[var(--bg-secondary)]/70 hover:bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-medium text-base transition-all flex items-center justify-center gap-2">
+              <span>Tenwise for Publishers</span>
+              <svg class="w-4 h-4 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </a>
           </div>
         </div>
 
-        <!-- Editorial Split Hero Header -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end mb-12">
-          <div class="lg:col-span-8">
-            <h1 class="font-serif-read text-4xl sm:text-5xl lg:text-[3.65rem] font-normal tracking-tight leading-[1.08] text-[var(--text-primary)]">
-              Scan hundreds of sources in dense rows. <span class="italic text-accent-accessible">Keep what matters</span> with notes, citations, and private AI.
-            </h1>
+        <!-- Living Auto-Advancing Product Showcase -->
+        <div id="showcase-stage-container" class="mt-16 sm:mt-20 max-w-6xl mx-auto reveal reveal-delay-1">
+          
+          <!-- 4 Story Tabs with Animated Progress Bars -->
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
+            <button class="showcase-tab active text-left p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50">
+              <div class="text-xs font-semibold text-amber-500 mb-1">01 · Read &amp; Note</div>
+              <div class="text-sm font-medium text-[var(--text-primary)]">Capture why it matters</div>
+              <div class="showcase-tab-progress"></div>
+            </button>
+            <button class="showcase-tab text-left p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50">
+              <div class="text-xs font-semibold text-amber-500 mb-1">02 · High-Speed Scan</div>
+              <div class="text-sm font-medium text-[var(--text-primary)]">Hundreds of sources, zero noise</div>
+              <div class="showcase-tab-progress"></div>
+            </button>
+            <button class="showcase-tab text-left p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50">
+              <div class="text-xs font-semibold text-amber-500 mb-1">03 · Curate &amp; Cite</div>
+              <div class="text-sm font-medium text-[var(--text-primary)]">Collections &amp; NotebookLM</div>
+              <div class="showcase-tab-progress"></div>
+            </button>
+            <button class="showcase-tab text-left p-4 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]/50">
+              <div class="text-xs font-semibold text-amber-500 mb-1">04 · Studio Print</div>
+              <div class="text-sm font-medium text-[var(--text-primary)]">Instant executive editions</div>
+              <div class="showcase-tab-progress"></div>
+            </button>
           </div>
 
-          <div class="lg:col-span-4 flex flex-col justify-between space-y-6">
-            <p class="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
-              A calm, docked reading workspace for people who read heavily—and a turnkey <strong>engagement layer for publishers</strong> to turn passive subscribers into active researchers.
-            </p>
-
-            <!-- Dual Action Bar -->
-            <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-3">
-              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="px-5 py-3 rounded-md bg-amber-500 hover:bg-amber-400 text-[#121315] font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-sm">
-                <span>Start Reading Free</span>
-                <span class="font-mono-code">→</span>
-              </a>
-              <a href="#publishers" class="px-5 py-3 rounded-md border border-[var(--border-light)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-hover)] text-[var(--text-primary)] font-medium text-sm transition-all flex items-center justify-center gap-2">
-                <span>For Publishers &amp; Media</span>
-                <span class="font-mono-code text-xs text-accent-accessible">§03</span>
+          <!-- Elevated Browser Window Stage -->
+          <div class="rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-secondary)] shadow-[0_32px_80px_-20px_rgba(0,0,0,0.65)] overflow-hidden">
+            <div class="relative bg-[#0d0e10] overflow-hidden">
+              <img id="showcase-active-img" src="assets/images/screenshots/01-saved-reader-dark.png" alt="Tenwise calm docked reader with your saved note, citation, and summary" class="w-full h-auto block stage-image-transition">
+            </div>
+            <div class="px-6 py-5 bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <h2 id="showcase-caption-title" class="text-base font-semibold text-[var(--text-primary)]">
+                  Read in calm focus. Capture why an article matters.
+                </h2>
+                <p id="showcase-caption-desc" class="text-sm text-[var(--text-secondary)] mt-0.5">
+                  Save any story with a personal note in seconds. Your thoughts, formatted citations, and an instant summary sit right above the full article.
+                </p>
+              </div>
+              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="shrink-0 text-sm font-semibold text-amber-500 hover:text-amber-400 flex items-center gap-1.5">
+                <span>Try it live</span>
+                <span>→</span>
               </a>
             </div>
           </div>
+
         </div>
 
-        <!-- Two-Track Value Bar (Power Consumers vs. Enterprise Publishers) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-          <!-- Track A: Readers -->
-          <div class="instrument-card rounded-lg p-4 sm:p-5 flex items-start justify-between gap-4">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <span class="font-mono-code text-[11px] uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/15 text-accent-accessible font-medium">Free Workspace</span>
-                <span class="text-xs font-semibold text-[var(--text-primary)]">For Power Consumers of Content</span>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 1: FOR POWER READERS — SPACIOUS, CALM, OUTCOME-FOCUSED
+         ===================================================================== -->
+    <section id="readers" class="py-28 md:py-36 border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <!-- Section Intro -->
+        <div class="max-w-3xl mb-20 reveal">
+          <div class="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">
+            For Power Consumers of Content · Free Forever
+          </div>
+          <h2 class="font-serif-display text-4xl sm:text-5xl font-normal tracking-tight leading-[1.12] text-[var(--text-primary)]">
+            Built for keeping, not just skimming.
+          </h2>
+          <p class="mt-5 text-lg text-[var(--text-secondary)] leading-relaxed">
+            Most feeds overwhelm you with volume, and bookmarking apps turn into graveyards of forgotten links. Tenwise gives heavy readers a calm, structured place to scan widely, think deeply, and turn reading into real output.
+          </p>
+        </div>
+
+        <!-- 3 Spacious Feature Pillars -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          
+          <!-- Pillar 1 -->
+          <div class="surface-card rounded-2xl p-8 sm:p-10 flex flex-col justify-between reveal">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-8">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
               </div>
-              <p class="text-xs text-[var(--text-secondary)] leading-relaxed pt-1">
-                Follow RSS, OPML &amp; 23 Google News editions. Save with notes (<span class="font-mono-code">n</span>), get automatic APA 7 citations, run 100% on-device Gemini Nano or Ollama AI, and export to NotebookLM or Studio print editions.
+              <h3 class="font-serif-display text-2xl sm:text-3xl font-normal text-[var(--text-primary)]">
+                High-speed scanning meets calm reading.
+              </h3>
+              <p class="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
+                Follow publications, blogs, research preprints, and Google News topics across 23 global editions. Scan hundreds of headlines in dense rows, then read the full article in a distraction-free docked reader.
               </p>
             </div>
-            <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="shrink-0 text-xs font-mono-code text-accent-accessible hover:underline self-center">
-              Launch →
-            </a>
+            <div class="mt-10 pt-6 border-t border-[var(--border-subtle)] text-xs font-medium text-[var(--text-muted)]">
+              Rows, Grid, List &amp; Compact views · Full-text reader
+            </div>
           </div>
 
-          <!-- Track B: Publishers -->
-          <div class="instrument-card rounded-lg p-4 sm:p-5 flex items-start justify-between gap-4">
-            <div class="space-y-1">
-              <div class="flex items-center gap-2">
-                <span class="font-mono-code text-[11px] uppercase tracking-wider px-2 py-0.5 rounded bg-[var(--bg-tertiary)] border border-[var(--border-light)] text-[var(--text-primary)] font-medium">Enterprise Edition</span>
-                <span class="text-xs font-semibold text-[var(--text-primary)]">For Publishers, B2B Intelligence &amp; Education</span>
+          <!-- Pillar 2 -->
+          <div class="surface-card rounded-2xl p-8 sm:p-10 flex flex-col justify-between reveal reveal-delay-1">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-8">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
               </div>
-              <p class="text-xs text-[var(--text-secondary)] leading-relaxed pt-1">
-                Stop losing readers to tab graveyards and generic chatbots. Deliver a branded research workspace over your archive with curated dossiers, house-voice AI guardrails, and co-branded PDF briefings.
+              <h3 class="font-serif-display text-2xl sm:text-3xl font-normal text-[var(--text-primary)]">
+                Save with a note &amp; instant citations.
+              </h3>
+              <p class="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
+                Never wonder why you saved an article months later. Record your takeaway the moment it strikes, organize saves into thematic collections, and get ready-to-paste academic citations automatically.
               </p>
             </div>
-            <a href="#publishers" class="shrink-0 text-xs font-mono-code text-accent-accessible hover:underline self-center">
-              Blueprint ↓
-            </a>
+            <div class="mt-10 pt-6 border-t border-[var(--border-subtle)] text-xs font-medium text-[var(--text-muted)]">
+              In-context notes · Multi-color highlights · Automatic APA citations
+            </div>
           </div>
+
+          <!-- Pillar 3 -->
+          <div class="surface-card rounded-2xl p-8 sm:p-10 flex flex-col justify-between reveal reveal-delay-2">
+            <div>
+              <div class="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-500 mb-8">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" /></svg>
+              </div>
+              <h3 class="font-serif-display text-2xl sm:text-3xl font-normal text-[var(--text-primary)]">
+                Turn reading into briefings &amp; print.
+              </h3>
+              <p class="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
+                Select multiple articles to compare perspectives or generate an executive briefing. Export any collection directly to Google NotebookLM, or typeset a print-ready edition in Studio.
+              </p>
+            </div>
+            <div class="mt-10 pt-6 border-t border-[var(--border-subtle)] text-xs font-medium text-[var(--text-muted)]">
+              Compare Sources · Send to NotebookLM · Studio PDF &amp; Word export
+            </div>
+          </div>
+
         </div>
 
         <!-- =================================================================
-             6-VIEW INTERACTIVE WORKSPACE STAGE (WITH KEYBOARD SUPPORT 1-6, j/k)
+             STUDIO & EDITORIAL VOICE SPOTLIGHT
              ================================================================= -->
-        <div class="mt-6">
-          <!-- Stage Controls Header -->
-          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-            <div class="flex flex-wrap items-center gap-1.5" role="tablist" aria-label="Tenwise Workspace Views">
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-amber-500/60 bg-amber-500/15 text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">1</span>
-                <span>Saved &amp; Reader</span>
-              </button>
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">2</span>
-                <span>Dense Rows</span>
-              </button>
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">3</span>
-                <span>Collections &amp; NotebookLM</span>
-              </button>
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">4</span>
-                <span>Studio Broadsheet</span>
-              </button>
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">5</span>
-                <span>⌘K Palette</span>
-              </button>
-              <button class="preview-tab-btn px-3 py-1.5 text-xs font-medium rounded border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-all flex items-center gap-1.5">
-                <span class="font-mono-code text-[10px] opacity-75">6</span>
-                <span>Grid View</span>
-              </button>
-            </div>
-
-            <!-- Keyboard Hint & Prev/Next -->
-            <div class="flex items-center gap-2 text-xs text-[var(--text-tertiary)] font-mono-code">
-              <span class="hidden lg:inline">Press <span class="kbd">1</span>–<span class="kbd">6</span> or <span class="kbd">j</span>/<span class="kbd">k</span></span>
-              <div class="flex items-center border border-[var(--border)] rounded bg-[var(--bg-secondary)]">
-                <button id="stage-prev-btn" class="px-2 py-1 hover:bg-[var(--bg-hover)] text-[var(--text-secondary)]" aria-label="Previous view">←</button>
-                <span id="stage-counter" class="px-2 text-[11px] border-x border-[var(--border)]">1 of 6</span>
-                <button id="stage-next-btn" class="px-2 py-1 hover:bg-[var(--bg-hover)] text-[var(--text-secondary)]" aria-label="Next view">→</button>
+        <div id="studio" class="mt-20 surface-card rounded-3xl p-8 sm:p-14 reveal">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+              <div class="text-xs font-semibold uppercase tracking-widest text-amber-500">
+                Private AI in Your Voice
               </div>
-            </div>
-          </div>
-
-          <!-- Application Frame -->
-          <div class="rounded-xl border border-[var(--border-light)] bg-[var(--bg-secondary)] shadow-2xl overflow-hidden">
-            <!-- Window Top Bar -->
-            <div class="h-9 px-4 bg-[var(--bg-tertiary)] border-b border-[var(--border)] flex items-center justify-between text-xs text-[var(--text-tertiary)]">
-              <div class="flex items-center gap-2">
-                <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-light)]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-light)]"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-[var(--border-light)]"></span>
-                <span class="ml-2 font-mono-code text-[11px] text-[var(--text-secondary)]">tenwise.app</span>
-              </div>
-              <div class="font-mono-code text-[11px] hidden sm:block">
-                Gemini Nano (On-Device) · SQLite + Litestream R2
-              </div>
-              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="font-mono-code text-[11px] text-accent-accessible hover:underline">
-                Open Live App ↗
-              </a>
-            </div>
-
-            <!-- Screenshot Viewport (Full Uncropped 16:10 Match) -->
-            <div class="relative bg-[#0d0e10] overflow-hidden">
-              <img id="preview-active-img" src="assets/images/screenshots/01-saved-reader-dark.png" alt="Tenwise Saved Articles with Notes, APA 7 Citation, and On-Device AI Summary" class="w-full h-auto block transition-opacity duration-150">
-            </div>
-
-            <!-- Bottom Status Bar (Modeled after Tenwise's native shortcut bar) -->
-            <div class="px-5 py-3.5 bg-[var(--bg-secondary)] border-t border-[var(--border)] flex flex-col md:flex-row md:items-center justify-between gap-3">
-              <div>
-                <h2 id="preview-caption-title" class="text-sm font-semibold text-[var(--text-primary)]">
-                  Saved with Your Note, APA 7 Citation &amp; In-Brief AI
-                </h2>
-                <p id="preview-caption-desc" class="text-xs text-[var(--text-secondary)] mt-0.5">
-                  Every saved article keeps your personal note at the top of the reader, generates a ready-to-paste APA 7 citation, and pairs with an on-device Gemini Nano summary.
-                </p>
-              </div>
-              <div id="preview-caption-keys" class="flex flex-wrap items-center gap-1.5 shrink-0">
-                <span class="kbd">b save</span>
-                <span class="kbd">n note</span>
-                <span class="kbd">c collect</span>
-                <span class="kbd">a AI rail</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         § 01 — THE 5-STAGE READING-TO-OUTPUT PIPELINE (FOR POWER CONSUMERS)
-         ===================================================================== -->
-    <section id="workflow" class="py-20 border-b border-[var(--border)]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-          <div>
-            <span class="section-coord">§ 01 — THE READER WORKSPACE</span>
-            <h2 class="mt-2 font-serif-read text-3xl sm:text-4xl font-normal tracking-tight">
-              From raw feed firehose to cited research and print.
-            </h2>
-          </div>
-          <p class="text-sm text-[var(--text-secondary)] max-w-md">
-            Most RSS readers stop at marking items read. Read-it-later apps become graveyards of forgotten links. Tenwise connects all five stages of serious reading in one keyboard-driven workspace.
-          </p>
-        </div>
-
-        <!-- 5-Stage Architectural Hairline Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-5 border border-[var(--border)] rounded-xl overflow-hidden divide-y md:divide-y-0 md:divide-x divide-[var(--border)] bg-[var(--bg-secondary)]">
-          
-          <!-- Stage 1 -->
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="font-mono-code text-xs text-accent-accessible mb-3">01 / INGEST</div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)]">Follow Everything</h3>
-              <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                Subscribe via URL auto-discovery, OPML import, curated catalogs, Google Alerts, or <strong>Google News searches across 23 editions</strong> with search operators (<span class="font-mono-code">site:</span>, exact phrases, exclusions).
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-[var(--border)] font-mono-code text-[11px] text-[var(--text-tertiary)]">
-              SSRF-guarded background sync (15m–2h)
-            </div>
-          </div>
-
-          <!-- Stage 2 -->
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="font-mono-code text-xs text-accent-accessible mb-3">02 / SCAN &amp; READ</div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)]">Dense Rows &amp; Full Text</h3>
-              <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                Scan hundreds of headlines in two-line <strong>Rows</strong>, <strong>Grid</strong>, <strong>List</strong>, or <strong>Compact</strong> views. Opening any item extracts the publisher's full text (including decoding Google News redirects) into a calm Newsreader-serif pane.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-[var(--border)] font-mono-code text-[11px] text-[var(--text-tertiary)]">
-              15 self-hosted fonts · Focus mode (<span class="kbd">f</span>)
-            </div>
-          </div>
-
-          <!-- Stage 3 -->
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="font-mono-code text-xs text-accent-accessible mb-3">03 / KEEP &amp; CITE</div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)]">Save with a Note &amp; APA 7</h3>
-              <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                Press <span class="kbd">n</span> to save an article with a note on <em>why</em> it caught your eye. Triage through your <strong>Unsorted</strong> queue into Collections (<span class="kbd">c</span>) and highlight passages in four colors.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-[var(--border)] font-mono-code text-[11px] text-[var(--text-tertiary)]">
-              Auto APA 7 + arXiv preprint citations
-            </div>
-          </div>
-
-          <!-- Stage 4 -->
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="font-mono-code text-xs text-accent-accessible mb-3">04 / SYNTHESIZE</div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)]">On-Device AI in Your Voice</h3>
-              <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                Summarize, chat, classify sentiment/framing, or select 2–15 articles to <strong>Compare Sources</strong> or generate an <strong>Executive Briefing</strong>—shaped by 9 personas and running locally on Chrome Gemini Nano or Ollama.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-[var(--border)] font-mono-code text-[11px] text-[var(--text-tertiary)]">
-              0 cloud API keys · 0 data leakage
-            </div>
-          </div>
-
-          <!-- Stage 5 -->
-          <div class="p-6 flex flex-col justify-between">
-            <div>
-              <div class="font-mono-code text-xs text-accent-accessible mb-3">05 / PUBLISH</div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)]">NotebookLM &amp; Studio Print</h3>
-              <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-                Export any collection as a single cited Markdown source file for <strong>Google NotebookLM</strong>, or open <strong>Studio</strong> to edit a newsletter beside a live <em>Broadsheet</em>, <em>Evening Edition</em>, or <em>Quarterly</em> print page.
-              </p>
-            </div>
-            <div class="mt-6 pt-3 border-t border-[var(--border)] font-mono-code text-[11px] text-[var(--text-tertiary)]">
-              Export as A4 PDF, PNG, Word (.docx)
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         § 02 — INTERACTIVE ANATOMY OF A KEPT ARTICLE & LIVE PERSONA DEMO
-         ===================================================================== -->
-    <section id="anatomy" class="py-20 bg-[var(--bg-secondary)] border-b border-[var(--border)]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-          <!-- Left Column: Explanation & Interactive Voice Switcher -->
-          <div class="lg:col-span-5 space-y-6">
-            <div>
-              <span class="section-coord">§ 02 — ANATOMY OF A KEPT ARTICLE</span>
-              <h2 class="mt-2 font-serif-read text-3xl sm:text-4xl font-normal tracking-tight">
-                Your note, your citation, and AI that speaks in your voice.
-              </h2>
-              <p class="mt-3 text-sm text-[var(--text-secondary)] leading-relaxed">
-                When you save an article in Tenwise, it becomes a structured research record. Your note sits right below the headline, paired with an automatic APA 7 citation and an on-device summary shaped by your chosen reading persona.
-              </p>
-            </div>
-
-            <!-- Interactive Persona Control -->
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-primary)] space-y-4">
-              <div class="flex items-center justify-between">
-                <span class="font-mono-code text-xs uppercase tracking-wider text-accent-accessible">Interactive Demo: Switch Reading Persona</span>
-                <span class="font-mono-code text-[11px] text-[var(--text-muted)]">editorial-ai</span>
-              </div>
-              <p class="text-xs text-[var(--text-secondary)]">
-                Click a persona below to see how Tenwise reshapes the <span class="font-mono-code">IN BRIEF</span> summary and framing on the right:
-              </p>
-
-              <div class="grid grid-cols-2 gap-2">
-                <button data-persona="executive" class="persona-btn px-3 py-2 rounded border border-amber-500 bg-amber-500/15 text-[var(--text-primary)] text-xs font-medium text-left transition-all">
-                  <div class="font-semibold">Executive Strategist</div>
-                  <div class="text-[10px] text-[var(--text-tertiary)] font-mono-code">Capital &amp; leverage</div>
-                </button>
-                <button data-persona="skeptic" class="persona-btn px-3 py-2 rounded border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-medium text-left transition-all">
-                  <div class="font-semibold">Critical Skeptic</div>
-                  <div class="text-[10px] text-[var(--text-tertiary)] font-mono-code">Methodological probe</div>
-                </button>
-                <button data-persona="product" class="persona-btn px-3 py-2 rounded border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-medium text-left transition-all">
-                  <div class="font-semibold">Product &amp; Systems</div>
-                  <div class="text-[10px] text-[var(--text-tertiary)] font-mono-code">Architecture focus</div>
-                </button>
-                <button data-persona="publisher" class="persona-btn px-3 py-2 rounded border border-[var(--border)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-medium text-left transition-all">
-                  <div class="font-semibold">House Style (Publisher)</div>
-                  <div class="text-[10px] text-[var(--text-tertiary)] font-mono-code">Objective &amp; citable</div>
-                </button>
-              </div>
-            </div>
-
-            <!-- Key Differentiators Callout -->
-            <div class="space-y-3 text-xs text-[var(--text-secondary)]">
-              <div class="flex items-start gap-2.5">
-                <span class="font-mono-code text-accent-accessible font-semibold">APA 7</span>
-                <span>Cites articles, blogs, and <strong>arXiv preprints</strong> automatically—stripping messy author email wrappers, LaTeX accents, and aggregator suffixes.</span>
-              </div>
-              <div class="flex items-start gap-2.5">
-                <span class="font-mono-code text-accent-accessible font-semibold">LOCAL</span>
-                <span>Runs on <strong>Gemini Nano</strong> inside desktop Google Chrome 148+ or local <strong>Ollama</strong> (Llama 3.2, Gemma, DeepSeek R1, Qwen).</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Column: Live Tactile Replica of the Tenwise Docked Reader -->
-          <div class="lg:col-span-7">
-            <div class="rounded-xl border border-[var(--border-light)] bg-[var(--bg-primary)] p-6 sm:p-10 shadow-xl">
-              
-              <!-- Reader Top Metadata -->
-              <div class="flex flex-wrap items-center gap-2 font-mono-code text-[11px] uppercase tracking-wider text-[var(--text-tertiary)]">
-                <span class="text-accent-accessible font-semibold">HACKER NEWS: FRONT PAGE</span>
-                <span>·</span>
-                <span>TODAY AT 8:05 AM</span>
-                <span>·</span>
-                <span>1 MIN READ</span>
-                <span>·</span>
-                <span>BY VFXGER</span>
-              </div>
-
-              <!-- Reader Serif Headline -->
-              <h3 class="mt-3 font-serif-read text-2xl sm:text-4xl font-normal leading-[1.18] text-[var(--text-primary)]">
-                Show HN: I put employees inside S&amp;P 500 market-cap bubbles
+              <h3 class="font-serif-display text-3xl sm:text-4xl font-normal leading-tight text-[var(--text-primary)]">
+                Synthesis shaped by your perspective—never generic slop.
               </h3>
+              <p class="text-base text-[var(--text-secondary)] leading-relaxed">
+                Choose from nine editorial personas and customize tone, energy, and instructions so every summary, source comparison, and briefing reads the way you think.
+              </p>
 
-              <!-- SAVED · YOUR NOTE Block (Authentic Tenwise Reader UI) -->
-              <div class="mt-6 reader-note-rule space-y-3">
-                <div class="flex items-center justify-between">
-                  <span class="font-mono-code text-[11px] uppercase tracking-wider text-accent-accessible font-semibold">
-                    SAVED · YOUR NOTE
-                  </span>
-                  <span class="font-mono-code text-[11px] text-[var(--text-muted)]">Pressed <span class="kbd">n</span></span>
-                </div>
-
-                <p class="text-sm text-[var(--text-primary)]">
-                  Share with the product team before Q1 headcount planning.
-                </p>
-
-                <!-- Collection Pills -->
-                <div class="flex flex-wrap items-center gap-2 pt-1">
-                  <span class="px-2.5 py-0.5 rounded-full text-xs border border-[var(--border-light)] bg-[var(--bg-secondary)] text-[var(--text-secondary)]">
-                    AI for product managers
-                  </span>
-                  <span class="px-2.5 py-0.5 rounded-full text-xs border border-dashed border-[var(--border-light)] text-[var(--text-tertiary)] font-mono-code">
-                    + Collection c
-                  </span>
-                </div>
-
-                <!-- APA 7 Citation Row -->
-                <div class="pt-2 flex items-start justify-between gap-4 text-xs text-[var(--text-secondary)]">
-                  <div class="leading-relaxed">
-                    <span class="font-mono-code text-[10px] uppercase tracking-wider text-[var(--text-muted)] mr-2">APA</span>
-                    <span>vfxGer. (2026, October 25). Show HN: I put employees inside S&amp;P 500 market-cap bubbles. <em>Hacker News: Front Page</em>. https://bigwhalehunting.com/workforce/</span>
-                  </div>
-                  <button id="demo-copy-citation-btn" class="shrink-0 px-2.5 py-1 rounded border border-[var(--border)] bg-[var(--bg-secondary)] hover:border-amber-500/50 font-mono-code text-[11px] text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors">
-                    <span id="demo-copy-citation-status">Copy APA 7</span>
+              <!-- Interactive Voice Pills -->
+              <div class="pt-2">
+                <div class="text-xs font-medium text-[var(--text-muted)] mb-3">Preview how Tenwise adapts to your voice:</div>
+                <div class="flex flex-wrap gap-2">
+                  <button data-voice="executive" class="voice-pill-btn px-4 py-2 rounded-full border border-amber-500 bg-amber-500/15 text-[var(--text-primary)] text-xs font-semibold transition-all">
+                    Executive Brief
+                  </button>
+                  <button data-voice="skeptic" class="voice-pill-btn px-4 py-2 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-semibold transition-all">
+                    Critical Analyst
+                  </button>
+                  <button data-voice="editorial" class="voice-pill-btn px-4 py-2 rounded-full border border-[var(--border-subtle)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-semibold transition-all">
+                    Publisher House Style
                   </button>
                 </div>
               </div>
+            </div>
 
-              <!-- Horizontal Divider -->
-              <hr class="my-6 border-[var(--border)]">
-
-              <!-- IN BRIEF AI Summary Block -->
-              <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 sm:gap-6 items-start">
-                <div class="sm:col-span-3">
-                  <div class="font-mono-code text-[11px] uppercase tracking-wider text-accent-accessible font-semibold">
-                    IN BRIEF
-                  </div>
-                  <div id="demo-persona-active-label" class="mt-1 font-mono-code text-[10px] text-[var(--text-muted)] leading-snug">
-                    Executive Strategist · Direct · High-Signal
-                  </div>
+            <!-- Live Synthesized Output Preview -->
+            <div class="lg:col-span-7">
+              <div class="rounded-2xl border border-[var(--border-strong)] bg-[var(--bg-primary)] p-8 sm:p-10">
+                <div class="flex items-center justify-between pb-5 mb-6 border-b border-[var(--border-subtle)]">
+                  <span id="voice-preview-tag" class="text-xs font-semibold uppercase tracking-wider text-amber-500">
+                    Executive Brief · Concise &amp; Strategic
+                  </span>
+                  <span class="text-xs text-[var(--text-muted)]">Synthesized from 5 saved articles</span>
                 </div>
-                <div class="sm:col-span-9 space-y-3">
-                  <p id="demo-in-brief-text" class="text-sm text-[var(--text-secondary)] leading-relaxed">
-                    A visual mapping of S&amp;P 500 market capitalization against headcount reveals extreme revenue-per-employee divergence: frontier technology and semiconductor firms command massive valuation footprints with lean headcounts, whereas legacy retail and logistics sectors remain labor-dense.
-                  </p>
-                  <div class="flex flex-wrap items-center gap-2 pt-1 font-mono-code text-[11px]">
-                    <span class="px-2 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-tertiary)]">
-                      Frame: <strong id="demo-analysis-frame" class="text-[var(--text-primary)] font-normal">Capital Efficiency</strong>
-                    </span>
-                    <span class="px-2 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-tertiary)]">
-                      Tone: <strong id="demo-analysis-tone" class="text-[var(--text-primary)] font-normal">Analytical · Concise</strong>
-                    </span>
-                    <span class="px-2 py-0.5 rounded bg-[var(--bg-secondary)] border border-[var(--border)] text-[var(--text-tertiary)]">
-                      Engine: <strong class="text-accent-accessible font-normal">On-Device Nano</strong>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Divider -->
-              <hr class="my-6 border-[var(--border)]">
-
-              <!-- Reader Body Excerpt -->
-              <div class="font-serif-read text-base sm:text-[17px] leading-[1.8] text-[var(--text-primary)] opacity-90 space-y-4">
-                <p>
-                  Each bubble is an S&amp;P 500 company, its area proportional to its market capitalization, grouped by sector. Inside it, one stick figure stands for employees, so a bubble crowded with small figures is worth little per worker and a big bubble with a handful of figures is worth a lot.
+                <p id="voice-preview-text" class="font-serif-display text-xl sm:text-2xl leading-relaxed text-[var(--text-primary)] transition-opacity duration-200">
+                  “Across the five selected articles, the consensus is clear: organizations shifting from passive content feeds to structured research workflows see markedly higher retention of key insights and faster decision cycles.”
                 </p>
+                <div class="mt-8 pt-5 border-t border-[var(--border-subtle)] flex flex-wrap items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+                  <span>Includes formatted APA 7 citations for all 5 sources</span>
+                  <span class="text-[var(--text-secondary)] font-medium">Export to Studio · Word · NotebookLM</span>
+                </div>
               </div>
-
             </div>
-          </div>
 
+          </div>
         </div>
 
       </div>
     </section>
 
     <!-- =====================================================================
-         § 03 — FOR PUBLISHERS & ENTERPRISE (BENCHMARK / B2B / EDUCATION / MEDIA)
+         SECTION 2: FOR PUBLISHERS & ENTERPRISE (THE ENGAGEMENT LAYER)
          ===================================================================== -->
-    <section id="publishers" class="py-24 border-b border-[var(--border)] instrument-grid-bg">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="publishers" class="py-28 md:py-36 bg-[var(--bg-secondary)] border-b border-[var(--border-subtle)] relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
 
-        <!-- Section Header -->
-        <div class="max-w-3xl mb-12">
-          <span class="section-coord">§ 03 — TENWISE FOR PUBLISHERS &amp; ENTERPRISE</span>
-          <h2 class="mt-2 font-serif-read text-3xl sm:text-5xl font-normal tracking-tight leading-[1.12]">
-            Turn passive subscribers into active researchers—and <span class="italic text-accent-accessible">every briefing into brand distribution.</span>
+        <!-- Executive Header -->
+        <div class="max-w-3xl mb-16 reveal">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-xs font-semibold uppercase tracking-wider text-amber-500 mb-4">
+            Tenwise Enterprise · For Publishers &amp; Research Organizations
+          </div>
+          <h2 class="font-serif-display text-4xl sm:text-5xl lg:text-6xl font-normal tracking-tight leading-[1.08] text-[var(--text-primary)]">
+            An intelligent engagement layer <span class="italic text-amber-500">on top of your content.</span>
           </h2>
-          <p class="mt-4 text-base text-[var(--text-secondary)] leading-relaxed">
-            For U.S. B2B intelligence leaders, educational &amp; curriculum publishers like <strong>Benchmark Publications</strong>, and specialist newsrooms: your biggest threat isn't lack of content—it's <strong>low archive utilization</strong>, <strong>passive inbox skimming</strong>, and readers pasting your proprietary IP into uncredited third-party chatbots.
+          <p class="mt-6 text-lg text-[var(--text-secondary)] leading-relaxed">
+            Publishers invest heavily in world-class journalism, research, and curriculum—only to watch subscribers skim an email and bounce, or paste proprietary articles into uncredited third-party chatbots. Tenwise transforms your catalog into an active research workspace your subscribers use every day.
           </p>
         </div>
 
-        <!-- 4 Executive Value Pillars for Publishers -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-          
-          <div class="instrument-card rounded-xl p-6">
-            <div class="font-mono-code text-xs text-accent-accessible mb-2">01 / SEAT RETENTION</div>
-            <h3 class="text-base font-semibold text-[var(--text-primary)]">Prove Corporate &amp; Institutional Renewal Value</h3>
-            <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-              When subscribers save your reports with notes, build shared topic collections, and generate executive digests inside your branded workspace, renewal switches from "Did we read the email?" to "Our team's research library lives here."
-            </p>
-          </div>
-
-          <div class="instrument-card rounded-xl p-6">
-            <div class="font-mono-code text-xs text-accent-accessible mb-2">02 / LIVING ARCHIVES</div>
-            <h3 class="text-base font-semibold text-[var(--text-primary)]">Curated Topic Dossiers &amp; Curriculum Packs</h3>
-            <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-              Surface years of backlist reporting, benchmarks, and leveled literacy or research packs as living collections. Readers compare 2–15 sources across time and copy formatted APA 7 reference lists in one click.
-            </p>
-          </div>
-
-          <div class="instrument-card rounded-xl p-6">
-            <div class="font-mono-code text-xs text-accent-accessible mb-2">03 / SAFE IP &amp; VOICE</div>
-            <h3 class="text-base font-semibold text-[var(--text-primary)]">Editor-Governed AI with Zero Model Leakage</h3>
-            <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-              Keep subscriber synthesis inside your walled garden. Configure custom editorial personas and rubric guardrails while running inference on-device or on isolated endpoints—never training public models on your IP.
-            </p>
-          </div>
-
-          <div class="instrument-card rounded-xl p-6">
-            <div class="font-mono-code text-xs text-accent-accessible mb-2">04 / STUDIO SYNDICATION</div>
-            <h3 class="text-base font-semibold text-[var(--text-primary)]">Co-Branded Executive Briefings (PDF &amp; Print)</h3>
-            <p class="mt-2 text-xs text-[var(--text-secondary)] leading-relaxed">
-              With Studio, your subscribers and editors turn curated collections into typeset <em>Broadsheet</em>, <em>Evening Edition</em>, or <em>Quarterly</em> A4 PDFs carrying your publication's masthead and source links.
-            </p>
-          </div>
-
-        </div>
-
-        <!-- Interactive Publisher Blueprint & Live Studio Broadsheet Preview -->
-        <div class="rounded-2xl border border-[var(--border-light)] bg-[var(--bg-secondary)] p-6 sm:p-10">
-          
-          <!-- Vertical Selector Tabs -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 mb-8 border-b border-[var(--border)]">
-            <div>
-              <span class="font-mono-code text-xs uppercase tracking-wider text-accent-accessible">Interactive Enterprise Blueprint</span>
-              <p class="text-xs text-[var(--text-secondary)] mt-0.5">Select your publishing model to inspect how Tenwise deploys over your catalog:</p>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <button data-vertical="b2b" class="pub-vertical-btn px-3.5 py-2 rounded-md border border-amber-500 bg-amber-500/15 text-[var(--text-primary)] text-xs font-medium transition-all">
-                B2B &amp; Market Benchmarks
-              </button>
-              <button data-vertical="education" class="pub-vertical-btn px-3.5 py-2 rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-medium transition-all">
-                Education &amp; Curriculum
-              </button>
-              <button data-vertical="media" class="pub-vertical-btn px-3.5 py-2 rounded-md border border-[var(--border)] bg-[var(--bg-secondary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs font-medium transition-all">
-                Specialist Media &amp; Policy
-              </button>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <!-- Living Architecture Diagram: How the Engagement Layer Works -->
+        <div class="mb-20 p-6 sm:p-10 rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-primary)] reveal">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
             
-            <!-- Left: Vertical Case Study & Architecture -->
+            <!-- Node 1: Publisher Content -->
+            <div class="p-6 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
+              <div class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">01 · Your Catalog</div>
+              <div class="text-lg font-semibold text-[var(--text-primary)]">Articles, Archives &amp; Reports</div>
+              <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                Your daily dispatches, historical backlist, market benchmarks, and curated curriculum packs.
+              </p>
+            </div>
+
+            <!-- Node 2: Tenwise Layer (With Animated Pulse Bars) -->
+            <div class="p-6 rounded-2xl border border-amber-500/40 bg-amber-500/5 relative">
+              <div class="h-1 w-full animated-flow-line rounded-full mb-4"></div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-amber-500 mb-1">02 · The Tenwise Layer</div>
+              <div class="text-lg font-semibold text-[var(--text-primary)]">Branded Research Workspace</div>
+              <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                Subscribers annotate, organize topic dossiers, cite automatically, and synthesize within your editorial guardrails.
+              </p>
+              <div class="h-1 w-full animated-flow-line rounded-full mt-4"></div>
+            </div>
+
+            <!-- Node 3: Enterprise Outcomes -->
+            <div class="p-6 rounded-2xl border border-[var(--border-subtle)] bg-[var(--bg-secondary)]">
+              <div class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-2">03 · Publisher Impact</div>
+              <div class="text-lg font-semibold text-[var(--text-primary)]">Higher Retention &amp; Reach</div>
+              <p class="mt-2 text-sm text-[var(--text-secondary)]">
+                Stronger institutional renewals, deeper archive utilization, and co-branded briefings shared across client teams.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Interactive Vertical Showcase + Live Broadsheet Preview -->
+        <div class="reveal">
+          <!-- Vertical Selector Pills -->
+          <div class="flex flex-wrap items-center gap-3 mb-12">
+            <span class="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)] mr-2">Explore by Industry:</span>
+            <button data-pub="education" class="publisher-tab-btn px-5 py-2.5 rounded-full border border-amber-500 bg-amber-500 text-[#0b0c0e] text-xs sm:text-sm font-semibold transition-all">
+              Education &amp; Research Publishing
+            </button>
+            <button data-pub="b2b" class="publisher-tab-btn px-5 py-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs sm:text-sm font-semibold transition-all">
+              B2B &amp; Market Intelligence
+            </button>
+            <button data-pub="media" class="publisher-tab-btn px-5 py-2.5 rounded-full border border-[var(--border-subtle)] bg-[var(--bg-primary)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] text-xs sm:text-sm font-semibold transition-all">
+              Specialist Media &amp; Newsletters
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <!-- Left: Narrative & Value Outcomes -->
             <div class="lg:col-span-6 space-y-6">
-              <h3 id="pub-vertical-title" class="font-serif-read text-2xl sm:text-3xl font-normal text-[var(--text-primary)]">
-                B2B Intelligence, Market Benchmarks &amp; Trade Publishers
+              <h3 id="pub-story-title" class="font-serif-display text-3xl sm:text-4xl font-normal text-[var(--text-primary)] leading-tight">
+                Education, Literacy &amp; Research Publishers
               </h3>
-
-              <div class="space-y-4 text-sm">
-                <div class="p-4 rounded-lg bg-[var(--bg-primary)] border border-[var(--border)]">
-                  <div class="font-mono-code text-[11px] uppercase text-[var(--text-muted)] mb-1">The Publisher Challenge</div>
-                  <p id="pub-vertical-problem" class="text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
-                    Corporate seat subscribers receive daily emails, skim two headlines, and rarely touch your historical archive. At renewal time, procurement questions seat utilization.
-                  </p>
-                </div>
-
-                <div class="p-4 rounded-lg bg-[var(--bg-primary)] border border-amber-500/30">
-                  <div class="font-mono-code text-[11px] uppercase text-accent-accessible mb-1">The Tenwise Engagement Layer</div>
-                  <p id="pub-vertical-solution" class="text-xs sm:text-sm text-[var(--text-primary)] leading-relaxed">
-                    Give every corporate seat a dedicated Tenwise workspace pre-loaded with your feeds and topic dossiers. Analysts compare multiple reports, annotate findings, and circulate co-branded Studio PDF briefings internally—making your brand indispensable across the enterprise.
-                  </p>
-                </div>
-              </div>
-
-              <ul class="space-y-2.5 text-xs text-[var(--text-secondary)]">
-                <li class="flex items-start gap-2.5">
-                  <span class="text-accent-accessible font-mono-code font-bold">✓</span>
-                  <span id="pub-metric-1">Turns passive email opens into active multi-article synthesis &amp; team collections</span>
-                </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="text-accent-accessible font-mono-code font-bold">✓</span>
-                  <span id="pub-metric-2">Every exported Studio PDF carries your masthead and verified APA citations to executive leadership</span>
-                </li>
-              </ul>
-
-              <div class="pt-2 flex flex-wrap items-center gap-4">
-                <button class="open-enterprise-modal px-6 py-3 rounded-md bg-amber-500 hover:bg-amber-400 text-[#121315] font-semibold text-xs sm:text-sm transition-all shadow-sm">
-                  Schedule a Publisher Architecture Review →
-                </button>
-                <a href="mailto:satish@tenwise.app?subject=Tenwise%20Publisher%20Partnership" class="text-xs font-mono-code text-[var(--text-secondary)] hover:text-[var(--text-primary)] underline">
-                  satish@tenwise.app
-                </a>
-              </div>
-            </div>
-
-            <!-- Right: Live Co-Branded Studio Broadsheet Sheet Preview -->
-            <div class="lg:col-span-6">
-              <div class="broadsheet-page rounded-lg p-6 sm:p-8 max-w-lg mx-auto">
-                <!-- Newspaper Top Metadata -->
-                <div class="flex items-center justify-between text-[10px] font-mono-code uppercase tracking-wider text-[#57534e] pb-2 border-b border-[#d6d3cb]">
-                  <span>VOL. IV · STUDIO EXPORT</span>
-                  <span id="broadsheet-subhead">Q4 INSTITUTIONAL EDITION · CURATED FROM 6 BENCHMARK REPORTS</span>
-                </div>
-
-                <!-- Masthead -->
-                <div class="py-3 text-center border-b-2 border-double border-[#181715]">
-                  <div id="broadsheet-masthead" class="font-serif-read text-2xl sm:text-3xl font-semibold tracking-tight text-[#181715]">
-                    The Benchmark Intelligence Brief
-                  </div>
-                </div>
-
-                <!-- Lead Story in Broadsheet -->
-                <div class="py-4 border-b border-[#d6d3cb] space-y-2">
-                  <div class="font-mono-code text-[10px] uppercase tracking-wider text-[#9c4808]">
-                    EXECUTIVE SYNTHESIS · COMPARE SOURCES (6)
-                  </div>
-                  <h4 id="broadsheet-lead-title" class="font-serif-read text-lg sm:text-xl font-medium leading-snug text-[#181715]">
-                    North American Supply Chain &amp; Capital Allocation Benchmarks: 2026–2027 Outlook
-                  </h4>
-                  <p id="broadsheet-lead-note" class="text-xs text-[#57534e] italic leading-relaxed">
-                    Analyst Note: Key margin comparison in Section 3—include in Friday’s Investment Committee packet.
-                  </p>
-                </div>
-
-                <!-- Secondary Story -->
-                <div class="py-3.5 border-b border-[#d6d3cb] space-y-1">
-                  <h5 class="font-serif-read text-sm font-medium text-[#181715]">
-                    Regional Capacity &amp; Labor Intensity Across Mid-Market Operators
-                  </h5>
-                  <p class="text-[11px] text-[#57534e]">
-                    Synthesized with House Editorial Persona · Includes full APA 7 reference list &amp; direct subscriber links.
-                  </p>
-                </div>
-
-                <!-- Sources Footer -->
-                <div class="pt-3 flex items-center justify-between text-[10px] font-mono-code text-[#57534e]">
-                  <span>SOURCES CITED (APA 7) · VERIFIED ARCHIVE</span>
-                  <span>EXPORTED AS A4 PDF / PNG</span>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         § 04 — ARCHITECTURAL COMPARISON & SECURITY DESIGN
-         ===================================================================== -->
-    <section id="comparison" class="py-20 bg-[var(--bg-secondary)] border-b border-[var(--border)]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="max-w-3xl mb-12">
-          <span class="section-coord">§ 04 — SPECIFICATION &amp; COMPARISON</span>
-          <h2 class="mt-2 font-serif-read text-3xl sm:text-4xl font-normal tracking-tight">
-            Why serious readers and publishers choose Tenwise.
-          </h2>
-        </div>
-
-        <div class="overflow-x-auto border border-[var(--border)] rounded-xl bg-[var(--bg-primary)]">
-          <table class="w-full text-left border-collapse text-xs sm:text-sm">
-            <thead>
-              <tr class="border-b border-[var(--border)] bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-mono-code text-xs uppercase">
-                <th class="p-4 w-1/3">Dimension</th>
-                <th class="p-4 w-1/5 text-accent-accessible border-x border-[var(--border)] font-semibold">Tenwise</th>
-                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Classic RSS Readers</th>
-                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Read-It-Later Apps</th>
-                <th class="p-4 w-1/6 text-[var(--text-secondary)]">Cloud AI Chatbots</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-[var(--border)] text-[var(--text-secondary)]">
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">AI Execution &amp; Data Privacy</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">100% On-Device (Gemini Nano &amp; Ollama)</td>
-                <td class="p-4">None or paid cloud add-on</td>
-                <td class="p-4">Cloud LLMs (article text uploaded)</td>
-                <td class="p-4">Cloud servers (trains on or logs inputs)</td>
-              </tr>
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">High-Volume Triage</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">Dense 2-Line Rows, Grid, List, Compact</td>
-                <td class="p-4">Basic list or magazine cards</td>
-                <td class="p-4">Single unread queue</td>
-                <td class="p-4">Single prompt box</td>
-              </tr>
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">Google News Full-Text Unmasking</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">23 editions · Decodes publisher URL</td>
-                <td class="p-4">Shows truncated Google snippet</td>
-                <td class="p-4">Manual save required</td>
-                <td class="p-4">Blocked by redirects</td>
-              </tr>
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">Save with In-Context Note &amp; APA 7</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">Instant (<span class="kbd">n</span>) + auto APA 7 &amp; arXiv ID</td>
-                <td class="p-4">Star / Mark unread only</td>
-                <td class="p-4">Highlights without APA citations</td>
-                <td class="p-4">Hallucinates citations</td>
-              </tr>
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">Multi-Article Synthesis &amp; Studio Print</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">Compare (2–5), Briefing (2–15), Broadsheet PDF</td>
-                <td class="p-4">No synthesis or publishing</td>
-                <td class="p-4">Export highlights only</td>
-                <td class="p-4">Unformatted wall of text</td>
-              </tr>
-              <tr>
-                <td class="p-4 font-medium text-[var(--text-primary)]">Publisher Engagement &amp; White-Label</td>
-                <td class="p-4 font-semibold text-[var(--text-primary)] bg-amber-500/5 border-x border-[var(--border)]">Branded Hubs, Dossiers &amp; House-Voice AI</td>
-                <td class="p-4">Unbranded XML feed</td>
-                <td class="p-4">Consumer app only</td>
-                <td class="p-4">Strips publisher brand</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Security & Open-Source Engine Strip -->
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-          <div class="p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-primary)]">
-            <div class="font-mono-code text-accent-accessible font-semibold mb-1">OPEN-SOURCE CORE (AGPLv3)</div>
-            <p class="text-[var(--text-secondary)]">
-              Built on the local-first <strong>Tenwise Engine</strong> (<span class="font-mono-code">tenwise-engine</span>). Your library lives in a single SQLite database (<span class="font-mono-code">reader.db</span>) with FTS5 full-text search.
-            </p>
-          </div>
-          <div class="p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-primary)]">
-            <div class="font-mono-code text-accent-accessible font-semibold mb-1">ISOLATED CLOUD CONTAINERS + R2</div>
-            <p class="text-[var(--text-secondary)]">
-              On <span class="font-mono-code">tenwise.app</span>, every signed-in reader gets an isolated container workspace continuously replicated to Cloudflare R2 via Litestream.
-            </p>
-          </div>
-          <div class="p-4 rounded-lg border border-[var(--border)] bg-[var(--bg-primary)]">
-            <div class="font-mono-code text-accent-accessible font-semibold mb-1">WCAG 2.2 AA &amp; HARDENED SSRF GUARD</div>
-            <p class="text-[var(--text-secondary)]">
-              Every outbound feed/article fetch is verified against IPv4/IPv6 loopback and metadata SSRF. Every surface meets 4.5:1 WCAG 2.2 AA contrast.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =====================================================================
-         § 05 — TRANSPARENT PRICING (READERS VS. PUBLISHERS)
-         ===================================================================== -->
-    <section id="pricing" class="py-24 border-b border-[var(--border)]">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="text-center max-w-3xl mx-auto mb-14">
-          <span class="section-coord">§ 05 — PRICING &amp; DEPLOYMENT</span>
-          <h2 class="mt-2 font-serif-read text-3xl sm:text-4xl font-normal tracking-tight">
-            Free for power readers. Custom-built for publishers.
-          </h2>
-          <p class="mt-3 text-sm sm:text-base text-[var(--text-secondary)]">
-            Because AI inference runs on your own device via Chrome's Gemini Nano or local Ollama, individual readers pay zero subscription fees and zero token markups.
-          </p>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
-
-          <!-- Tier 1: Power Consumer (Free) -->
-          <div class="instrument-card rounded-2xl p-8 flex flex-col justify-between">
-            <div>
-              <div class="flex items-center justify-between pb-4 border-b border-[var(--border)]">
-                <div>
-                  <span class="font-mono-code text-xs uppercase text-accent-accessible">Individual Workspace</span>
-                  <h3 class="text-2xl font-bold text-[var(--text-primary)] mt-0.5">Power Reader</h3>
-                </div>
-                <div class="text-right">
-                  <span class="font-serif-read text-4xl font-normal text-[var(--text-primary)]">$0</span>
-                  <span class="block font-mono-code text-[11px] text-[var(--text-muted)]">Free forever</span>
-                </div>
-              </div>
-
-              <p class="mt-4 text-xs sm:text-sm text-[var(--text-secondary)]">
-                Your own private cloud workspace at <span class="font-mono-code">tenwise.app</span> (or self-hosted locally via the open-source engine).
+              <p id="pub-story-desc" class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed">
+                Give districts, educators, and researchers an interactive workspace on top of your catalog. Readers explore curated topic collections, highlight key evidence, capture structured notes, and generate accurate citations automatically.
               </p>
 
-              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-[var(--text-secondary)]">
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Unlimited RSS/Atom feeds, OPML import/export &amp; Google News search feeds (23 editions)</span>
+              <div class="space-y-4 pt-2">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
+                  <p id="pub-outcome-1" class="text-sm sm:text-base text-[var(--text-primary)]">
+                    Turn static digital libraries into active research and curriculum workspaces
+                  </p>
+                </div>
+                <div class="flex items-start gap-3.5">
+                  <div class="w-6 h-6 rounded-full bg-amber-500/15 text-amber-500 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">✓</div>
+                  <p id="pub-outcome-2" class="text-sm sm:text-base text-[var(--text-primary)]">
+                    Editorial AI operates strictly within your approved rubrics and trusted content
+                  </p>
+                </div>
+              </div>
+
+              <div class="pt-6 flex flex-wrap items-center gap-4">
+                <button class="open-enterprise-modal btn-primary-glow px-7 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] font-semibold text-sm flex items-center gap-2">
+                  <span>Schedule an Enterprise Walkthrough</span>
+                  <span>→</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Right: Floating Co-Branded Studio Broadsheet Preview -->
+            <div class="lg:col-span-6">
+              <div id="broadsheet-card" class="broadsheet-preview rounded-2xl p-8 sm:p-10 max-w-lg mx-auto transition-all duration-300">
+                <div class="flex items-center justify-between text-[11px] uppercase tracking-wider text-[#57534e] pb-3 border-b border-[#d6d3cb]">
+                  <span>Co-Branded Subscriber Briefing</span>
+                  <span>PDF / Print Edition</span>
+                </div>
+
+                <div class="py-4 text-center border-b-2 border-double border-[#181715]">
+                  <div id="broadsheet-masthead" class="font-serif-display text-2xl sm:text-3xl font-medium tracking-tight text-[#181715]">
+                    Benchmark Literacy &amp; Research Review
+                  </div>
+                  <div id="broadsheet-edition" class="text-[10px] tracking-widest uppercase text-[#78716c] mt-1">
+                    CURRICULUM &amp; EVIDENCE DOSSIER · 4 SOURCES CITED
+                  </div>
+                </div>
+
+                <div class="py-6 border-b border-[#d6d3cb] space-y-3">
+                  <div class="text-xs font-semibold uppercase tracking-wider text-[#b45309]">
+                    Curated Dossier Synthesis
+                  </div>
+                  <h4 id="broadsheet-headline" class="font-serif-display text-xl sm:text-2xl font-normal leading-snug text-[#181715]">
+                    Evidence-Based Reading Comprehension Across Secondary Classrooms
+                  </h4>
+                  <p id="broadsheet-note" class="text-xs sm:text-sm text-[#57534e] italic leading-relaxed border-l-2 border-[#d97706] pl-3">
+                    Instructional Lead Note: Share this curated dossier and reference list at Tuesday’s district workshop.
+                  </p>
+                </div>
+
+                <div class="pt-4 flex items-center justify-between text-[11px] text-[#57534e]">
+                  <span>Includes verified APA 7 bibliography</span>
+                  <span class="font-semibold text-[#181715]">Powered by Tenwise Studio</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         SECTION 3: SIMPLE, POISED PRICING
+         ===================================================================== -->
+    <section id="pricing" class="py-28 md:py-36 border-b border-[var(--border-subtle)]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+
+        <div class="text-center max-w-3xl mx-auto mb-20 reveal">
+          <div class="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-3">
+            Plans &amp; Licensing
+          </div>
+          <h2 class="font-serif-display text-4xl sm:text-5xl font-normal tracking-tight text-[var(--text-primary)]">
+            Free for individual readers. Tailored for publishers.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
+          <!-- Personal Plan -->
+          <div class="surface-card rounded-3xl p-10 flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-baseline justify-between pb-6 border-b border-[var(--border-subtle)]">
+                <div>
+                  <h3 class="text-2xl font-semibold text-[var(--text-primary)]">Personal Workspace</h3>
+                  <p class="text-sm text-[var(--text-secondary)] mt-1">For power readers, analysts &amp; researchers</p>
+                </div>
+                <div class="text-right">
+                  <span class="font-serif-display text-5xl font-normal text-[var(--text-primary)]">$0</span>
+                  <span class="block text-xs text-[var(--text-muted)]">Free forever</span>
+                </div>
+              </div>
+
+              <ul class="mt-8 space-y-4 text-sm sm:text-base text-[var(--text-secondary)]">
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Unlimited RSS feeds, newsletters &amp; 23 Google News editions</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Rows, Grid, List &amp; Compact views + Docked full-text reader</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Dense Rows, Grid, List &amp; Compact views with full-text reader</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Save with notes (<span class="kbd">n</span>), 4-color highlights, Unsorted queue &amp; Collections (<span class="kbd">c</span>)</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Save with notes, 4-color highlights &amp; organized collections</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Automatic APA 7 citations &amp; A–Z collection bibliography copy</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Automatic APA 7 citations &amp; one-click reference lists</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>On-device AI summaries, chat, sentiment/frame analysis &amp; 9 reading personas</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Private AI summaries, source comparisons &amp; 9 reading personas</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Compare Sources (2–5), Executive Briefing (2–15), NotebookLM &amp; Studio PDF/PNG export</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>One-click export to NotebookLM &amp; Studio PDF print editions</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-[var(--border)]">
-              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-5 rounded-md bg-amber-500 hover:bg-amber-400 text-[#121315] font-semibold text-sm transition-all flex items-center justify-center gap-2">
-                <span>Sign In with Email (Passwordless)</span>
-                <span class="font-mono-code">→</span>
+            <div class="mt-10 pt-6 border-t border-[var(--border-subtle)]">
+              <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="btn-primary-glow w-full py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] font-semibold text-sm flex items-center justify-center gap-2">
+                <span>Sign In to Your Workspace</span>
+                <span>→</span>
               </a>
             </div>
           </div>
 
-          <!-- Tier 2: Publisher & Enterprise -->
-          <div class="instrument-card rounded-2xl p-8 flex flex-col justify-between border-amber-500/40 relative">
+          <!-- Enterprise / Publisher Plan -->
+          <div class="surface-card rounded-3xl p-10 flex flex-col justify-between border-amber-500/35 reveal reveal-delay-1">
             <div>
-              <div class="flex items-center justify-between pb-4 border-b border-[var(--border)]">
+              <div class="flex items-baseline justify-between pb-6 border-b border-[var(--border-subtle)]">
                 <div>
-                  <span class="font-mono-code text-xs uppercase text-accent-accessible">B2B, Education &amp; Media</span>
-                  <h3 class="text-2xl font-bold text-[var(--text-primary)] mt-0.5">Publisher &amp; Enterprise</h3>
+                  <h3 class="text-2xl font-semibold text-[var(--text-primary)]">Publisher &amp; Enterprise</h3>
+                  <p class="text-sm text-[var(--text-secondary)] mt-1">For media, B2B intelligence &amp; education publishers</p>
                 </div>
                 <div class="text-right">
-                  <span class="font-serif-read text-3xl font-normal text-[var(--text-primary)]">Custom</span>
-                  <span class="block font-mono-code text-[11px] text-[var(--text-muted)]">Pilot &amp; Annual Licensing</span>
+                  <span class="font-serif-display text-4xl font-normal text-[var(--text-primary)]">Custom</span>
+                  <span class="block text-xs text-[var(--text-muted)]">Contact for pricing</span>
                 </div>
               </div>
 
-              <p class="mt-4 text-xs sm:text-sm text-[var(--text-secondary)]">
-                A dedicated engagement and synthesis layer built over your publication, archive, or educational catalog.
-              </p>
-
-              <ul class="mt-6 space-y-3 text-xs sm:text-sm text-[var(--text-secondary)]">
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span><strong>Branded Reader Hub</strong> (<span class="font-mono-code">reader.yourpublication.com</span>) with custom typography &amp; masthead</span>
+              <ul class="mt-8 space-y-4 text-sm sm:text-base text-[var(--text-secondary)]">
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span><strong>Branded Reader Hub</strong> configured for your publication or catalog</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span><strong>Pre-Populated Topic Dossiers</strong>, benchmark collections &amp; authenticated full-archive bridge</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span><strong>Curated Topic Dossiers</strong> &amp; full-archive subscriber access</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span><strong>Custom Editorial AI Personas &amp; Guardrails</strong> tuned to your house style and rubrics</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span><strong>House-Voice Editorial AI</strong> governed by your editors &amp; rubrics</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span><strong>Co-Branded Studio Print Templates</strong> so every subscriber PDF export promotes your brand</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span><strong>Co-Branded Studio Print Templates</strong> carrying your masthead</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span><strong>Subscriber SSO (OAuth / SAML)</strong> &amp; privacy-preserving curation analytics for seat renewals</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span><strong>Subscriber Single Sign-On (SSO)</strong> &amp; institutional seat insights</span>
                 </li>
-                <li class="flex items-start gap-2.5">
-                  <span class="font-mono-code text-accent-accessible font-bold">✓</span>
-                  <span>Dedicated engineering integration, custom plugin slots &amp; enterprise SLA</span>
+                <li class="flex items-center gap-3">
+                  <span class="text-amber-500 font-bold">✓</span>
+                  <span>Dedicated onboarding, custom integrations &amp; enterprise SLA</span>
                 </li>
               </ul>
             </div>
 
-            <div class="mt-8 pt-6 border-t border-[var(--border)]">
-              <button class="open-enterprise-modal w-full py-3 px-5 rounded-md border border-amber-500 bg-amber-500/15 hover:bg-amber-500 hover:text-[#121315] text-[var(--text-primary)] font-semibold text-sm transition-all flex items-center justify-center gap-2">
-                <span>Contact for Enterprise Pricing &amp; Pilot</span>
-                <span class="font-mono-code">→</span>
+            <div class="mt-10 pt-6 border-t border-[var(--border-subtle)]">
+              <button class="open-enterprise-modal w-full py-4 rounded-full border border-amber-500 bg-amber-500/10 hover:bg-amber-500 hover:text-[#0b0c0e] text-[var(--text-primary)] font-semibold text-sm transition-all flex items-center justify-center gap-2">
+                <span>Contact Us for Enterprise Pricing</span>
+                <span>→</span>
               </button>
             </div>
           </div>
@@ -983,150 +627,121 @@
     </section>
 
     <!-- =====================================================================
-         § 06 — FREQUENTLY ASKED QUESTIONS
+         CLOSING CALL TO ACTION
          ===================================================================== -->
-    <section id="faq" class="py-20 bg-[var(--bg-secondary)] border-b border-[var(--border)]">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        <div class="mb-10">
-          <span class="section-coord">§ 06 — QUESTIONS &amp; ARCHITECTURE</span>
-          <h2 class="mt-2 font-serif-read text-3xl font-normal tracking-tight">Frequently Asked Questions</h2>
+    <section class="py-28 relative overflow-hidden">
+      <div class="ambient-sunrise"></div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center reveal">
+        <h2 class="font-serif-display text-4xl sm:text-6xl font-normal tracking-tight text-[var(--text-primary)]">
+          Ready to elevate how you read and publish?
+        </h2>
+        <p class="mt-6 text-lg text-[var(--text-secondary)] max-w-xl mx-auto">
+          Sign in with just your email to start your personal workspace, or talk to our team to bring Tenwise to your subscribers.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="btn-primary-glow w-full sm:w-auto px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] font-semibold text-base">
+            Start Reading Free →
+          </a>
+          <button class="open-enterprise-modal w-full sm:w-auto px-8 py-4 rounded-full border border-[var(--border-strong)] bg-[var(--bg-secondary)] hover:bg-[var(--bg-tertiary)] text-[var(--text-primary)] font-medium text-base transition-all">
+            Partner With Us
+          </button>
         </div>
-
-        <div class="space-y-3">
-          
-          <div class="faq-item rounded-lg border border-[var(--border)] bg-[var(--bg-primary)] overflow-hidden">
-            <button class="faq-trigger w-full p-4 sm:p-5 text-left text-sm font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors">
-              <span>How does Tenwise run AI with zero cloud cost and zero data leakage?</span>
-              <svg class="faq-icon w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border)] pt-4">
-              Tenwise uses <strong>Gemini Nano</strong> (built into desktop Google Chrome 148+ via the Prompt API) or connects to a local <strong>Ollama</strong> server on your machine. Summaries, article Q&amp;A, and multi-article briefings run directly on your hardware—the Tenwise server has no AI model and never sends your reading text to external AI providers.
-            </div>
-          </div>
-
-          <div class="faq-item rounded-lg border border-[var(--border)] bg-[var(--bg-primary)] overflow-hidden">
-            <button class="faq-trigger w-full p-4 sm:p-5 text-left text-sm font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors">
-              <span>How can a publisher like Benchmark Publications integrate Tenwise?</span>
-              <svg class="faq-icon w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border)] pt-4">
-              Tenwise is built on a modular plugin architecture (<span class="font-mono-code">editorial-ai</span>, <span class="font-mono-code">studio</span>, <span class="font-mono-code">notebooklm</span>, custom source connectors). For enterprise publishers, we deploy a dedicated branded workspace (<span class="font-mono-code">reader.yourbrand.com</span>) integrated with your subscriber SSO, pre-populated with your curated topic dossiers, custom house-style AI prompts, and Studio PDF templates carrying your masthead.
-            </div>
-          </div>
-
-          <div class="faq-item rounded-lg border border-[var(--border)] bg-[var(--bg-primary)] overflow-hidden">
-            <button class="faq-trigger w-full p-4 sm:p-5 text-left text-sm font-semibold flex items-center justify-between text-[var(--text-primary)] hover:bg-[var(--bg-hover)] transition-colors">
-              <span>Where does my library data live on the hosted app?</span>
-              <svg class="faq-icon w-4 h-4 text-[var(--text-muted)] transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-            </button>
-            <div class="faq-content hidden px-4 sm:px-5 pb-5 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed border-t border-[var(--border)] pt-4">
-              When you sign in at <a href="https://tenwise.app/login" class="text-accent-accessible underline">tenwise.app/login</a> (passwordless email code/link), you get an isolated container of your own. Your SQLite database (<span class="font-mono-code">reader.db</span>) and settings are replicated continuously by Litestream to Cloudflare R2 so your library survives container sleep and redeploys. You can also export OPML, Markdown collections, and CSV highlights at any time.
-            </div>
-          </div>
-
-        </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-[var(--bg-primary)] py-12 text-xs text-[var(--text-tertiary)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-[var(--border)]">
-        <div class="flex items-center gap-3">
-          <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-6 h-6">
-          <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-4 w-auto">
-          <span class="text-[var(--text-muted)]">·</span>
-          <span>A product of <strong>CodeStrata, Inc.</strong></span>
+  <!-- =====================================================================
+       FOOTER
+       ===================================================================== -->
+  <footer class="bg-[var(--bg-secondary)] border-t border-[var(--border-subtle)] py-16 text-sm text-[var(--text-secondary)]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-12 border-b border-[var(--border-subtle)]">
+        <div class="space-y-3">
+          <div class="flex items-center gap-3">
+            <img src="assets/images/brand/tenwise-icon.svg" alt="Tenwise" class="w-7 h-7">
+            <img src="assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" class="dynamic-brand-logo h-4 w-auto">
+          </div>
+          <p class="text-xs text-[var(--text-muted)] max-w-sm">
+            The reading workspace for power consumers of content, and the engagement layer for publishers. A product of CodeStrata, Inc.
+          </p>
         </div>
-        <div class="flex flex-wrap items-center gap-6">
-          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)]">Sign In (tenwise.app)</a>
-          <a href="#workflow" class="hover:text-[var(--text-primary)]">Reader Workflow</a>
-          <a href="#publishers" class="hover:text-[var(--text-primary)]">For Publishers</a>
-          <button class="open-enterprise-modal hover:text-[var(--text-primary)]">Enterprise Inquiry</button>
-          <a href="mailto:satish@tenwise.app" class="hover:text-[var(--text-primary)]">satish@tenwise.app</a>
+
+        <div class="flex flex-wrap gap-8 text-sm">
+          <a href="https://tenwise.app/login" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--text-primary)] transition-colors">Sign In</a>
+          <a href="#readers" class="hover:text-[var(--text-primary)] transition-colors">For Readers</a>
+          <a href="#publishers" class="hover:text-[var(--text-primary)] transition-colors">For Publishers</a>
+          <a href="#studio" class="hover:text-[var(--text-primary)] transition-colors">Studio</a>
+          <a href="#pricing" class="hover:text-[var(--text-primary)] transition-colors">Pricing</a>
+          <button class="open-enterprise-modal hover:text-[var(--text-primary)] transition-colors">Contact Sales</button>
         </div>
       </div>
 
-      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[var(--text-muted)]">
-        <div>
-          © 2026 CodeStrata, Inc. All rights reserved. Built on the open-source Tenwise Engine (AGPL-3.0), originally created as Atlas Pulse by Vinay Chaganti.
-        </div>
-        <div class="font-mono-code">
-          WCAG 2.2 AA · Zero Third-Party Telemetry
-        </div>
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)]">
+        <div>© 2026 CodeStrata, Inc. All rights reserved.</div>
+        <div><a href="mailto:satish@tenwise.app" class="hover:text-[var(--text-primary)]">satish@tenwise.app</a></div>
       </div>
     </div>
   </footer>
 
-  <!-- ENTERPRISE INQUIRY MODAL -->
+  <!-- =====================================================================
+       ENTERPRISE INQUIRY MODAL
+       ===================================================================== -->
   <div id="enterprise-modal" class="hidden fixed inset-0 z-50 modal-backdrop flex items-center justify-center p-4">
-    <div class="relative w-full max-w-lg rounded-xl border border-[var(--border-light)] bg-[var(--bg-modal)] p-6 sm:p-8 shadow-2xl">
+    <div class="relative w-full max-w-lg rounded-3xl border border-[var(--border-strong)] bg-[var(--bg-secondary)] p-8 sm:p-10 shadow-2xl">
       
-      <button id="close-modal-btn" class="absolute top-5 right-5 p-1.5 rounded-md text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors" aria-label="Close modal">
+      <button id="close-modal-btn" class="absolute top-6 right-6 p-2 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)] transition-colors" aria-label="Close modal">
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
       </button>
 
-      <div class="mb-6">
-        <span class="section-coord">PUBLISHER &amp; ENTERPRISE PARTNERSHIP</span>
-        <h3 class="mt-1 font-serif-read text-2xl font-normal text-[var(--text-primary)]">Deploy Your Engagement Layer</h3>
-        <p class="text-xs text-[var(--text-secondary)] mt-1">
-          Share a few details about your publication, research desk, or educational catalog. We’ll prepare a tailored pilot demonstration.
+      <div class="mb-8">
+        <div class="text-xs font-semibold uppercase tracking-widest text-amber-500 mb-2">
+          Tenwise Enterprise
+        </div>
+        <h3 class="font-serif-display text-3xl font-normal text-[var(--text-primary)]">Talk to Our Team</h3>
+        <p class="text-sm text-[var(--text-secondary)] mt-2">
+          Tell us about your publication or organization. We’ll schedule a live walkthrough tailored to your catalog.
         </p>
       </div>
 
       <form id="enterprise-form" class="space-y-4">
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label for="form-name" class="block text-xs font-medium text-[var(--text-primary)] mb-1">Your Name</label>
-            <input type="text" id="form-name" name="name" required class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="Jane Doe">
+            <label for="form-name" class="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">Your Name</label>
+            <input type="text" id="form-name" name="name" required class="w-full px-4 py-3 text-sm rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="Jane Doe">
           </div>
           <div>
-            <label for="form-email" class="block text-xs font-medium text-[var(--text-primary)] mb-1">Work Email</label>
-            <input type="email" id="form-email" name="email" required class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="jane@publisher.com">
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div>
-            <label for="form-org" class="block text-xs font-medium text-[var(--text-primary)] mb-1">Publication / Organization</label>
-            <input type="text" id="form-org" name="organization" required class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="Benchmark Publications">
-          </div>
-          <div>
-            <label for="form-role" class="block text-xs font-medium text-[var(--text-primary)] mb-1">Your Role</label>
-            <input type="text" id="form-role" name="role" required class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="VP of Product / Editorial">
+            <label for="form-email" class="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">Work Email</label>
+            <input type="email" id="form-email" name="email" required class="w-full px-4 py-3 text-sm rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="jane@company.com">
           </div>
         </div>
 
-        <div>
-          <label for="form-vertical" class="block text-xs font-medium text-[var(--text-primary)] mb-1">Publishing Vertical</label>
-          <select id="form-vertical" name="vertical" class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500">
-            <option value="B2B Intelligence & Trade Media">B2B Intelligence, Benchmarks &amp; Trade Media</option>
-            <option value="Education & Curriculum Publishing">Education, Literacy &amp; Research Publishing</option>
-            <option value="Specialist Journalism & Newsletters">Specialist Journalism, Policy &amp; Newsletters</option>
-            <option value="Enterprise Internal Research">Enterprise Internal Research &amp; Intelligence</option>
-          </select>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="form-org" class="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">Publication / Organization</label>
+            <input type="text" id="form-org" name="organization" required class="w-full px-4 py-3 text-sm rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="Benchmark Publications">
+          </div>
+          <div>
+            <label for="form-role" class="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">Role</label>
+            <input type="text" id="form-role" name="role" required class="w-full px-4 py-3 text-sm rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500" placeholder="VP of Product / Editorial">
+          </div>
         </div>
 
         <div>
-          <label for="form-message" class="block text-xs font-medium text-[var(--text-primary)] mb-1">How would you like to engage your readers?</label>
-          <textarea id="form-message" name="message" rows="3" required class="w-full px-3 py-2 text-xs rounded-md bg-[var(--bg-tertiary)] border border-[var(--border)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500 resize-none" placeholder="We want to offer our institutional subscribers a branded workspace with curated dossiers and house-style AI synthesis..."></textarea>
+          <label for="form-message" class="block text-xs font-medium text-[var(--text-secondary)] mb-1.5">How can we help?</label>
+          <textarea id="form-message" name="message" rows="3" required class="w-full px-4 py-3 text-sm rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] focus:outline-none focus:border-amber-500 resize-none" placeholder="We'd like to explore an engagement workspace for our subscribers..."></textarea>
         </div>
 
-        <button type="submit" class="w-full py-2.5 px-4 rounded-md bg-amber-500 hover:bg-amber-400 text-[#121315] font-semibold text-xs transition-colors shadow-sm flex items-center justify-center gap-2">
-          <span>Request Publisher Demo &amp; Pricing</span>
-          <span class="font-mono-code">→</span>
+        <button type="submit" class="btn-primary-glow w-full py-3.5 px-6 rounded-full bg-amber-500 hover:bg-amber-400 text-[#0b0c0e] font-semibold text-sm mt-2">
+          Request Walkthrough &amp; Pricing →
         </button>
       </form>
 
-      <div id="form-success-state" class="hidden text-center py-6 space-y-2">
-        <div class="font-mono-code text-xs uppercase text-accent-accessible">DISPATCH READY</div>
-        <h4 class="font-serif-read text-xl text-[var(--text-primary)]">Thank you for reaching out.</h4>
-        <p class="text-xs text-[var(--text-secondary)] max-w-xs mx-auto">
-          Your inquiry has been prepared for <a href="mailto:satish@tenwise.app" class="text-accent-accessible underline">satish@tenwise.app</a>.
+      <div id="form-success-state" class="hidden text-center py-8 space-y-3">
+        <div class="text-xs font-semibold uppercase tracking-widest text-amber-500">Thank You</div>
+        <h4 class="font-serif-display text-2xl text-[var(--text-primary)]">We’ll be in touch shortly.</h4>
+        <p class="text-sm text-[var(--text-secondary)] max-w-xs mx-auto">
+          Your inquiry has been prepared for <a href="mailto:satish@tenwise.app" class="text-amber-500 underline">satish@tenwise.app</a>.
         </p>
       </div>
 
