@@ -41,7 +41,7 @@ Every pull request (`.github/workflows/ci.yml`):
 
 - **HTML is valid**: `npx html-validate@11.17.0 "public/**/*.html"`, with the rules in `.htmlvalidate.json`. Style rules are off; `<div>` inside `<button>` is a warning for now.
 - **Internal links resolve**: `node scripts/check-links.mjs` checks every `href`, `src` and CSS `url()` in `public/`, and every `#anchor`.
-- **A preview**: the PR's version of the site, uploaded but not live, at its own `workers.dev` address, linked in a comment on the PR and updated with each push. PRs from forks get the checks only.
+- **A preview**: the PR's version of the site, uploaded but not live, at its own `workers.dev` address, linked in a comment on the PR and updated with each push. PRs from forks get the checks only, and until the repository has its Cloudflare secrets every PR does (the preview job skips with a warning).
 
 The deploy runs the same checks first, and fails, rather than skipping, if the Cloudflare secrets are missing.
 
