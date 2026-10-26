@@ -1,3 +1,10 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/brand/tenwise-wordmark-dark.svg">
+    <img src="docs/brand/tenwise-wordmark-light.svg" alt="Tenwise" width="480">
+  </picture>
+</p>
+
 # Tenwise Website
 
 Official marketing and product website for **Tenwise** (`tenwise.app`), deployed on GitHub Pages.
