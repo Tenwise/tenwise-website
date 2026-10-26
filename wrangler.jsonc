@@ -1,5 +1,5 @@
 // The Tenwise website as a Cloudflare Worker that serves the static files in
-// public/ (only that folder is published). It has no public address of its own: tenwise.app and www.tenwise.app
+// public/ (only that folder is published). tenwise.app and www.tenwise.app
 // belong to the platform's Worker (Tenwise/tenwise-platform,
 // infrastructure/cloudflare), which signs people in and shows signed-out
 // visitors this website through a service binding.
@@ -7,8 +7,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "tenwise-website",
   "compatibility_date": "2026-10-01",
-  "workers_dev": false,
-  "preview_urls": false,
+  "workers_dev": true,
+  // Each pull request uploads a version (not live) with its own preview
+  // address on workers.dev (.github/workflows/ci.yml); previews need
+  // workers.dev on, which also makes the live site reachable there.
+  "preview_urls": true,
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
