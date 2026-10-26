@@ -199,7 +199,7 @@ function switchStory(index, animate = true) {
 }
 
 /**
- * Interactive Enterprise Publisher Showcase (Education, B2B, Media)
+ * Interactive Enterprise Use-Case Showcase (Strategy, Education, Content Organizations)
  */
 function initPublisherExperience() {
   const buttons = document.querySelectorAll('.publisher-tab-btn');
@@ -214,35 +214,35 @@ function initPublisherExperience() {
   const previewCard = document.getElementById('broadsheet-card');
 
   const data = {
+    b2b: {
+      title: 'Strategy, Market Intelligence & Advisory Teams',
+      desc: 'Give analysts, leadership, and client teams a shared intelligence workspace. Track global sources alongside proprietary reports, compare perspectives, and publish board-ready briefings in minutes.',
+      outcome1: 'Turn scattered feeds and reports into cited, decision-ready briefings',
+      outcome2: 'Every exported Studio briefing carries your organization’s brand and standards',
+      masthead: 'Global Strategy & Markets Brief',
+      edition: 'Q4 EXECUTIVE INTELLIGENCE · SYNTHESIZED FROM 6 SOURCES',
+      headline: 'North American Supply Chain & Capital Allocation Outlook: 2026–2027',
+      note: 'VP Strategy Note: Key margin trends highlighted—attach to Friday’s leadership briefing.'
+    },
     education: {
-      title: 'Education, Literacy & Research Publishers',
-      desc: 'Give districts, educators, and researchers an interactive workspace on top of your catalog. Readers explore curated topic collections, highlight key evidence, capture structured notes, and generate accurate citations automatically.',
-      outcome1: 'Turn static libraries into active research and curriculum workspaces',
-      outcome2: 'Editorial AI operates strictly within your rubrics and trusted content',
+      title: 'Education, Research & Policy Institutions',
+      desc: 'Equip educators, scholars, and policy teams with a structured environment for evidence-based reading. Explore curated topic collections, highlight key evidence, capture notes, and generate verified citations automatically.',
+      outcome1: 'Turn static digital libraries into active research and learning workspaces',
+      outcome2: 'AI synthesis operates strictly within your institutional rubrics and sources',
       masthead: 'National Literacy Review',
       edition: 'CURRICULUM & EVIDENCE DOSSIER · 4 SOURCES CITED',
       headline: 'Evidence-Based Reading Comprehension Across Secondary Classrooms',
-      note: 'Instructional Lead Note: Share this curated dossier and reference list at Tuesday’s district workshop.'
-    },
-    b2b: {
-      title: 'B2B Intelligence, Market Research & Trade Media',
-      desc: 'Stop losing corporate seat renewals to unread inbox clutter. Empower enterprise subscribers to compare reports across your archive, synthesize multi-source briefings, and share co-branded PDF digests with leadership.',
-      outcome1: 'Increase seat utilization and drive expansion across client teams',
-      outcome2: 'Every exported executive briefing carries your brand and masthead',
-      masthead: 'Global Markets Executive Brief',
-      edition: 'Q4 MARKET INTELLIGENCE · SYNTHESIZED FROM 6 REPORTS',
-      headline: 'North American Supply Chain & Capital Allocation Outlook: 2026–2027',
-      note: 'VP Strategy Note: Key margin trends highlighted—attach to Friday’s board briefing.'
+      note: 'Program Lead Note: Share this curated dossier and reference list at Tuesday’s workshop.'
     },
     media: {
-      title: 'Specialist Journalism, Policy Desks & Newsletters',
-      desc: 'Give your most loyal subscribers a dedicated reading sanctuary where your reporting lives permanently—complete with topic timelines, synthesis in your newsroom’s house voice, and printable weekend editions.',
-      outcome1: 'Deepen subscriber retention by becoming their daily research habit',
-      outcome2: 'Keep subscriber research and synthesis inside your trusted environment',
+      title: 'Content, Media & Intelligence Organizations',
+      desc: 'Transform your proprietary research or publication catalog into an interactive workspace for teams and subscribers. Readers curate topic dossiers, synthesize within your house voice, and share co-branded editions.',
+      outcome1: 'Increase institutional seat utilization and long-term retention',
+      outcome2: 'Keep research and synthesis inside your governed, trusted environment',
       masthead: 'Capitol & Policy Evening Edition',
-      edition: 'SUBSCRIBER BRIEFING · 5 ARCHIVE DISPATCHES',
+      edition: 'EXECUTIVE BRIEFING · 5 ARCHIVE DISPATCHES',
       headline: 'Global Semiconductor Policy & Foundry Capacity: Six-Month Synthesis',
-      note: 'Policy Desk Note: Contrasts recent export filings with European manufacturing commitments.'
+      note: 'Research Desk Note: Contrasts recent export filings with European manufacturing commitments.'
     }
   };
 
@@ -301,8 +301,8 @@ function initVoicePreview() {
       text: '“While three sources emphasize rapid adoption metrics, only two examine long-term retention. Comparing their underlying data reveals that lasting value depends on active curation rather than volume.”'
     },
     editorial: {
-      tag: 'Publisher House Style · Objective & Cited',
-      text: '“A synthesis of recent industry reports indicates a decisive shift toward reader-curated briefings, with cited source collections replacing static bookmarking across enterprise teams.”'
+      tag: 'Enterprise House Style · Objective & Cited',
+      text: '“A synthesis of recent industry reports indicates a decisive shift toward curated briefings, with cited source collections replacing static bookmarking across enterprise teams.”'
     }
   };
 
@@ -396,10 +396,10 @@ function initEnterpriseModal() {
       const role = form.elements['role'].value;
       const message = form.elements['message'].value;
 
-      const mailtoSubject = encodeURIComponent(`Tenwise Enterprise Partnership — ${organization}`);
+      const mailtoSubject = encodeURIComponent(`Tenwise Enterprise Inquiry — ${organization}`);
       const mailtoBody = encodeURIComponent(
         `Hello Tenwise Team,\n\n` +
-        `We are interested in exploring Tenwise for Publishers & Enterprise.\n\n` +
+        `We are interested in exploring Tenwise Enterprise for our organization.\n\n` +
         `Name: ${name}\n` +
         `Email: ${email}\n` +
         `Organization: ${organization}\n` +
