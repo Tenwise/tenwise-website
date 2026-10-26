@@ -49,11 +49,23 @@
     td { color: var(--text-secondary); }
     .note { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--accent-border); border-radius: 12px; background: var(--accent-soft); color: var(--text-primary); font-size: 14.5px; }
     .note p { margin: 0; color: var(--text-primary); }
+    figure { margin: 22px 0 8px; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: 12px; }
+    figcaption { margin-top: 8px; font-size: 13.5px; color: var(--text-muted); }
+    .app { display: inline-block; margin-left: 8px; padding: 2px 9px; border: 1px solid var(--accent-border); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font: 600 11.5px/1.5 var(--font-sans); letter-spacing: .02em; vertical-align: middle; white-space: nowrap; }
+    td .app { margin-left: 6px; }
     footer { border-top: 1px solid var(--border-subtle); padding: 28px 24px; text-align: center; font-size: 13px; color: var(--text-muted); }
     @media (max-width: 860px) {
       .layout { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
       .toc { position: static; }
       .top nav .hide-sm { display: none; }
+    }
+    @media (max-width: 480px) {
+      .top-inner { padding: 0 16px; gap: 10px; }
+      .top-inner img { height: 24px; }
+      .top nav { gap: 12px; }
+      .top nav .signin { padding: 7px 13px; white-space: nowrap; }
+      .layout { padding-left: 16px; padding-right: 16px; }
     }
   </style>
 </head>
@@ -96,6 +108,7 @@
       <p class="eyebrow">Docs</p>
       <h1>Using Tenwise</h1>
       <p class="lede">Tenwise is a reading workspace: follow the sources that matter, read calmly, save what's worth keeping with a note on why, and turn it into cited briefings. This guide takes you from your first sign-in to your first newsletter.</p>
+      <div class="note"><p><strong>Tenwise app or Tenwise Engine?</strong> This guide is for the Tenwise app at tenwise.app. Tenwise Engine is its free, open-source core, which you run on your own computer. The engine has everything here except the features marked <span class="app">Tenwise app</span>: those come with the Tenwise app.</p></div>
 
       <section id="start">
         <h2>Get started</h2>
@@ -106,6 +119,7 @@
         </ol>
         <div class="note"><p>Use desktop <strong>Google Chrome 148 or later</strong>: it's the browser with Gemini Nano, the AI Tenwise uses (see <a href="#ai">AI on your device</a>). Everything else works in any modern browser.</p></div>
         <p>You stay signed in for 30 days on that browser. Signing in with a different email gives you a different, separate library.</p>
+        <figure><img src="/docs/img/sign-in.jpg" width="1520" height="950" loading="lazy" alt="The Tenwise sign-in page: an email field and an Email me a sign-in code button"><figcaption>Sign in with just your email. There is no password.</figcaption></figure>
       </section>
 
       <section id="feeds">
@@ -117,10 +131,11 @@
             <tr><td>URL</td><td>Paste any site's address; Tenwise finds its feed for you.</td></tr>
             <tr><td>Search</td><td>Search a curated catalog of publications.</td></tr>
             <tr><td>Popular</td><td>Browse well-known sources by topic.</td></tr>
-            <tr><td>Google News</td><td>Follow a Google News search, in any of 23 editions, optionally limited to one site, with search operators like quotes.</td></tr>
+            <tr><td>Google News<span class="app">Tenwise app</span></td><td>Follow a Google News search, in any of 23 editions, optionally limited to one site, with search operators like quotes.</td></tr>
             <tr><td>Google Alerts</td><td>Steps to turn a Google Alert into a feed.</td></tr>
           </tbody>
         </table>
+        <figure><img src="/docs/img/add-feeds.jpg" width="1520" height="950" loading="lazy" alt="The Add feeds dialog on the Popular tab: topics such as Technology and Science, and sources with an Add button"><figcaption>Add feeds: browse Popular sources by topic, or use the other tabs.</figcaption></figure>
         <p>Already use another reader? Import your list as an <strong>OPML</strong> file in <strong>Settings → Data</strong>; the feeds start fetching right away. Group feeds into <strong>folders</strong> from the sidebar, and right-click a feed to refresh, move or remove it. Tenwise refreshes your feeds while you're using it: set how often in <strong>Settings → Reading</strong>, or press ↻ in the left rail to refresh them all now.</p>
       </section>
 
@@ -133,6 +148,7 @@
           <li><strong>Highlight.</strong> Select text in an article to highlight it in one of four colors. Find every highlight in <strong>Highlights</strong>.</li>
           <li><strong>Find anything.</strong> Press <kbd>/</kbd> to search everything you've fetched, or <kbd>⌘</kbd> <kbd>K</kbd> to jump to any view, folder or feed and run commands.</li>
         </ul>
+        <figure><img src="/docs/img/reader.jpg" width="1520" height="950" loading="lazy" alt="A folder of articles in dense rows, with one article open beside the list"><figcaption>Scan the list, and read the article beside it.</figcaption></figure>
       </section>
 
       <section id="saving">
@@ -143,6 +159,7 @@
           <li><strong>Unsorted</strong> holds saves that aren't in a collection yet: a filing queue. File one with <kbd>c</kbd>, and <kbd>j</kbd> takes you to the next.</li>
           <li>Removing a feed never removes your saves: they stay in Saved and your collections, notes included.</li>
         </ul>
+        <figure><img src="/docs/img/saved.jpg" width="1520" height="950" loading="lazy" alt="Saved articles, each with its note, and an open article showing the note, its collection and its citation"><figcaption>Saved: every save with its note. The reader shows the note, its collections and the citation.</figcaption></figure>
       </section>
 
       <section id="citations">
@@ -151,9 +168,10 @@
           <li>Every saved article carries an <strong>APA 7 citation</strong>: under your note in the reader, and behind a copy button on saved rows. It pastes into a document with its italics.</li>
           <li>A collection's <strong>Copy citations</strong> copies a reference list, A to Z.</li>
           <li><strong>Download Markdown</strong> saves a collection as one file: each article's title, source, dates, citation, your note and its text.</li>
-          <li><strong>Send to NotebookLM</strong> on a collection downloads that file to upload as a source, copies the links to paste, or opens NotebookLM.</li>
+          <li><strong>Send to NotebookLM</strong><span class="app">Tenwise app</span> on a collection downloads that file to upload as a source, copies the links to paste, or opens NotebookLM.</li>
           <li>Export your feed list as OPML (<strong>Settings → Data</strong>), and your highlights as CSV from <strong>Highlights</strong>.</li>
         </ul>
+        <figure><img src="/docs/img/collection.jpg" width="1520" height="950" loading="lazy" alt="A collection of articles with Copy citations and download buttons"><figcaption>A collection, ready to cite or download.</figcaption></figure>
       </section>
 
       <section id="ai">
@@ -164,16 +182,16 @@
           <li>Open an article and press <kbd>a</kbd> for the <strong>AI rail</strong>.</li>
           <li>Press <strong>Generate summary</strong>. The first time, Chrome downloads Gemini Nano once (a few GB); after that it's ready whenever you are.</li>
         </ol>
-        <p>The AI rail has <strong>Summary</strong>, <strong>Analysis</strong> (sentiment, urgency, frame, tone, depth and topics), <strong>Chat</strong> about the article, and your <strong>Highlights</strong>. Save a summary to keep it in <strong>AI Summaries</strong>.</p>
-        <h3>Your voice</h3>
+        <p>The AI rail has <strong>Summary</strong>, <strong>Analysis</strong><span class="app">Tenwise app</span> (sentiment, urgency, frame, tone, depth and topics), <strong>Chat</strong> about the article, and your <strong>Highlights</strong>. Save a summary to keep it in <strong>AI Summaries</strong>.</p>
+        <h3>Your voice<span class="app">Tenwise app</span></h3>
         <p>In <strong>Settings → AI assistant</strong>, choose reading personas (several blend into one voice), a tone, and custom instructions. They apply to every summary, chat and briefing.</p>
-        <h3>Background processing</h3>
+        <h3>Background processing<span class="app">Tenwise app</span></h3>
         <p>Turn it on in <strong>Settings → AI engines</strong> to summarize and analyze new articles automatically while Tenwise is open in Chrome, or press ✨ in the list header to process recent articles now. Analyzed articles can then be filtered by sentiment, urgency and more with the <strong>Filters</strong> button.</p>
         <div class="note"><p>Ollama, the other AI engine the open-source Tenwise Engine supports, needs Tenwise to run on your own computer, so it isn't available on tenwise.app.</p></div>
       </section>
 
       <section id="several">
-        <h2>Work with several articles</h2>
+        <h2>Work with several articles<span class="app">Tenwise app</span></h2>
         <p>Select articles with the circle on each row, then choose <strong>AI</strong> in the bar that appears:</p>
         <table>
           <thead><tr><th>Action</th><th>For</th><th>What you get</th></tr></thead>
@@ -184,16 +202,18 @@
           </tbody>
         </table>
         <p>Export the result as Markdown or Word, email it, or save a newsletter to Studio.</p>
+        <figure><img src="/docs/img/selection.jpg" width="1520" height="950" loading="lazy" alt="Three articles selected, with a bar offering Read, Save, Collect, CSV and an AI menu of Compare, Newsletter and Briefing"><figcaption>Select articles, then choose an AI action.</figcaption></figure>
       </section>
 
       <section id="studio">
-        <h2>Studio newsletters</h2>
+        <h2>Studio newsletters<span class="app">Tenwise app</span></h2>
         <p><strong>Studio</strong> (in the left rail) keeps your newsletters. Save one from a generated newsletter, or start a draft from any collection: each article becomes a section, with your note as "Why it matters" and a reference list at the end.</p>
         <ul class="points">
           <li>Edit the title and Markdown with a live preview; changes save as you type.</li>
           <li>Pick a design: <strong>Broadsheet</strong>, <strong>Evening Edition</strong> or <strong>Quarterly</strong>.</li>
           <li>Export as Markdown, Word, a <strong>PNG</strong> for sharing, or an <strong>A4 PDF</strong> with real text.</li>
         </ul>
+        <figure><img src="/docs/img/studio.jpg" width="1520" height="950" loading="lazy" alt="The Studio editor: Markdown on one side and the designed newsletter preview on the other"><figcaption>Studio: write in Markdown and see the designed newsletter as you type.</figcaption></figure>
       </section>
 
       <section id="settings">
@@ -204,6 +224,7 @@
           <li><strong>Simple and Power:</strong> Settings opens in Simple, with what most people need. Power shows everything, including the AI prompts, which you can read and edit.</li>
           <li>Your settings follow you to any browser you sign in on.</li>
         </ul>
+        <figure><img src="/docs/img/settings.jpg" width="1520" height="950" loading="lazy" alt="Settings, Appearance section, in the light theme: theme, interface font, accent color and text color"><figcaption>Settings → Appearance, in the light theme.</figcaption></figure>
       </section>
 
       <section id="shortcuts">
@@ -225,10 +246,11 @@
           </tbody>
         </table>
         <p>None of them fire while you're typing.</p>
+        <figure><img src="/docs/img/palette.jpg" width="1520" height="950" loading="lazy" alt="The command palette open with AI typed, listing matching views and commands"><figcaption>⌘ K: jump anywhere, or run a command.</figcaption></figure>
       </section>
 
       <section id="account">
-        <h2>Your account and data</h2>
+        <h2>Your account and data<span class="app">Tenwise app</span></h2>
         <ul class="points">
           <li><strong>Sign out:</strong> click your initial at the bottom of the left rail, then <strong>Sign out</strong>. From there you can also sign out on every device at once. <strong>Settings → Account</strong> has the same.</li>
           <li><strong>Your library is private</strong> to your email: nobody else signing in can see your feeds, saves or notes.</li>
