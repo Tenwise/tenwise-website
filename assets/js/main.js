@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const SHOWCASE_STORIES = [
   {
     src: 'assets/images/screenshots/01-saved-reader-dark.png',
-    lightSrc: 'assets/images/screenshots/07-saved-reader-light.png',
+    lightSrc: 'assets/images/screenshots/01-saved-reader-dark.png',
     alt: 'Tenwise calm docked reader with your saved note, citation, and summary',
     title: 'Read in calm focus. Capture why an article matters.',
     desc: 'Save any story with a personal note in seconds. Your thoughts, formatted citations, and an instant summary sit right above the full article.'
