@@ -1,0 +1,4 @@
+# Wrangler's local cache: account details, never committed
+.wrangler/
+node_modules/
+.DS_Store

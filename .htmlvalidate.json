@@ -1,9 +1,10 @@
 {
-  "extends": ["html-validate:recommended"],
+  "extends": [
+    "html-validate:recommended"
+  ],
   "rules": {
     "no-trailing-whitespace": "off",
     "doctype-style": "off",
-    "no-implicit-button-type": "off",
-    "element-permitted-content": "warn"
+    "no-implicit-button-type": "off"
   }
 }
