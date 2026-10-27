@@ -3,8 +3,8 @@ name: Deploy the website to Cloudflare
 # Every push to main publishes this folder as the tenwise-website Worker
 # (wrangler.jsonc). Visitors reach it at tenwise.app through the platform's
 # Worker, which shows the website to anyone who isn't signed in.
-# Needs repository secrets CLOUDFLARE_API_TOKEN (Workers Scripts: Edit on the
-# account) and CLOUDFLARE_ACCOUNT_ID; the PR previews (ci.yml) use them too.
+# Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit on the account) in the
+# production environment, and the repository secret CLOUDFLARE_ACCOUNT_ID.
 on:
   push:
     branches: ["main"]
@@ -12,33 +12,12 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: deploy
   cancel-in-progress: false
 
 jobs:
-  deploy-pages:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          persist-credentials: false
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './public'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-
   deploy:
     runs-on: ubuntu-latest
     environment: production
