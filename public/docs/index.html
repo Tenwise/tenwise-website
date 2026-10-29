@@ -175,8 +175,14 @@
       </section>
 
       <section id="ai">
-        <h2>AI on your device</h2>
-        <p>Tenwise's AI runs <strong>in your browser</strong>, using <strong>Gemini Nano</strong>, the model built into desktop Google Chrome. Article text isn't sent to an AI service.</p>
+        <h2>AI</h2>
+        <p>Tenwise works with three kinds of AI. Pick whichever fits; you can change it any time in <strong>Settings → AI engines</strong>.</p>
+        <ul class="points">
+          <li><strong>Gemini Nano in Chrome</strong> (free, private): the model built into desktop Google Chrome runs <strong>in your browser</strong>, so article text isn't sent to an AI service. Set-up is below.</li>
+          <li><strong>OpenRouter's free models</strong><span class="app">Tenwise app</span> (free, any browser): in <strong>Settings → AI engines → Your own AI key</strong>, choose <strong>OpenRouter (free models)</strong>, follow the link to get a free key at openrouter.ai, paste it, and pick a model marked <em>free</em>. Free models have daily limits, and some free providers may use what you send them to train models, so don't send private text through them.</li>
+          <li><strong>Your own key</strong><span class="app">Tenwise app</span> (any browser): Claude, OpenAI, OpenRouter or another OpenAI-compatible service, with your own API key. The key is checked with the provider, stored encrypted, and never shown again; the article text you ask about goes to that provider.</li>
+        </ul>
+        <h3>Gemini Nano in Chrome</h3>
         <ol class="steps">
           <li>Use desktop Chrome 148 or later. Chrome needs about 22 GB of free disk space and a computer it supports; <code>chrome://on-device-internals</code> shows whether yours qualifies.</li>
           <li>Open an article and press <kbd>a</kbd> for the <strong>AI rail</strong>.</li>
@@ -258,7 +264,7 @@
           <li><strong>Sign out:</strong> from the same menu, or <strong>Settings → Account</strong>. You can sign out on every device at once.</li>
           <li><strong>Your library is private</strong> to your email: nobody else signing in can see your feeds, saves or notes.</li>
           <li><strong>Where it's kept:</strong> your library lives in your own workspace on Tenwise's servers (on Cloudflare), with a continuous backup, so it's there on any browser you sign in on.</li>
-          <li><strong>AI stays on your device:</strong> Gemini Nano runs in Chrome; article text isn't sent to an AI service.</li>
+          <li><strong>Where AI runs:</strong> Gemini Nano stays on your device. With your own key or OpenRouter, the text you ask about goes to that provider, and nowhere else.</li>
           <li><strong>No tracking:</strong> no third-party analytics or advertising.</li>
         </ul>
       </section>
