@@ -45,7 +45,7 @@ jobs:
             exit 1
           fi
           if [ "$GITHUB_REF_NAME" = "main" ]; then
-            npx --yes wrangler@4.151.3 deploy
+            npx --yes wrangler@4.151.3 deploy --message "commit $GITHUB_SHA"
           else
-            npx --yes wrangler@4.151.3 deploy --env sandbox
+            npx --yes wrangler@4.151.3 deploy --env sandbox --message "commit $GITHUB_SHA"
           fi
