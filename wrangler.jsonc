@@ -15,5 +15,17 @@
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page"
+  },
+  "env": {
+    // The sandbox branch's site, shown to signed-out visitors of
+    // sandbox.tenwise.app through the platform's sandbox Worker (its WEBSITE
+    // binding). Reached only through that Worker: no workers.dev address, and
+    // the platform's sandbox Worker tells search engines not to index it.
+    // Deployed with `npx wrangler deploy --env sandbox` from the sandbox branch.
+    "sandbox": {
+      "name": "tenwise-website-sandbox",
+      "workers_dev": false,
+      "preview_urls": false
+    }
   }
 }
