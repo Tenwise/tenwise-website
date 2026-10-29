@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services that see your data · Tenwise</title>
+  <meta name="description" content="Every service that sees some of your data when you use Tenwise at tenwise.app: what it sees, why, and for how long.">
+  <meta name="author" content="CodeStrata, Inc.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/tenwise-icon.svg">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    // The website's own theme choice (assets/js/main.js keeps it under the same key).
+    try { if (localStorage.getItem('tenwise-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) { /* storage blocked */ }
+  </script>
+  <style>
+    body { margin: 0; background: var(--bg-primary); color: var(--text-primary); font-family: var(--font-sans); line-height: 1.65; }
+    a { color: var(--accent); }
+    .top { position: sticky; top: 0; z-index: 10; border-bottom: 1px solid var(--border-subtle); background: var(--bg-glass); backdrop-filter: blur(12px); }
+    .top-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .top-inner img { height: 30px; width: auto; display: block; }
+    .top nav { display: flex; align-items: center; gap: 22px; font-size: 14px; }
+    .top nav a { color: var(--text-secondary); text-decoration: none; }
+    .top nav a:hover, .top nav a[aria-current] { color: var(--text-primary); }
+    .top nav .signin { padding: 8px 16px; border-radius: 999px; background: var(--accent); color: #0b0c0e; font-weight: 600; }
+    .theme { border: 1px solid var(--border-strong); background: transparent; color: var(--text-secondary); border-radius: 8px; width: 34px; height: 34px; cursor: pointer; font-size: 15px; }
+    .top-inner .logo-light, html.light .top-inner .logo-dark { display: none; }
+    html.light .top-inner .logo-light { display: block; }
+    .layout { max-width: 1180px; margin: 0 auto; padding: 40px 24px 96px; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; }
+    .toc { position: sticky; top: 100px; align-self: start; font-size: 14px; }
+    .toc p { margin: 0 0 10px; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--text-muted); }
+    .toc ol { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--border-subtle); }
+    .toc a { display: block; padding: 5px 0 5px 14px; color: var(--text-secondary); text-decoration: none; }
+    .toc a:hover { color: var(--text-primary); }
+    main { max-width: 760px; }
+    .eyebrow { margin: 0 0 12px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+    h1 { margin: 0 0 16px; font-family: var(--font-serif); font-weight: 400; font-size: clamp(36px, 5vw, 52px); line-height: 1.08; letter-spacing: -.01em; }
+    .lede { margin: 0 0 48px; font-size: 18px; color: var(--text-secondary); }
+    section { padding-top: 24px; margin-bottom: 40px; scroll-margin-top: 88px; }
+    h2 { margin: 0 0 14px; font-family: var(--font-serif); font-weight: 500; font-size: 30px; line-height: 1.2; }
+    h3 { margin: 26px 0 8px; font-size: 16.5px; }
+    p, li { color: var(--text-secondary); }
+    strong { color: var(--text-primary); font-weight: 600; }
+    ol.steps, ul.points { padding-left: 22px; }
+    ol.steps li, ul.points li { margin: 6px 0; }
+    kbd { display: inline-block; min-width: 1.6em; padding: 1px 7px; border: 1px solid var(--border-strong); border-bottom-width: 2px; border-radius: 6px; background: var(--bg-tertiary); color: var(--text-primary); font: 600 12.5px/1.6 ui-monospace, Menlo, monospace; text-align: center; }
+    table { width: 100%; border-collapse: collapse; margin: 12px 0 8px; font-size: 14.5px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+    th { color: var(--text-primary); font-weight: 600; }
+    td { color: var(--text-secondary); }
+    .note { margin: 18px 0; padding: 14px 16px; border: 1px solid var(--accent-border); border-radius: 12px; background: var(--accent-soft); color: var(--text-primary); font-size: 14.5px; }
+    .note p { margin: 0; color: var(--text-primary); }
+    figure { margin: 22px 0 8px; }
+    figure img { display: block; width: 100%; height: auto; border: 1px solid var(--border-subtle); border-radius: 12px; }
+    figcaption { margin-top: 8px; font-size: 13.5px; color: var(--text-muted); }
+    .app { display: inline-block; margin-left: 8px; padding: 2px 9px; border: 1px solid var(--accent-border); border-radius: 999px; background: var(--accent-soft); color: var(--accent); font: 600 11.5px/1.5 var(--font-sans); letter-spacing: .02em; vertical-align: middle; white-space: nowrap; }
+    td .app { margin-left: 6px; }
+    footer { border-top: 1px solid var(--border-subtle); padding: 28px 24px; text-align: center; font-size: 13px; color: var(--text-muted); }
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; gap: 24px; padding-top: 24px; }
+      .toc { position: static; }
+      .top nav .hide-sm { display: none; }
+    }
+    @media (max-width: 480px) {
+      .top-inner { padding: 0 16px; gap: 10px; }
+      .top-inner img { height: 24px; }
+      .top nav { gap: 12px; }
+      .top nav .signin { padding: 7px 13px; white-space: nowrap; }
+      .layout { padding-left: 16px; padding-right: 16px; }
+    }
+    .layout.single { grid-template-columns: minmax(0, 1fr); max-width: 860px; }
+    main { max-width: none; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <a href="/" aria-label="Tenwise home">
+        <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise">
+        <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise">
+      </a>
+      <nav aria-label="Main">
+        <a class="hide-sm" href="/">Home</a>
+        <a href="/docs/">Docs</a>
+        <button type="button" class="theme" id="docs-theme" aria-label="Switch theme">◐</button>
+        <a class="signin" href="/login">Sign In</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout single">
+    <main>
+      <p class="eyebrow">Privacy</p>
+      <h1>Services that see your data</h1>
+      <p class="lede">Tenwise has no analytics, advertising or tracking scripts. These are the services that do see some of your data when you use Tenwise at tenwise.app: what each sees, why, and for how long. When we add one, it's added here first.</p>
+
+      <section id="everyone">
+        <h2>Services Tenwise uses for everyone</h2>
+        <table>
+          <thead><tr><th>Service</th><th>What it sees</th><th>Why</th><th>For how long</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Cloudflare</strong></td><td>Every request to tenwise.app (address, browser, the page), its logs, and the check at sign-in (Turnstile). Your account: email address, sessions, plan, email preferences, usage counts and your answer to the welcome's question. Your workspace while it runs, and a continuous copy of your library: feeds, articles, notes, highlights, collections, Studio drafts and settings.</td><td>Hosting: sign-in, the app, and keeping your library safe between sessions.</td><td>Account and library: until you delete your account, or 90 days after a trial or subscription ends without paying. Logs: up to 7 days.</td></tr>
+            <tr><td><strong>Amazon Web Services</strong> (Simple Email Service)</td><td>Your email address and the emails we send you: sign-in codes and links, trial and billing emails, and the daily digest (titles and sources of new articles).</td><td>Sending email.</td><td>As AWS keeps sending records for delivery and abuse checks.</td></tr>
+            <tr><td><strong>Stripe</strong></td><td>Your email address, your payment details (entered on Stripe's own pages; Tenwise never sees card numbers) and your subscription.</td><td>Payments, invoices and managing your plan.</td><td>As Stripe must keep payment records by law.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="yours">
+        <h2>Services you choose</h2>
+        <table>
+          <thead><tr><th>Service</th><th>When</th><th>What it sees</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Your own AI provider</strong> (OpenAI, Anthropic, OpenRouter or another)</td><td>When you add your key in Settings → AI engines and run an AI action.</td><td>The text of that action (articles, notes, your prompt), sent from your workspace with your key, under your agreement with that provider.</td></tr>
+            <tr><td><strong>Google News</strong></td><td>When you follow an interest in the welcome or in Add feeds.</td><td>The words of the interest, in the feed address your workspace fetches. Not your name or email.</td></tr>
+            <tr><td><strong>The sites you follow</strong></td><td>Whenever your workspace refreshes a feed or opens an article.</td><td>A request from Tenwise's servers, not from you.</td></tr>
+            <tr><td><strong>Gemini Nano in Chrome</strong></td><td>When you choose it as your AI engine.</td><td>Nothing leaves your computer: the model runs in your browser.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <div class="note"><p>The free, open-source <a href="https://github.com/Tenwise/tenwise-engine">Tenwise Engine</a> runs on your own computer and uses none of the services in the first table.</p></div>
+    </main>
+  </div>
+
+  <footer>© CodeStrata, Inc. · <a href="/">tenwise.app</a> · <a href="/login">Sign In</a></footer>
+
+  <script>
+    // The theme switch: the same key and class as the rest of the website.
+    document.getElementById('docs-theme').addEventListener('click', function () {
+      var light = document.documentElement.classList.toggle('light');
+      try { localStorage.setItem('tenwise-theme', light ? 'light' : 'dark'); } catch (e) { /* storage blocked */ }
+    });
+  </script>
+</body>
+</html>
