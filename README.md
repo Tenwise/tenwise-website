@@ -42,6 +42,7 @@ The website works like the platform: **`main` is production (tenwise.app), `sand
 - Every change branches from `sandbox`, and its pull request targets `sandbox`.
 - Once merged, deploy the sandbox site and look at it on sandbox.tenwise.app, signed out.
 - A release is one pull request, `sandbox` → `main`, released together with the platform. Nothing goes into `main` from any other branch, hotfixes included: a hotfix merges into `sandbox` first, is checked there, then is promoted.
+- Before a release merges, the platform's release check must pass for it: `node infrastructure/cloudflare/release-check.mjs <pr> --repo website` (in Tenwise/tenwise-platform). It refuses a pull request that doesn't come from `sandbox`, whose commit the sandbox site doesn't run, or while the independent audit isn't done. So every deploy records its commit (`--message`, below).
 
 ## Deployment
 
@@ -53,8 +54,8 @@ The website works like the platform: **`main` is production (tenwise.app), `sand
 While GitHub Actions minutes are used up, deploy from a clean checkout of the branch, after the checks below:
 
 ```bash
-npx wrangler@4.151.3 deploy --env sandbox   # from sandbox
-npx wrangler@4.151.3 deploy                 # from main, on release day only
+npx wrangler@4.151.3 deploy --env sandbox --message "commit $(git rev-parse HEAD)"   # from sandbox
+npx wrangler@4.151.3 deploy --message "commit $(git rev-parse HEAD)"                 # from main, on release day only
 ```
 
 Otherwise every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker, and every push to `sandbox` as `tenwise-website-sandbox` (`wrangler.jsonc`, `.github/workflows/deploy.yml`). **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
