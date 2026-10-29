@@ -116,6 +116,7 @@
           <li>Go to <a href="/login">tenwise.app/login</a> (or press <strong>Sign In</strong> on this site) and enter your email.</li>
           <li>Tenwise emails you a <strong>6-digit code</strong> and a <strong>link</strong>. Enter the code, or open the link and press <strong>Sign in</strong>. Both work once, for 15 minutes. There's no password.</li>
           <li>You land in your own <strong>library</strong>, private to your email. A short welcome helps you bring your feeds from Feedly (OPML) or start from a few topics, and set up AI. You can add sources any time with <strong>+</strong> in the left rail.</li>
+          <li>A <strong>Getting started</strong> card at the bottom left tracks a few first steps (add feeds, read, save, try AI) and goes away once they're done, or when you hide it.</li>
           <li>Then a <strong>guided tour</strong> points out the article list, Saved, Collections, Studio and Help. Take it again any time from <strong>?</strong> → <strong>Take the tour</strong> at the bottom of the left rail.</li>
         </ol>
         <div class="note"><p>Tenwise is at its best in desktop <strong>Google Chrome 148 or later</strong>: it has Gemini Nano built in, so summaries and chat run free and private on your computer (see <a href="#ai">AI</a>). In another browser, Tenwise says so once and offers OpenRouter's free models instead. Everything else works in any modern browser.</p></div>
@@ -137,7 +138,7 @@
           </tbody>
         </table>
         <figure><img src="/docs/img/add-feeds.jpg" width="1520" height="950" loading="lazy" alt="The Add feeds dialog on the Popular tab: topics such as Technology and Science, and sources with an Add button"><figcaption>Add feeds: browse Popular sources by topic, or use the other tabs.</figcaption></figure>
-        <p>Already use another reader? Import your list as an <strong>OPML</strong> file in <strong>Settings → Data</strong>; the feeds start fetching right away. Group feeds into <strong>folders</strong> from the sidebar, and right-click a feed to refresh, move or remove it. Tenwise refreshes your feeds while you're using it: set how often in <strong>Settings → Reading</strong>, or press ↻ in the left rail to refresh them all now.</p>
+        <p>Already use another reader? Import your list as an <strong>OPML</strong> file in <strong>Settings → Data</strong> (or from the welcome when you first sign in); the feeds and their folders come in and start fetching right away. From Feedly: <strong>Organize → Export OPML</strong>, then import that file. Group feeds into <strong>folders</strong> from the sidebar, and right-click a feed to refresh, move or remove it. Tenwise refreshes your feeds while you're using it: set how often in <strong>Settings → Reading</strong>, or press ↻ in the left rail to refresh them all now. <span class="app">Tenwise app</span> During your trial and with Tenwise Plus, your feeds also refresh every few hours while you're away, so new articles are waiting when you come back.</p>
       </section>
 
       <section id="reading">
@@ -147,6 +148,9 @@
           <li><strong>Read calmly.</strong> Open an article and it docks beside the list. Tenwise fetches the <strong>full text</strong> from the source when it can, and tells you when you're reading only the feed's summary.</li>
           <li><strong>Make room.</strong> Hide the sidebar with <kbd>[</kbd> and the list with <kbd>]</kbd>, or press <kbd>f</kbd> for focus mode. The <strong>Aa</strong> menu sets font, size, spacing and width.</li>
           <li><strong>Highlight.</strong> Select text in an article to highlight it in one of four colors. Highlighting an article also <strong>saves</strong> it, so it isn't lost under tomorrow's articles. Find every highlight in <strong>Highlights</strong>.</li>
+          <li><strong>Mute and alert.</strong> In <strong>Settings → Reading → Mute and alert rules</strong>, list words or feeds to mute: matching articles disappear from every view and count (your saves keep what you saved). List alert words, and matching articles are marked in the list. Words match whole words, so muting "ai" doesn't hide "said".</li>
+          <li><strong>Since your last visit</strong><span class="app">Tenwise app</span>: when you come back, a card says how many new articles arrived while you were away, and where.</li>
+          <li><strong>Daily digest</strong><span class="app">Tenwise app</span>: an email each morning with the new articles from your feeds, at the hour you choose in <strong>Settings → Account → Email</strong>. Each article opens straight in Tenwise.</li>
           <li><strong>Find anything.</strong> Press <kbd>/</kbd> to search everything you've fetched, or <kbd>⌘</kbd> <kbd>K</kbd> to jump to any view, folder or feed and run commands.</li>
         </ul>
         <figure><img src="/docs/img/reader.jpg" width="1520" height="950" loading="lazy" alt="A folder of articles in dense rows, with one article open beside the list"><figcaption>Scan the list, and read the article beside it.</figcaption></figure>
@@ -263,6 +267,7 @@
           <li><strong>Plan &amp; billing:</strong> your Tenwise Plus plan or how many trial days are left. <strong>Subscribe</strong> takes you to Stripe to pay; <strong>Manage billing</strong> opens Stripe's page to change your card, see invoices or cancel. If you cancel, you keep Tenwise Plus until the end of the period you paid for.</li>
           <li><strong>Email:</strong> turn the daily digest, tips and product news on or off, and choose the hour the digest comes, in your own time zone. Emails about your account, your trial and billing always come. Every email also has a one-click unsubscribe.</li>
           <li><strong>Sign out:</strong> from the same menu, or <strong>Settings → Account</strong>. You can sign out on every device at once.</li>
+          <li><strong>Download your library:</strong> <strong>Settings → Data → Download your library</strong> gives you one file with your feeds, folders, saves, highlights, notes, collections, AI summaries and Studio drafts, on any plan, read-only included. It opens in the free, open-source Tenwise Engine on your own computer, so your library is always yours.</li>
           <li><strong>Your library is private</strong> to your email: nobody else signing in can see your feeds, saves or notes.</li>
           <li><strong>Where it's kept:</strong> your library lives in your own workspace on Tenwise's servers (on Cloudflare), with a continuous backup, so it's there on any browser you sign in on.</li>
           <li><strong>Where AI runs:</strong> Gemini Nano stays on your device. With your own key or OpenRouter, the text you ask about goes to that provider, and nowhere else.</li>
