@@ -35,9 +35,29 @@ Then open `http://localhost:8000` in your browser.
 
 ---
 
+## Branches and releases
+
+The website works like the platform: **`main` is production (tenwise.app), `sandbox` is for review (sandbox.tenwise.app)**.
+
+- Every change branches from `sandbox`, and its pull request targets `sandbox`.
+- Once merged, deploy the sandbox site and look at it on sandbox.tenwise.app, signed out.
+- A release is one pull request, `sandbox` → `main`, released together with the platform. Nothing goes into `main` from any other branch, hotfixes included: a hotfix merges into `sandbox` first, is checked there, then is promoted.
+
 ## Deployment
 
-Every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker (`wrangler.jsonc`, `.github/workflows/deploy.yml`). **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
+| Branch | Worker | Shown at |
+|---|---|---|
+| `main` | `tenwise-website` | tenwise.app |
+| `sandbox` | `tenwise-website-sandbox` (`env.sandbox` in `wrangler.jsonc`) | sandbox.tenwise.app, through the platform's sandbox Worker; not indexed |
+
+While GitHub Actions minutes are used up, deploy from a clean checkout of the branch, after the checks below:
+
+```bash
+npx wrangler@4.151.3 deploy --env sandbox   # from sandbox
+npx wrangler@4.151.3 deploy                 # from main, on release day only
+```
+
+Otherwise every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker, and every push to `sandbox` as `tenwise-website-sandbox` (`wrangler.jsonc`, `.github/workflows/deploy.yml`). **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
 
 Links into the app: **Sign In** is `/login`; signing out happens in the app (`/logout`) and lands back here.
 
@@ -55,7 +75,7 @@ The deploy runs the same checks first, and fails, rather than skipping, if the C
 
 In **Settings → Secrets and variables → Actions**:
 
-- `CLOUDFLARE_API_TOKEN`: a token with **Workers Scripts: Edit** on the account, as a secret of the **production** environment (the deploy). For PR previews, add it to the **preview** environment too.
+- `CLOUDFLARE_API_TOKEN`: a token with **Workers Scripts: Edit** on the account, as a secret of the **production** environment (the deploy) and of the **sandbox** environment (the sandbox deploy). For PR previews, add it to the **preview** environment too.
 - `CLOUDFLARE_ACCOUNT_ID`: the Cloudflare account id, as a repository secret.
 
 The site lives in `public/`, and only that folder is published. To deploy by hand: `npx wrangler@4.151.3 deploy` (after `npx wrangler login`).

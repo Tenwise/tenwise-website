@@ -1,26 +1,27 @@
 name: Deploy the website to Cloudflare
 
 # Every push to main publishes this folder as the tenwise-website Worker
-# (wrangler.jsonc). Visitors reach it at tenwise.app through the platform's
-# Worker, which shows the website to anyone who isn't signed in.
+# (wrangler.jsonc), and every push to sandbox as tenwise-website-sandbox.
+# Visitors reach them at tenwise.app and sandbox.tenwise.app through the
+# platform's Workers, which show the website to anyone who isn't signed in.
 # Needs CLOUDFLARE_API_TOKEN (Workers Scripts: Edit on the account) in the
 # production environment, and the repository secret CLOUDFLARE_ACCOUNT_ID.
 on:
   push:
-    branches: ["main"]
+    branches: ["main", "sandbox"]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: deploy
+  group: deploy-${{ github.ref_name }}
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: production
+    environment: ${{ github.ref_name == 'main' && 'production' || 'sandbox' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -40,7 +41,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           if [ -z "$CLOUDFLARE_API_TOKEN" ] || [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
-            echo "::error::Add the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets (README, Deployment). Nothing was deployed to tenwise.app."
+            echo "::error::Add the CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets (README, Secrets). Nothing was deployed."
             exit 1
           fi
-          npx --yes wrangler@4.151.3 deploy
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            npx --yes wrangler@4.151.3 deploy
+          else
+            npx --yes wrangler@4.151.3 deploy --env sandbox
+          fi

@@ -7,9 +7,9 @@ name: Check the website
 # get the checks only, so outside code never sees the Cloudflare token.
 on:
   pull_request:
-    branches: ["main"]
+    branches: ["main", "sandbox"]
   push:
-    branches: ["main"]
+    branches: ["main", "sandbox"]
 
 permissions:
   contents: read
