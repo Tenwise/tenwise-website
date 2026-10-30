@@ -341,3 +341,10 @@ figure.brief-demo { margin: 0; }
 @media (max-width: 640px) {
   .layout table { display: block; overflow-x: auto; }
 }
+
+/* On a phone, the legal pages' contents take two short columns, not a screen. */
+@media (max-width: 640px) {
+  .legal-toc { font-size: 13px; }
+  .legal-toc ol { columns: 2; column-gap: 12px; border-left: 0; }
+  .legal-toc a { padding: 3px 0; break-inside: avoid; }
+}
