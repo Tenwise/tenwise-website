@@ -183,11 +183,20 @@
 
       <section id="ai">
         <h2>AI</h2>
-        <p>Tenwise works with three kinds of AI. Pick whichever fits; you can change it any time in <strong>Settings → AI engines</strong>.</p>
+        <p>Tenwise works with four kinds of AI. In the Tenwise app, Tenwise AI is ready from the start; the others are there when you want no limits, or your own provider. Change it any time in <strong>Settings → AI engines</strong>.</p>
         <ul class="points">
+          <li><strong>Tenwise AI</strong><span class="app">Tenwise app</span> (included, any browser, nothing to set up): AI that Tenwise runs for you, included with your trial and Tenwise Plus, up to a monthly allowance. It's what Tenwise uses when you haven't added a key of your own. More below.</li>
           <li><strong>Gemini Nano in Chrome</strong> (free, private): the model built into desktop Google Chrome runs <strong>in your browser</strong>, so article text isn't sent to an AI service. Set-up is below.</li>
           <li><strong>OpenRouter's free models</strong><span class="app">Tenwise app</span> (free, any browser): in <strong>Settings → AI engines → Your own AI key</strong>, choose <strong>OpenRouter (free models)</strong>, follow the link to get a free key at openrouter.ai, paste it, and pick a model marked <em>free</em>. Free models have daily limits, and some free providers may use what you send them to train models, so don't send private text through them.</li>
           <li><strong>Your own key</strong><span class="app">Tenwise app</span> (any browser): Claude, OpenAI, OpenRouter or another OpenAI-compatible service, with your own API key. The key is checked with the provider, stored encrypted, and never shown again; the article text you ask about goes to that provider.</li>
+        </ul>
+        <h3>Tenwise AI<span class="app">Tenwise app</span></h3>
+        <p>Summaries, chat about an article, brief drafts and evidence checks work as soon as you sign in. Tenwise sends the text of that action (the article, your question, the notes you tick for a brief) to AI models that Tenwise runs on AWS Bedrock; it isn't kept there or used for training, and Tenwise itself keeps only how much you used, not the text. See <a href="/docs/services/">Services that see your data</a>.</p>
+        <ul class="points">
+          <li><strong>Your monthly allowance</strong> is counted per kind of answer: so many summaries, chat answers, brief drafts and evidence checks. <strong>Settings → Account → Tenwise AI this month</strong> shows what's left of each, and when it resets (the first of the month).</li>
+          <li><strong>When one runs out</strong>, that kind of answer says so, and the others keep working. Until it resets, use your own key or Gemini Nano for it; they have no Tenwise limit.</li>
+          <li><strong>Now and then Tenwise AI may pause for a while</strong> for everyone (Tenwise caps what it spends in a day). It says so; your own key and Gemini Nano still work.</li>
+          <li><strong>A key of your own comes first:</strong> once you add one in <strong>Settings → AI engines</strong>, Tenwise uses it instead, and Tenwise AI stays there to pick by hand.</li>
         </ul>
         <h3>Gemini Nano in Chrome</h3>
         <ol class="steps">
@@ -297,6 +306,8 @@
         <p>Check spam, then request a new one; each new email replaces the last. To stop abuse, Tenwise sends only a few sign-in emails per address in a short time, so if you're told to wait, wait a few minutes.</p>
         <h3>"That code isn't right" or "expired"</h3>
         <p>Codes work once, for 15 minutes, and five wrong tries end them. Request a new code.</p>
+        <h3>"You've used this month's … with Tenwise AI" or "Tenwise AI is paused"</h3>
+        <p>That kind of answer has reached its monthly allowance, or Tenwise AI is paused for the day. <strong>Settings → Account → Tenwise AI this month</strong> shows what's left and when it resets. Until then, add your own key (OpenRouter's free models work) or use Gemini Nano in Chrome, in <strong>Settings → AI engines</strong>.</p>
         <h3>"No AI model available"</h3>
         <p>Open Tenwise in desktop Google Chrome 148 or later. If it still says so, <code>chrome://on-device-internals</code> shows why Chrome can't run Gemini Nano on that computer.</p>
         <h3>A feed won't add</h3>
