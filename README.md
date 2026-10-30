@@ -15,7 +15,7 @@ The website for **Tenwise** at `tenwise.app`, deployed to Cloudflare. A product 
 
 Tenwise is a reading and research workspace: follow your sources, keep what matters with notes and highlights, and turn it into a recurring brief where every claim is linked to the passage that supports it.
 
-The site is static files in `public/`: the home page, `/pricing/`, `/terms/`, `/privacy/`, `/refunds/`, the user guide at `/docs/` (with `/docs/services/`, the services that see your data) and a 404 page. Every page loads only `assets/css/styles.css` and `assets/js/main.js`, and the fonts in `assets/fonts/` (IBM Plex Sans and Newsreader, OFL): nothing from another host.
+The site is static files in `public/`: the home page, `/pricing/`, `/terms/`, `/privacy/`, `/refunds/`, the user guide at `/docs/` (with `/docs/services/`, the services that see your data) and a 404 page. Every page loads only `assets/css/styles.css` and `assets/js/main.js`, and the fonts in `assets/fonts/` (Inter and Newsreader, OFL): nothing from another host.
 
 ### Shared parts and prices: `site/`
 
