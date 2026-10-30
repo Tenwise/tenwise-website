@@ -46,9 +46,15 @@ function price(plan) {
     return `<p class="price"><span>Price to be announced</span></p>
           <p class="price-note">Set before launch</p>`;
   }
+  if (!plan.annual) {
+    return `<p class="price">${money(plan.monthly)}<small> /month</small></p>
+          <p class="price-note">Billed monthly</p>`;
+  }
+  // Yearly shows the monthly price struck through and what the year saves.
   const perMonthYearly = plan.annual / 12;
-  return `<p class="price"><span class="price-monthly">${money(plan.monthly)}<small> /month</small></span><span class="price-annual">${money(perMonthYearly)}<small> /month</small></span></p>
-          <p class="price-note"><span class="price-monthly">Billed monthly</span><span class="price-annual">${money(plan.annual)} billed yearly</span></p>`;
+  const saving = plan.monthly * 12 - plan.annual;
+  return `<p class="price"><span class="price-monthly">${money(plan.monthly)}<small> /month</small></span><span class="price-annual"><s class="was">${money(plan.monthly)}</s>${money(perMonthYearly)}<small> /month</small></span></p>
+          <p class="price-note"><span class="price-monthly">Billed monthly, or ${money(perMonthYearly)}/month billed yearly</span><span class="price-annual">${money(plan.annual)} billed yearly <span class="save">Save ${money(saving)} a year</span></span></p>`;
 }
 
 function planCard(plan, ref) {

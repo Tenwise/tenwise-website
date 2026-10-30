@@ -223,9 +223,11 @@ html.light .logo-light { display: block !important; }
 .plan .badge { position: absolute; top: -12px; left: 28px; padding: 3px 12px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 600; }
 .plan h3 { margin: 0 0 4px; font-size: 20px; }
 .plan .for { margin: 0 0 20px; color: var(--text-secondary); font-size: 14.5px; min-height: 2.8em; }
-.plan .price { margin: 0; font-family: var(--font-serif); font-size: 44px; line-height: 1; }
-.plan .price small { font-family: var(--font-sans); font-size: 15px; color: var(--text-muted); }
-.plan .price-note { margin: 8px 0 22px; font-size: 13.5px; color: var(--text-muted); min-height: 1.6em; }
+.plan .price { margin: 0; font-family: var(--font-serif); font-size: 52px; font-weight: 500; line-height: 1; color: var(--accent); }
+.plan .price small { font-family: var(--font-sans); font-size: 15px; font-weight: 400; color: var(--text-muted); }
+.plan .price .was { margin-right: 10px; font-size: 28px; font-weight: 400; color: var(--text-muted); text-decoration-thickness: 2px; }
+.plan .price-note { margin: 10px 0 22px; font-size: 13.5px; color: var(--text-muted); min-height: 1.6em; }
+.plan .save { display: inline-block; margin-left: 6px; padding: 2px 9px; border-radius: 999px; background: var(--ok-soft); color: var(--ok); font-weight: 600; font-size: 12.5px; white-space: nowrap; }
 .plan ul { list-style: none; margin: 0 0 26px; padding: 0; flex: 1; }
 .plan li { position: relative; padding: 6px 0 6px 26px; font-size: 15px; color: var(--text-secondary); }
 .plan li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
