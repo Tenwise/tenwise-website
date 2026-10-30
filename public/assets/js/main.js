@@ -37,17 +37,77 @@ if (menuButton && mobileNav) {
 }
 
 // Screenshot tabs: each tab names its image and caption in data attributes.
+// They advance on their own, with a progress bar on the current tab, and
+// pause while the pointer is over the showcase, while the page is hidden, or
+// for good when the visitor prefers reduced motion. A click shows that tab
+// and starts its time again.
+const showcase = document.getElementById('showcase');
 const showcaseImage = document.getElementById('showcase-image');
-const showcaseCaption = document.getElementById('showcase-caption');
+const showcaseTitle = document.getElementById('showcase-title');
+const showcaseDesc = document.getElementById('showcase-desc');
 const tabs = [...document.querySelectorAll('.showcase-tab')];
-for (const tab of tabs) {
-  tab.addEventListener('click', () => {
-    for (const other of tabs) other.setAttribute('aria-selected', String(other === tab));
+const STEP_MS = 6500;
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let current = 0;
+let elapsed = 0;
+let paused = false;
+
+const showTab = (index) => {
+  current = index;
+  elapsed = 0;
+  tabs.forEach((tab, i) => {
+    tab.setAttribute('aria-selected', String(i === index));
+    tab.querySelector('.tab-progress').style.width = '0%';
+  });
+  const tab = tabs[index];
+  const swap = () => {
     showcaseImage.src = tab.dataset.src;
     showcaseImage.alt = tab.dataset.alt;
-    const title = document.createElement('strong');
-    title.textContent = tab.dataset.title;
-    showcaseCaption.replaceChildren(title, ` ${tab.dataset.desc}`);
+    showcaseTitle.textContent = tab.dataset.title;
+    showcaseDesc.textContent = tab.dataset.desc;
+    showcaseImage.classList.remove('switching');
+  };
+  if (reducedMotion) { swap(); return; }
+  showcaseImage.classList.add('switching');
+  setTimeout(swap, 220);
+};
+
+if (showcase && tabs.length) {
+  // Fetch the other screenshots now, so a switch never waits on the network.
+  for (const tab of tabs.slice(1)) { const img = new Image(); img.src = tab.dataset.src; }
+  tabs.forEach((tab, i) => tab.addEventListener('click', () => showTab(i)));
+  showcase.addEventListener('mouseenter', () => { paused = true; });
+  showcase.addEventListener('mouseleave', () => { paused = false; });
+  showcase.addEventListener('focusin', () => { paused = true; });
+  showcase.addEventListener('focusout', () => { paused = false; });
+  if (!reducedMotion) {
+    const TICK_MS = 50;
+    setInterval(() => {
+      if (paused || document.hidden) return;
+      elapsed += TICK_MS;
+      tabs[current].querySelector('.tab-progress').style.width = `${Math.min(100, (elapsed / STEP_MS) * 100)}%`;
+      if (elapsed >= STEP_MS) showTab((current + 1) % tabs.length);
+    }, TICK_MS);
+  }
+}
+
+// AI in your voice: each persona button swaps in its example draft, kept in
+// a <template> beside the preview.
+const voiceButtons = [...document.querySelectorAll('[data-voice]')];
+const voiceTag = document.getElementById('voice-tag-slot');
+const voiceText = document.getElementById('voice-text');
+for (const button of voiceButtons) {
+  button.addEventListener('click', () => {
+    for (const other of voiceButtons) other.setAttribute('aria-pressed', String(other === button));
+    const example = document.getElementById(`voice-${button.dataset.voice}`).content;
+    const swap = () => {
+      voiceTag.textContent = example.querySelector('.voice-tag').textContent;
+      voiceText.replaceChildren(...example.querySelector('.voice-text').cloneNode(true).childNodes);
+      voiceText.classList.remove('switching');
+    };
+    if (reducedMotion) { swap(); return; }
+    voiceText.classList.add('switching');
+    setTimeout(swap, 180);
   });
 }
 
