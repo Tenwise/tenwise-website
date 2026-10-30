@@ -110,6 +110,7 @@
         <table>
           <thead><tr><th>Service</th><th>When</th><th>What it sees</th></tr></thead>
           <tbody>
+            <tr><td><strong>Amazon Web Services</strong> (Bedrock, for Tenwise AI)</td><td>When you run an AI action with Tenwise AI, the hosted engine.</td><td>The text of that action (articles, notes, your prompt), sent by Tenwise from the US West (Oregon) region to the model the action uses (Amazon Nova, or Anthropic's Claude run by AWS). Bedrock doesn't keep it or use it for training, and the model makers don't see it. Tenwise keeps only the token counts and cost, for your monthly allowance.</td></tr>
             <tr><td><strong>Your own AI provider</strong> (OpenAI, Anthropic, OpenRouter or another)</td><td>When you add your key in Settings → AI engines and run an AI action.</td><td>The text of that action (articles, notes, your prompt), sent from your workspace with your key, under your agreement with that provider.</td></tr>
             <tr><td><strong>Google News</strong></td><td>When you follow an interest in the welcome or in Add feeds.</td><td>The words of the interest, in the feed address your workspace fetches. Not your name or email.</td></tr>
             <tr><td><strong>The sites you follow</strong></td><td>Whenever your workspace refreshes a feed or opens an article.</td><td>A request from Tenwise's servers, not from you.</td></tr>
