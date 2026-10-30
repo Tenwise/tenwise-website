@@ -1,0 +1,45 @@
+{
+  "_about": "Plans and prices for the whole website, in one place. node scripts/site.mjs writes them into every page's <!-- site:plans --> block. While published is false, prices show as 'Price to be announced'. Stripe holds the amount actually charged (STRIPE_PRICE_* in the platform), so change both together. ASSUMED for review (DEC-1, Tenwise/tenwise-platform#87, not agreed): two plans, Reader $6/month or $60/year and Plus $12/month or $120/year.",
+  "published": true,
+  "currency": "$",
+  "trialDays": 14,
+  "readOnlyDays": 90,
+  "annualNote": "2 months free",
+  "plans": [
+    {
+      "id": "reader",
+      "name": "Reader",
+      "for": "Your feeds and your library, hosted for you, with AI from your own key or your browser.",
+      "monthly": 6,
+      "annual": 60,
+      "features": [
+        "Feeds, blogs and Google News searches, refreshed when you open Tenwise",
+        "A dense list or a grid, and a calm docked reader",
+        "Saves with notes, highlights and collections",
+        "APA citations; export to Markdown, HTML and OPML",
+        "A daily digest email of what's new",
+        "AI with your own key, or Gemini Nano in Chrome",
+        "Read, save and highlight on your phone",
+        "Download your whole library, any time"
+      ]
+    },
+    {
+      "id": "plus",
+      "name": "Plus",
+      "featured": true,
+      "badge": "Your trial is Plus",
+      "for": "For people who turn their reading into something they send: a weekly update, a client note, a newsletter.",
+      "monthly": 12,
+      "annual": 120,
+      "includes": "Everything in Reader",
+      "features": [
+        "Recurring briefs, drafted from your sources and the notes you choose",
+        "Every claim linked to the passage that supports it",
+        "Unsupported or conflicting claims flagged before you send",
+        "Approve, export, or share a brief by link",
+        "Tenwise AI included each month, no key needed",
+        "Studio newsletters and PDFs; Send to NotebookLM"
+      ]
+    }
+  ]
+}

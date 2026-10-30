@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy · Tenwise</title>
+  <meta name="description" content="What Tenwise collects, why, who processes it, how long it's kept, and your rights: sign-in, your workspace, payments, email, AI, usage counts and shared briefs.">
+  <meta name="author" content="CodeStrata, Inc.">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/tenwise-icon.svg">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    // The visitor's theme, before the first paint (assets/js/main.js keeps it).
+    try { if (localStorage.getItem('tenwise-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) { /* storage blocked */ }
+  </script>
+</head>
+<body>
+<!-- site:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Tenwise home">
+      <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" width="193" height="30">
+      <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise" width="193" height="30">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#read">Product</a>
+      <a href="/#briefs">Briefs</a>
+      <a href="/#ai">AI</a>
+      <a href="/pricing/">Pricing</a>
+      <a href="/docs/">Guide</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between light and dark">◐</button>
+      <a class="signin-link" href="/login">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="/login?ref=site-header">Start free trial</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-controls="mobile-nav" aria-expanded="false" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu">
+    <a href="/#read">Product</a>
+    <a href="/#briefs">Briefs</a>
+    <a href="/#ai">AI</a>
+    <a href="/pricing/">Pricing</a>
+    <a href="/docs/">Guide</a>
+    <a class="btn btn-primary" href="/login?ref=site-menu">Start your free trial</a>
+  </nav>
+</header>
+<!-- /site:header -->
+
+<div class="legal-layout">
+  <nav class="legal-toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#who">Who we are</a></li>
+      <li><a href="#collect">What we collect and why</a></li>
+      <li><a href="#ai">AI and your text</a></li>
+      <li><a href="#usage">Usage counts</a></li>
+      <li><a href="#first-run">The welcome question</a></li>
+      <li><a href="#attribution">Where you came from</a></li>
+      <li><a href="#sharing">Shared briefs and readers</a></li>
+      <li><a href="#dont">What we don't do</a></li>
+      <li><a href="#services">Services that process data</a></li>
+      <li><a href="#cookies">Cookies and storage</a></li>
+      <li><a href="#retention">How long we keep it</a></li>
+      <li><a href="#your-data">Export and deletion</a></li>
+      <li><a href="#rights">Your rights</a></li>
+      <li><a href="#legal-bases">Legal bases (EU and UK)</a></li>
+      <li><a href="#transfers">International transfers</a></li>
+      <li><a href="#security">Security</a></li>
+      <li><a href="#children">Children</a></li>
+      <li><a href="#changes">Changes</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </nav>
+
+  <main id="main" class="legal">
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated 30 October 2026</p>
+
+    <div class="summary">
+      <h2>In short</h2>
+      <ul>
+        <li>We collect what it takes to run your workspace: your email, your library, your plan, and counts of how you use Tenwise. Never which articles you read for analytics or ads.</li>
+        <li>No advertising, no selling data, no third-party analytics or tracking scripts, on the app or this website.</li>
+        <li>Your AI text goes only where you choose: AWS (Tenwise AI), your own provider, or nowhere (Gemini Nano on your device).</li>
+        <li>Every service that sees your data is <a href="/docs/services/">listed, with what it sees</a>.</li>
+        <li>Download your library any time. Ask us to delete your account, and we do.</li>
+      </ul>
+    </div>
+
+    <section id="who">
+      <h2>1. Who we are</h2>
+      <p>CodeStrata, Inc. ("we", "us"), 8026 W Nicolet Ave, Glendale, AZ 85303, runs Tenwise at tenwise.app and is the controller of the personal data described here. This policy covers the Tenwise website, the app, our emails and shared brief pages. It doesn't cover the open-source Tenwise Engine you run yourself, which sends us nothing, or the sites and services you choose to connect.</p>
+    </section>
+
+    <section id="collect">
+      <h2>2. What we collect and why</h2>
+
+      <h3>When you sign in</h3>
+      <ul>
+        <li><strong>Your email address</strong>, to create your account and send you a one-time sign-in code and link. There's no password.</li>
+        <li><strong>A session</strong>, kept in a secure cookie for up to 30 days, so you stay signed in on that browser. You can sign out of every device in Settings → Account.</li>
+        <li><strong>Abuse protection.</strong> Cloudflare Turnstile checks in your browser that a person, not a script, is signing in. To limit sign-in emails and new trials, we count requests per email address and per network; we store those as keyed hashes, not as addresses, and only for the window they count (15 minutes to a day).</li>
+      </ul>
+
+      <h3>Your workspace</h3>
+      <p>Your library: your feeds and folders, the articles your feeds bring in, the pages you save, your notes, highlights, collections, briefs, Studio drafts, AI summaries and settings. It lives in your own workspace on Cloudflare, which runs only while you use Tenwise, and is continuously backed up to Cloudflare R2 storage. It's private to your account. To bring in articles, your workspace requests the feeds and pages you follow from their sites, as Tenwise rather than as you; a Google News feed's address carries the words of that search.</p>
+
+      <h3>Your account and plan</h3>
+      <p>Your plan and trial dates, email preferences and digest hour, your answer to the welcome question, where you came from, your Tenwise AI usage, and any feedback you send us. If you subscribe, Stripe gives us your subscription status, the plan and its dates, and a customer reference; your card details stay with Stripe.</p>
+
+      <h3>Email</h3>
+      <p>We send email through Amazon Simple Email Service (SES): sign-in codes; account, trial and billing emails, which always come; and, if you leave them on, the daily digest (the titles and sources of new articles from your feeds), tips and product news. Every email that isn't about your account has a one-click unsubscribe, and you can change them any time in Settings → Account → Email. To send the digest, Tenwise opens your workspace once a day to check your feeds.</p>
+
+      <h3>Running the service</h3>
+      <p>Like any website, Cloudflare receives every request, including your IP address, browser and the page asked for. Our logs of these requests are kept for up to 7 days to fix problems and stop abuse.</p>
+    </section>
+
+    <section id="ai">
+      <h2>3. AI and your text</h2>
+      <p>AI runs only when you ask for an AI action (a summary, chat, a brief draft or an evidence check) or turn on background processing. Where your text goes depends on the AI engine you use:</p>
+      <table class="facts">
+        <tbody>
+          <tr><th scope="row">Tenwise AI</th><td>Tenwise sends the text of that action (the article, your question, and the notes you tick for a brief) to models it runs on Amazon Web Services' Bedrock service in the United States: Amazon Nova, or Anthropic's Claude run by AWS. AWS doesn't keep it or use it to train models, and the model makers don't receive it. We keep only how much you used (tokens and cost) for your monthly allowance, never the text.</td></tr>
+          <tr><th scope="row">Your own key</th><td>Your workspace sends the text of that action directly to the provider you chose (such as Anthropic, OpenAI or OpenRouter), under your agreement with them. Your key is stored encrypted in your workspace and never shown again.</td></tr>
+          <tr><th scope="row">Gemini Nano</th><td>Runs in desktop Chrome on your computer. The text never leaves your device.</td></tr>
+        </tbody>
+      </table>
+      <p>Settings → AI engines shows which engine Tenwise is using. We never use your library or your AI text to train models.</p>
+    </section>
+
+    <section id="usage">
+      <h2>4. Usage counts</h2>
+      <p>To understand whether Tenwise is working for people, and to send trial emails that fit what you've done, we record counts, not content: how many feeds, articles read, saves, highlights, notes, collections, AI summaries and Studio items you have, and which days you opened Tenwise. Your workspace reports these numbers about once a day while it's running. Nothing about which articles, feeds or words you read leaves your workspace for this.</p>
+    </section>
+
+    <section id="first-run">
+      <h2>5. The welcome question</h2>
+      <p>When you first open Tenwise, we ask, optionally, what you make from your reading, for whom and how often. You pick from fixed choices, with no free text. We store your answer on your account to set up your first brief and to learn, in totals, which kinds of work Tenwise serves.</p>
+    </section>
+
+    <section id="attribution">
+      <h2>6. Where you came from</h2>
+      <p>If you sign up from a link that names a campaign, an edition or a referral (for example a link on this website, in a newsletter, from a trial code, or from a brief someone shared), we record that name on your account once, when it's created. We use it, in totals, to see which channels bring people who stay. We don't use advertising cookies or pixels for this.</p>
+    </section>
+
+    <section id="sharing">
+      <h2>7. Shared briefs and reader accounts</h2>
+      <ul>
+        <li><strong>Sharing a brief.</strong> When you share an approved brief by link, we keep a copy of that version (its text and source links, without your private notes or the draft's marks) and show it to anyone who has the link, without signing in. It shows a byline only if you add one. Stop sharing removes it for everyone. Sign-ups from your link are counted under your referral.</li>
+        <li><strong>Reader accounts.</strong> If you keep a brief someone shared, we store your email and the briefs you kept. A reader account has no workspace, and we email it only to sign in.</li>
+      </ul>
+    </section>
+
+    <section id="dont">
+      <h2>8. What we don't do</h2>
+      <ul>
+        <li>We don't show ads, and we don't sell or rent personal data, or "share" it for cross-context advertising.</li>
+        <li>We don't use third-party analytics, tracking scripts or advertising pixels in the app or on this website. Our fonts and scripts are served from our own address.</li>
+        <li>We don't read your library, except when you ask us to help with a problem, or when the law requires it.</li>
+        <li>We don't use your content to train AI models.</li>
+      </ul>
+    </section>
+
+    <section id="services">
+      <h2>9. Services that process data for us</h2>
+      <p>We use a small number of providers (sub-processors), each only for the purpose listed. <a href="/docs/services/">Services that see your data</a> lists every one, what it sees and for how long, and we update it before we add one.</p>
+      <table class="facts">
+        <tbody>
+          <tr><th scope="row">Cloudflare</th><td>Hosting: the website, sign-in (including Turnstile), the app, your workspace, the account database (D1) and library backups (R2).</td></tr>
+          <tr><th scope="row">Amazon Web Services</th><td>Email (SES) and, when you use it, Tenwise AI (Bedrock), in the United States.</td></tr>
+          <tr><th scope="row">Stripe</th><td>Payments, invoices, the billing page and tax calculation. Stripe is also an independent controller for payment data.</td></tr>
+        </tbody>
+      </table>
+      <p>Services you choose yourself, such as your own AI provider, Google News feeds, or the sites you follow, receive only what's needed for that request.</p>
+      <p>We may also disclose data if the law requires it, to protect the rights and safety of people or the service, or as part of a merger or sale of the business, in which case this policy continues to apply to it.</p>
+    </section>
+
+    <section id="cookies">
+      <h2>10. Cookies and local storage</h2>
+      <p>We use only what the service needs:</p>
+      <ul>
+        <li>Two sign-in cookies: your session, and a short-lived one while a sign-in is pending. They can only be read by tenwise.app, not by scripts or other sites.</li>
+        <li>Your browser's local storage, for preferences such as your theme and, in the app, your reading settings on that browser.</li>
+      </ul>
+      <p>We don't use advertising or analytics cookies, so there's nothing to opt out of.</p>
+    </section>
+
+    <section id="retention">
+      <h2>11. How long we keep it</h2>
+      <table class="facts">
+        <tbody>
+          <tr><th scope="row">Your account and library</th><td>While you have an account. If a trial or subscription ends without payment, for 90 days read-only, then deleted, with emails 30 and 7 days before.</td></tr>
+          <tr><th scope="row">Sign-in codes and links</th><td>15 minutes, and used once.</td></tr>
+          <tr><th scope="row">Sessions</th><td>Up to 30 days, or until you sign out.</td></tr>
+          <tr><th scope="row">Abuse counters</th><td>15 minutes to a day, as hashes.</td></tr>
+          <tr><th scope="row">Request logs</th><td>Up to 7 days.</td></tr>
+          <tr><th scope="row">Shared briefs</th><td>Until you stop sharing, or your account is deleted.</td></tr>
+          <tr><th scope="row">Email delivery records</th><td>As AWS keeps them for delivery and abuse checks.</td></tr>
+          <tr><th scope="row">Payment records</th><td>Kept by Stripe, and by us where tax and accounting law requires (typically up to 7 years).</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="your-data">
+      <h2>12. Export and deletion</h2>
+      <ul>
+        <li><strong>Download your library</strong>: Settings → Data → <em>Download your library</em>, on any plan, read-only included. It opens in the free Tenwise Engine.</li>
+        <li><strong>Export your saves and notes</strong> as HTML or Markdown, your feeds as OPML and your highlights as CSV.</li>
+        <li><strong>Delete your account</strong>: write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a> from your account's email address. We delete your library, its backups and every record about you in our account database within 30 days, apart from payment records we must keep. Cancel any subscription first, in Manage billing.</li>
+      </ul>
+    </section>
+
+    <section id="rights">
+      <h2>13. Your rights</h2>
+      <p>Wherever you live, you can ask us to access, correct, export or delete your personal data, and to stop sending you non-essential email. Depending on where you live (for example in the EU, the UK, or California and other US states), you may also have the right to object to or restrict processing, to withdraw consent, and not to be treated differently for using your rights. Write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a>; we'll answer within 30 days and may need to confirm it's you. You can also complain to your local data protection authority.</p>
+    </section>
+
+    <section id="legal-bases">
+      <h2>14. Legal bases (EU and UK)</h2>
+      <ul>
+        <li><strong>Contract</strong>: running your account, workspace, sign-in, billing, AI actions you request, sharing you choose, and account emails.</li>
+        <li><strong>Legitimate interests</strong>: preventing abuse and fraud, keeping the service secure, usage counts, the welcome question and where you came from (to improve Tenwise), and tips and product news, which you can turn off any time.</li>
+        <li><strong>Consent</strong>: the daily digest you choose to receive, where the law requires consent.</li>
+        <li><strong>Legal obligation</strong>: keeping payment and tax records.</li>
+      </ul>
+    </section>
+
+    <section id="transfers">
+      <h2>15. International transfers</h2>
+      <p>CodeStrata is in the United States, and Tenwise is run on servers there and in Cloudflare's global network. When we transfer personal data from the EU, the UK or Switzerland, we rely on our providers' commitments under the EU-US Data Privacy Framework and its UK and Swiss extensions where they apply, and on the European Commission's standard contractual clauses.</p>
+    </section>
+
+    <section id="security">
+      <h2>16. Security</h2>
+      <p>Sign-in uses one-time codes and secure, HTTP-only cookies; secrets are stored as keyed hashes; each person's workspace is kept apart from everyone else's; and connections are encrypted. No system is perfectly secure; if we learn of a breach that affects you, we'll tell you as the law requires. To report a security issue, write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a> with "Security" in the subject.</p>
+    </section>
+
+    <section id="children">
+      <h2>17. Children</h2>
+      <p>Tenwise is not for children under 16, and we don't knowingly collect their data. If you believe a child has an account, write to us and we'll delete it.</p>
+    </section>
+
+    <section id="changes">
+      <h2>18. Changes to this policy</h2>
+      <p>We'll update this policy, and the services list, before we change what we collect or who processes it. If a change is significant, we'll tell you by email or in the app before it takes effect. The date at the top shows the last change.</p>
+    </section>
+
+    <section id="contact">
+      <h2>19. Contact</h2>
+      <p>CodeStrata, Inc., 8026 W Nicolet Ave, Glendale, AZ 85303<br>
+      Email: <a href="mailto:ask@tenwise.app">ask@tenwise.app</a></p>
+    </section>
+  </main>
+</div>
+
+<!-- site:footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" width="167" height="26">
+        <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise" width="167" height="26">
+        <p>Turn what you read into briefs you can stand behind. A product of CodeStrata, Inc.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/#read">Reading</a></li>
+          <li><a href="/#briefs">Recurring briefs</a></li>
+          <li><a href="/#ai">AI</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="https://github.com/Tenwise/tenwise-engine">Open-source engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Help</h2>
+        <ul>
+          <li><a href="/docs/">Guide</a></li>
+          <li><a href="mailto:ask@tenwise.app">ask@tenwise.app</a></li>
+          <li><a href="/billing">Manage billing</a></li>
+          <li><a href="/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/refunds/">Refunds and cancellation</a></li>
+          <li><a href="/docs/services/">Services that see your data</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 CodeStrata, Inc.</span>
+      <span>No ads. No third-party trackers.</span>
+    </div>
+  </div>
+</footer>
+<!-- /site:footer -->
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

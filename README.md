@@ -13,9 +13,20 @@ The website for **Tenwise** at `tenwise.app`, deployed to Cloudflare. A product 
 
 ## Overview
 
-Tenwise is a calm reading workspace for people who read a lot, and a research and engagement layer for enterprise teams: follow what matters, save with notes and citations, and turn reading into briefings.
+Tenwise is a reading and research workspace: follow your sources, keep what matters with notes and highlights, and turn it into a recurring brief where every claim is linked to the passage that supports it.
 
-The site is static files in `public/`: the home page, the user guide at `/docs/` and a 404 page. The guide documents the Tenwise app and marks what the free, open-source [Tenwise Engine](https://github.com/Tenwise/tenwise-engine) doesn't have.
+The site is static files in `public/`: the home page, `/pricing/`, `/terms/`, `/privacy/`, `/refunds/`, the user guide at `/docs/` (with `/docs/services/`, the services that see your data) and a 404 page. Every page loads only `assets/css/styles.css` and `assets/js/main.js`, and the fonts in `assets/fonts/` (IBM Plex Sans and Newsreader, OFL): nothing from another host.
+
+### Shared parts and prices: `site/`
+
+The header, the footer and the plans and prices are kept once, in `site/header.html`, `site/footer.html` and `site/plans.json`. Pages mark where they go (`<!-- site:header -->…<!-- /site:header -->`, `site:footer`, `site:plans ref="…"`), and a script writes them in:
+
+```bash
+node scripts/site.mjs           # after changing anything in site/
+node scripts/site.mjs --check   # exit 1 if a page is out of step
+```
+
+To change a price or a plan, edit `site/plans.json` and run the script. While `"published"` is `false`, every price shows as "Price to be announced". Stripe holds the amount actually charged (the platform's `STRIPE_PRICE_*`), so change both together. The guide documents the Tenwise app and marks what the free, open-source [Tenwise Engine](https://github.com/Tenwise/tenwise-engine) doesn't have.
 
 ---
 
@@ -60,13 +71,14 @@ npx wrangler@4.151.3 deploy --message "commit $(git rev-parse HEAD)"            
 
 Otherwise every push to `main` publishes the site to Cloudflare as the `tenwise-website` Worker, and every push to `sandbox` as `tenwise-website-sandbox` (`wrangler.jsonc`, `.github/workflows/deploy.yml`). **tenwise.app** belongs to the Tenwise platform's Worker, which shows this website to anyone who isn't signed in, serves the sign-in at `/login`, and shows signed-in people their library. `www.tenwise.app` redirects to `tenwise.app`.
 
-Links into the app: **Sign In** is `/login`; signing out happens in the app (`/logout`) and lands back here.
+Links into the app are root-relative, so they reach the app on whichever host shows the site (sandbox.tenwise.app or tenwise.app) with no setting: **Sign In** and sign-up are `/login` (sign-up links add `?ref=site-…` so the platform counts where sign-ups came from, EDN-1); **Manage billing** is `/billing`; email preferences are `/email/preferences`; signing out happens in the app (`/logout`) and lands back here.
 
 ## Checks and previews
 
 Every pull request (`.github/workflows/ci.yml`):
 
 - **HTML is valid**: `npx html-validate@11.17.0 "public/**/*.html"`, with the rules in `.htmlvalidate.json`. Style rules are off.
+- **Shared parts are in step**: `node scripts/site.mjs --check`.
 - **Internal links resolve**: `node scripts/check-links.mjs` checks every `href`, `src` and CSS `url()` in `public/`, and every `#anchor`.
 - **A preview**: the PR's version of the site, uploaded but not live, at its own `workers.dev` address, linked in a comment on the PR and updated with each push. PRs from forks get the checks only, and until the repository has its Cloudflare secrets every PR does (the preview job skips with a warning).
 

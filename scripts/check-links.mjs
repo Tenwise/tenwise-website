@@ -2,13 +2,14 @@
 // somewhere: each href and src in the HTML, and each url() in the CSS, must
 // name a file that exists, and each #anchor an id on the page it points to.
 // Links to other sites, mailto: and tel: are left alone. App routes the
-// platform serves on tenwise.app (/login, /logout) are allowed by name.
+// platform serves on tenwise.app (/login, /logout, /billing,
+// /email/preferences) are allowed by name.
 // Usage: node scripts/check-links.mjs   (exit 1 if anything is broken)
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, join, relative, resolve } from 'node:path';
 
 const ROOT = resolve('public');
-const APP_ROUTES = new Set(['/login', '/logout']);
+const APP_ROUTES = new Set(['/login', '/logout', '/billing', '/email/preferences']);
 
 const files = (dir) => readdirSync(dir).flatMap((name) => {
   const path = join(dir, name);

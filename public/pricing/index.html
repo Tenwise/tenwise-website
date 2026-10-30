@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing · Tenwise</title>
+  <meta name="description" content="Tenwise plans and prices: a 14-day free trial with no card, then Reader or Plus. What happens when the trial ends, read-only for 90 days, cancelling, refunds and your library.">
+  <meta name="author" content="CodeStrata, Inc.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tenwise.app/pricing/">
+  <meta property="og:title" content="Tenwise pricing">
+  <meta property="og:image" content="https://tenwise.app/assets/images/screenshots/01-saved-reader-dark.png">
+  <link rel="icon" type="image/svg+xml" href="/assets/images/brand/tenwise-icon.svg">
+  <link rel="preload" href="/assets/fonts/ibm-plex-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <script>
+    // The visitor's theme, before the first paint (assets/js/main.js keeps it).
+    try { if (localStorage.getItem('tenwise-theme') === 'light') document.documentElement.classList.add('light'); } catch (e) { /* storage blocked */ }
+  </script>
+</head>
+<body>
+<!-- site:header -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Tenwise home">
+      <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" width="193" height="30">
+      <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise" width="193" height="30">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#read">Product</a>
+      <a href="/#briefs">Briefs</a>
+      <a href="/#ai">AI</a>
+      <a href="/pricing/" aria-current="page">Pricing</a>
+      <a href="/docs/">Guide</a>
+    </nav>
+    <div class="header-actions">
+      <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch between light and dark">◐</button>
+      <a class="signin-link" href="/login">Sign in</a>
+      <a class="btn btn-primary btn-sm" href="/login?ref=site-header">Start free trial</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-controls="mobile-nav" aria-expanded="false" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Menu">
+    <a href="/#read">Product</a>
+    <a href="/#briefs">Briefs</a>
+    <a href="/#ai">AI</a>
+    <a href="/pricing/" aria-current="page">Pricing</a>
+    <a href="/docs/">Guide</a>
+    <a class="btn btn-primary" href="/login?ref=site-menu">Start your free trial</a>
+  </nav>
+</header>
+<!-- /site:header -->
+
+<main id="main">
+  <section class="hero hero-tight center">
+    <div class="wrap">
+      <p class="eyebrow">Pricing</p>
+      <h1>Start with 14 days of Plus. <em>No card.</em></h1>
+      <p class="lede">Then pick the plan that fits how you work. Cancel any time, and your library is always yours to download.</p>
+    </div>
+  </section>
+
+  <section id="plans" class="section section-flush">
+    <div class="wrap">
+<!-- site:plans ref="site-pricing" -->
+      <div class="center"><div class="billing-switch" role="group" aria-label="Billing period">
+        <button type="button" data-period="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" data-period="annual" aria-pressed="true">Yearly · 2 months free</button>
+      </div></div>
+      <div class="plans">
+        <article class="plan" id="plan-reader">
+          <h3>Reader</h3>
+          <p class="for">Your feeds and your library, hosted for you, with AI from your own key or your browser.</p>
+          <p class="price"><span class="price-monthly">$6<small> /month</small></span><span class="price-annual"><s class="was">$6</s>$5<small> /month</small></span></p>
+          <p class="price-note"><span class="price-monthly">Billed monthly, or $5/month billed yearly</span><span class="price-annual">$60 billed yearly <span class="save">Save $12 a year</span></span></p>
+          <ul>
+            <li>Feeds, blogs and Google News searches, refreshed when you open Tenwise</li>
+            <li>A dense list or a grid, and a calm docked reader</li>
+            <li>Saves with notes, highlights and collections</li>
+            <li>APA citations; export to Markdown, HTML and OPML</li>
+            <li>A daily digest email of what's new</li>
+            <li>AI with your own key, or Gemini Nano in Chrome</li>
+            <li>Read, save and highlight on your phone</li>
+            <li>Download your whole library, any time</li>
+          </ul>
+          <a class="btn btn-ghost" href="/login?ref=site-pricing-reader">Start your 14-day free trial</a>
+        </article>
+        <article class="plan featured" id="plan-plus">
+          <span class="badge">Your trial is Plus</span>
+          <h3>Plus</h3>
+          <p class="for">For people who turn their reading into something they send: a weekly update, a client note, a newsletter.</p>
+          <p class="price"><span class="price-monthly">$12<small> /month</small></span><span class="price-annual"><s class="was">$12</s>$10<small> /month</small></span></p>
+          <p class="price-note"><span class="price-monthly">Billed monthly, or $10/month billed yearly</span><span class="price-annual">$120 billed yearly <span class="save">Save $24 a year</span></span></p>
+          <ul>
+            <li class="plus-all">Everything in Reader</li>
+            <li>Recurring briefs, drafted from your sources and the notes you choose</li>
+            <li>Every claim linked to the passage that supports it</li>
+            <li>Unsupported or conflicting claims flagged before you send</li>
+            <li>Approve, export, or share a brief by link</li>
+            <li>Tenwise AI included each month, no key needed</li>
+            <li>Studio newsletters and PDFs; Send to NotebookLM</li>
+          </ul>
+          <a class="btn btn-primary" href="/login?ref=site-pricing-plus">Start your 14-day free trial</a>
+        </article>
+      </div>
+<!-- /site:plans -->
+      <p class="pricing-foot">Prices in US dollars. Where sales tax or VAT applies, Stripe adds it at checkout.</p>
+
+      <div class="grid grid-2 mt-lg">
+        <div class="card" id="readers">
+          <span class="tag">Free</span>
+          <h3>Reader account</h3>
+          <p>Someone shared a brief with you? Read it without signing in, or keep it with a free reader account. There's no trial and no card; your own 14-day trial starts only if you choose to open a workspace.</p>
+        </div>
+        <div class="card" id="engine">
+          <span class="tag">Free and open source</span>
+          <h3>Tenwise Engine</h3>
+          <p>The <a href="https://github.com/Tenwise/tenwise-engine">engine</a> behind Tenwise, under AGPL-3.0, to run on your own computer. It needs Node.js and a terminal. It has the reader, saves, notes, collections and citations, and opens a library you download from Tenwise.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="trial" class="section section-alt">
+    <div class="wrap narrow">
+      <p class="eyebrow">Trial terms</p>
+      <h2 class="section-title">The 14-day trial</h2>
+      <table class="facts">
+        <tbody>
+          <tr><th scope="row">Length</th><td>14 days from your first sign-in. If you joined as a reader of a shared brief, it starts when you choose <em>Start your own brief</em>.</td></tr>
+          <tr><th scope="row">Card</th><td>Not needed. Nothing is charged unless you subscribe.</td></tr>
+          <tr><th scope="row">What's included</th><td>Everything in Plus: recurring briefs, Tenwise AI with a monthly allowance, Studio, and everything in Reader.</td></tr>
+          <tr><th scope="row">Reminders</th><td>An email when it starts, 3 days before it ends, and when it ends. Your plan page always shows the days left.</td></tr>
+          <tr><th scope="row">When it ends</th><td>Subscribe to Reader or Plus, or do nothing: your library becomes <a href="#read-only">read-only</a>.</td></tr>
+          <tr><th scope="row">How many</th><td>One trial per person. To keep Tenwise free of abuse, a network can start only a few trials a day.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="read-only" class="section">
+    <div class="wrap narrow">
+      <p class="eyebrow">If you don't subscribe</p>
+      <h2 class="section-title">Read-only, then deleted after 90 days</h2>
+      <p class="section-lede">When a trial or subscription ends without payment, nothing is lost straight away.</p>
+      <table class="facts">
+        <tbody>
+          <tr><th scope="row">You can still</th><td>Read your library, mark articles read, export your saves and notes, and download your whole library.</td></tr>
+          <tr><th scope="row">Paused</th><td>Adding feeds, refreshing, saving, highlights, AI, briefs and Studio. Each says it needs a plan, with a link to subscribe.</td></tr>
+          <tr><th scope="row">For how long</th><td>90 days from the day your trial or paid period ended. We email you 30 days and 7 days before deletion.</td></tr>
+          <tr><th scope="row">Then</th><td>Your library and account are deleted. Stripe keeps its payment records as the law requires.</td></tr>
+          <tr><th scope="row">Changed your mind?</th><td>Subscribe any time within the 90 days and everything works again, as you left it.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-alt">
+    <div class="wrap narrow">
+      <p class="eyebrow">Questions</p>
+      <h2 class="section-title">Frequently asked</h2>
+      <div class="faq">
+        <details id="faq-trial-end">
+          <summary>What happens when my trial ends?</summary>
+          <p>If you've subscribed, nothing changes. If not, your library becomes read-only: you can read it, export it and download it for 90 days, and subscribe any time to pick up where you left off. After 90 days it's deleted, with emails 30 and 7 days before.</p>
+        </details>
+        <details id="cancel">
+          <summary>How do I cancel?</summary>
+          <p>In Tenwise, open Settings → Account → <a href="/billing">Manage billing</a>. That opens Stripe's billing page, where you cancel in one click. You keep your plan until the end of the period you've paid for; then your library becomes read-only for 90 days. More on <a href="/refunds/">refunds and cancellation</a>.</p>
+        </details>
+        <details id="refunds">
+          <summary>Can I get a refund?</summary>
+          <p>Yes, on your first payment: if Tenwise isn't for you, write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a> within 14 days of it and we refund it in full. The same goes for each yearly renewal. Otherwise we don't refund part-used periods, and cancelling keeps your plan to the end of the period. See <a href="/refunds/#refunds">Refunds and cancellation</a>.</p>
+        </details>
+        <details id="faq-switch">
+          <summary>Can I switch between Reader and Plus?</summary>
+          <p>Yes, any time, in Manage billing. Stripe works out the difference for the rest of your period.</p>
+        </details>
+        <details id="faq-export">
+          <summary>Can I take my library with me?</summary>
+          <p>Always, on any plan, read-only included. Settings → Data → <em>Download your library</em> gives you one file with your feeds, folders, saves, highlights, notes, collections, AI summaries and Studio drafts; it opens in the free, open-source Tenwise Engine. <em>Export your saves and notes</em> gives HTML or Markdown for OneNote, Word, Notion or Obsidian.</p>
+        </details>
+        <details id="faq-readers">
+          <summary>Someone shared a brief with me. Do I need to pay?</summary>
+          <p>No. Anyone with the link can read a shared brief without signing in. To keep it, press <em>Keep this brief</em> and sign in with your email: that makes a free reader account, with no trial and no card. Your own 14-day trial starts only when you choose <em>Start your own brief</em>.</p>
+        </details>
+        <details id="faq-ai">
+          <summary>What's included in Tenwise AI?</summary>
+          <p>Your trial and Plus include a monthly allowance of summaries, chat answers, brief drafts and evidence checks, run by Tenwise on AWS Bedrock. Settings → Account shows what's left and when it resets. When one kind runs out, use your own key or Gemini Nano in Chrome, which have no Tenwise limit. Reader uses your own key or Gemini Nano.</p>
+        </details>
+        <details id="faq-free">
+          <summary>Is there a free plan?</summary>
+          <p>Not for a hosted workspace: each one runs on its own server while you use it, and that costs us real money. What's free: reader accounts for briefs shared with you, and the open-source Tenwise Engine on your own computer.</p>
+        </details>
+        <details id="faq-card">
+          <summary>Do I need a card to try it?</summary>
+          <p>No. Sign in with your email, and you get 14 days of Plus. You only enter a card, on Stripe's own page, if you subscribe.</p>
+        </details>
+        <details id="faq-teams">
+          <summary>Can I sign up a class or a team?</summary>
+          <p>Write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a> with how many people and what you'd use it for, and we'll set you up.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="callout">
+        <div>
+          <h3>Start reading in a minute.</h3>
+          <p>Sign in with your email, no password. 14 days of Plus, no card.</p>
+        </div>
+        <a class="btn btn-primary btn-lg" href="/login?ref=site-pricing-close">Start your free trial</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- site:footer -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img class="logo-dark" src="/assets/images/brand/tenwise-wordmark-dark.svg" alt="Tenwise" width="167" height="26">
+        <img class="logo-light" src="/assets/images/brand/tenwise-wordmark-light.svg" alt="Tenwise" width="167" height="26">
+        <p>Turn what you read into briefs you can stand behind. A product of CodeStrata, Inc.</p>
+      </div>
+      <div>
+        <h2>Product</h2>
+        <ul>
+          <li><a href="/#read">Reading</a></li>
+          <li><a href="/#briefs">Recurring briefs</a></li>
+          <li><a href="/#ai">AI</a></li>
+          <li><a href="/pricing/">Pricing</a></li>
+          <li><a href="https://github.com/Tenwise/tenwise-engine">Open-source engine</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Help</h2>
+        <ul>
+          <li><a href="/docs/">Guide</a></li>
+          <li><a href="mailto:ask@tenwise.app">ask@tenwise.app</a></li>
+          <li><a href="/billing">Manage billing</a></li>
+          <li><a href="/login">Sign in</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="/terms/">Terms of Service</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/refunds/">Refunds and cancellation</a></li>
+          <li><a href="/docs/services/">Services that see your data</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-base">
+      <span>© 2026 CodeStrata, Inc.</span>
+      <span>No ads. No third-party trackers.</span>
+    </div>
+  </div>
+</footer>
+<!-- /site:footer -->
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
