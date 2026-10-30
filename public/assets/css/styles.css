@@ -335,3 +335,9 @@ html.annual .price-annual { display: inline; }
 .hero-tight { padding-bottom: 40px; }
 .section-flush { padding-top: 0; }
 figure.brief-demo { margin: 0; }
+
+/* The guide's wide tables (the services list) scroll on their own on a phone,
+   instead of widening the page. */
+@media (max-width: 640px) {
+  .layout table { display: block; overflow-x: auto; }
+}
