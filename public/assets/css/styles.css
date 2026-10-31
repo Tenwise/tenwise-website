@@ -401,7 +401,7 @@ html.annual .price-annual { display: inline; }
   .voice-preview { padding: 22px; }
   .voice-text { font-size: 19px; }
   .header-actions .btn { display: none; }
-  .brand img { height: 26px; }
+  .brand img { height: 22px; }
   .callout { padding: 22px; }
   .facts th, .facts td { display: block; width: 100%; padding: 4px 0; border: 0; }
   .facts tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--border-subtle); }
