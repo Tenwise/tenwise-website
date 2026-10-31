@@ -24,16 +24,15 @@ for (const button of document.querySelectorAll('[data-theme-toggle]')) {
 const menuButton = document.querySelector('[data-menu-toggle]');
 const mobileNav = document.getElementById('mobile-nav');
 if (menuButton && mobileNav) {
-  menuButton.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
+  // ☰ opens the menu and becomes ✕ to close it.
+  const setOpen = (open) => {
+    mobileNav.classList.toggle('open', open);
     menuButton.setAttribute('aria-expanded', String(open));
-  });
-  for (const link of mobileNav.querySelectorAll('a')) {
-    link.addEventListener('click', () => {
-      mobileNav.classList.remove('open');
-      menuButton.setAttribute('aria-expanded', 'false');
-    });
-  }
+    menuButton.textContent = open ? '✕' : '☰';
+    menuButton.setAttribute('aria-label', open ? 'Close menu' : 'Menu');
+  };
+  menuButton.addEventListener('click', () => setOpen(!mobileNav.classList.contains('open')));
+  for (const link of mobileNav.querySelectorAll('a')) link.addEventListener('click', () => setOpen(false));
 }
 
 // Screenshot tabs: each tab names its image and caption in data attributes.
