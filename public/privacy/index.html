@@ -57,6 +57,7 @@
       <li><a href="#usage">Usage counts</a></li>
       <li><a href="#first-run">The welcome question</a></li>
       <li><a href="#attribution">Where you came from</a></li>
+      <li><a href="#website-analytics">Website analytics</a></li>
       <li><a href="#sharing">Shared briefs and readers</a></li>
       <li><a href="#dont">What we don't do</a></li>
       <li><a href="#services">Services that process data</a></li>
@@ -82,7 +83,7 @@
       <h2>In short</h2>
       <ul>
         <li>We collect what it takes to run your workspace: your email, your library, your plan, and counts of how you use Tenwise. Never which articles you read for analytics or ads.</li>
-        <li>No advertising, no selling data, no third-party analytics or tracking scripts, on the app or this website.</li>
+        <li>No advertising and no selling data. The app has no analytics or tracking scripts; this website counts page visits with Cloudflare Web Analytics, which uses no cookies.</li>
         <li>Your AI text goes only where you choose: AWS (Tenwise AI), your own provider, or nowhere (Gemini Nano on your device).</li>
         <li>Every service that sees your data is <a href="/docs/services/">listed, with what it sees</a>.</li>
         <li>Download your library any time. Ask us to delete your account, and we do.</li>
@@ -145,8 +146,14 @@
       <p>If you sign up from a link that names a campaign, an edition or a referral (for example a link on this website, in a newsletter, from a trial code, or from a brief someone shared), we record that name on your account once, when it's created. We use it, in totals, to see which channels bring people who stay. We don't use advertising cookies or pixels for this.</p>
     </section>
 
+    <section id="website-analytics">
+      <h2>7. Website analytics</h2>
+      <p>Cloudflare, which hosts Tenwise, adds its Web Analytics script to the pages of this website, including the guide. It counts visits to each page: the page's address, the site that linked to it, your browser, operating system and type of device, your country, and how fast the page loaded. It uses no cookies or local storage and doesn't fingerprint you, so it can't recognise you from one visit to the next or follow you to other sites. We see only totals.</p>
+      <p>It doesn't run in the app, on the sign-in and billing pages, or on shared briefs: their security policy allows only Tenwise's own scripts. If you block it in your browser, the website works the same.</p>
+    </section>
+
     <section id="sharing">
-      <h2>7. Shared briefs and reader accounts</h2>
+      <h2>8. Shared briefs and reader accounts</h2>
       <ul>
         <li><strong>Sharing a brief.</strong> When you share an approved brief by link, we keep a copy of that version (its text and source links, without your private notes or the draft's marks) and show it to anyone who has the link, without signing in. It shows a byline only if you add one. Stop sharing removes it for everyone. Sign-ups from your link are counted under your referral.</li>
         <li><strong>Reader accounts.</strong> If you keep a brief someone shared, we store your email and the briefs you kept. A reader account has no workspace, and we email it only to sign in.</li>
@@ -154,21 +161,21 @@
     </section>
 
     <section id="dont">
-      <h2>8. What we don't do</h2>
+      <h2>9. What we don't do</h2>
       <ul>
         <li>We don't show ads, and we don't sell or rent personal data, or "share" it for cross-context advertising.</li>
-        <li>We don't use third-party analytics, tracking scripts or advertising pixels in the app or on this website. Our fonts and scripts are served from our own address.</li>
+        <li>We don't use advertising pixels or tracking cookies anywhere, or analytics or tracking scripts in the app. This website's only analytics is <a href="#website-analytics">Cloudflare Web Analytics</a>, which counts page visits without cookies.</li>
         <li>We don't read your library, except when you ask us to help with a problem, or when the law requires it.</li>
         <li>We don't use your content to train AI models.</li>
       </ul>
     </section>
 
     <section id="services">
-      <h2>9. Services that process data for us</h2>
+      <h2>10. Services that process data for us</h2>
       <p>We use a small number of providers (sub-processors), each only for the purpose listed. <a href="/docs/services/">Services that see your data</a> lists every one, what it sees and for how long, and we update it before we add one.</p>
       <table class="facts">
         <tbody>
-          <tr><th scope="row">Cloudflare</th><td>Hosting: the website, sign-in (including Turnstile), the app, your workspace, the account database (D1) and library backups (R2).</td></tr>
+          <tr><th scope="row">Cloudflare</th><td>Hosting: the website, sign-in (including Turnstile), the app, your workspace, the account database (D1) and library backups (R2); and Web Analytics on the website&#39;s pages.</td></tr>
           <tr><th scope="row">Amazon Web Services</th><td>Email (SES) and, when you use it, Tenwise AI (Bedrock), in the United States.</td></tr>
           <tr><th scope="row">Stripe</th><td>Payments, invoices, the billing page and tax calculation. Stripe is also an independent controller for payment data.</td></tr>
         </tbody>
@@ -178,17 +185,17 @@
     </section>
 
     <section id="cookies">
-      <h2>10. Cookies and local storage</h2>
+      <h2>11. Cookies and local storage</h2>
       <p>We use only what the service needs:</p>
       <ul>
         <li>Two sign-in cookies: your session, and a short-lived one while a sign-in is pending. They can only be read by tenwise.app, not by scripts or other sites.</li>
         <li>Your browser's local storage, for preferences such as your theme and, in the app, your reading settings on that browser.</li>
       </ul>
-      <p>We don't use advertising or analytics cookies, so there's nothing to opt out of.</p>
+      <p>We don't use advertising or analytics cookies; Cloudflare Web Analytics on this website uses none. So there's no cookie banner and nothing to opt out of.</p>
     </section>
 
     <section id="retention">
-      <h2>11. How long we keep it</h2>
+      <h2>12. How long we keep it</h2>
       <table class="facts">
         <tbody>
           <tr><th scope="row">Your account and library</th><td>While you have an account. If a trial or subscription ends without payment, for 90 days read-only, then deleted, with emails 30 and 7 days before.</td></tr>
@@ -204,7 +211,7 @@
     </section>
 
     <section id="your-data">
-      <h2>12. Export and deletion</h2>
+      <h2>13. Export and deletion</h2>
       <ul>
         <li><strong>Download your library</strong>: Settings → Data → <em>Download your library</em>, on any plan, read-only included. It opens in the free Tenwise Engine.</li>
         <li><strong>Export your saves and notes</strong> as HTML or Markdown, your feeds as OPML and your highlights as CSV.</li>
@@ -213,42 +220,42 @@
     </section>
 
     <section id="rights">
-      <h2>13. Your rights</h2>
+      <h2>14. Your rights</h2>
       <p>Wherever you live, you can ask us to access, correct, export or delete your personal data, and to stop sending you non-essential email. Depending on where you live (for example in the EU, the UK, or California and other US states), you may also have the right to object to or restrict processing, to withdraw consent, and not to be treated differently for using your rights. Write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a>; we'll answer within 30 days and may need to confirm it's you. You can also complain to your local data protection authority.</p>
     </section>
 
     <section id="legal-bases">
-      <h2>14. Legal bases (EU and UK)</h2>
+      <h2>15. Legal bases (EU and UK)</h2>
       <ul>
         <li><strong>Contract</strong>: running your account, workspace, sign-in, billing, AI actions you request, sharing you choose, and account emails.</li>
-        <li><strong>Legitimate interests</strong>: preventing abuse and fraud, keeping the service secure, usage counts, the welcome question and where you came from (to improve Tenwise), and tips and product news, which you can turn off any time.</li>
+        <li><strong>Legitimate interests</strong>: preventing abuse and fraud, keeping the service secure, usage counts, the welcome question, where you came from and website analytics (to improve Tenwise), and tips and product news, which you can turn off any time.</li>
         <li><strong>Consent</strong>: the daily digest you choose to receive, where the law requires consent.</li>
         <li><strong>Legal obligation</strong>: keeping payment and tax records.</li>
       </ul>
     </section>
 
     <section id="transfers">
-      <h2>15. International transfers</h2>
+      <h2>16. International transfers</h2>
       <p>CodeStrata is in the United States, and Tenwise is run on servers there and in Cloudflare's global network. When we transfer personal data from the EU, the UK or Switzerland, we rely on our providers' commitments under the EU-US Data Privacy Framework and its UK and Swiss extensions where they apply, and on the European Commission's standard contractual clauses.</p>
     </section>
 
     <section id="security">
-      <h2>16. Security</h2>
+      <h2>17. Security</h2>
       <p>Sign-in uses one-time codes and secure, HTTP-only cookies; secrets are stored as keyed hashes; each person's workspace is kept apart from everyone else's; and connections are encrypted. No system is perfectly secure; if we learn of a breach that affects you, we'll tell you as the law requires. To report a security issue, write to <a href="mailto:ask@tenwise.app">ask@tenwise.app</a> with "Security" in the subject.</p>
     </section>
 
     <section id="children">
-      <h2>17. Children</h2>
+      <h2>18. Children</h2>
       <p>Tenwise is not for children under 16, and we don't knowingly collect their data. If you believe a child has an account, write to us and we'll delete it.</p>
     </section>
 
     <section id="changes">
-      <h2>18. Changes to this policy</h2>
+      <h2>19. Changes to this policy</h2>
       <p>We'll update this policy, and the services list, before we change what we collect or who processes it. If a change is significant, we'll tell you by email or in the app before it takes effect. The date at the top shows the last change.</p>
     </section>
 
     <section id="contact">
-      <h2>19. Contact</h2>
+      <h2>20. Contact</h2>
       <p>CodeStrata, Inc., 8026 W Nicolet Ave, Glendale, AZ 85303<br>
       Email: <a href="mailto:ask@tenwise.app">ask@tenwise.app</a></p>
     </section>
@@ -295,7 +302,7 @@
     </div>
     <div class="footer-base">
       <span>© 2026 CodeStrata, Inc.</span>
-      <span>No ads. No third-party trackers.</span>
+      <span>No ads. No tracking cookies.</span>
     </div>
   </div>
 </footer>
