@@ -20,7 +20,10 @@
   --text-secondary: #a6a49d;
   --text-muted: #85827b;
 
+  /* The logo's orange (#F59E0B), as on tenwise.app: --accent-fill for buttons,
+     badges and highlights, --accent for orange text. */
   --accent: #f59e0b;
+  --accent-fill: #f59e0b;
   --accent-light: #fbbf24;
   --accent-ink: #0b0c0e;
   --accent-soft: rgba(245, 158, 11, 0.12);
@@ -50,11 +53,12 @@ html.light {
   --text-secondary: #475569;
   --text-muted: #64748b;
 
-  --accent: #b45309;
-  --accent-light: #d97706;
-  --accent-ink: #ffffff;
-  --accent-soft: rgba(217, 119, 6, 0.1);
-  --accent-border: rgba(217, 119, 6, 0.3);
+  --accent: #d97706;            /* orange text: #F59E0B is 2.0:1 on ivory, this is 3.0:1 */
+  --accent-fill: #f59e0b;
+  --accent-light: #f59e0b;
+  --accent-ink: #0b0c0e;
+  --accent-soft: rgba(245, 158, 11, 0.12);
+  --accent-border: rgba(245, 158, 11, 0.4);
 
   --ok: #15803d;
   --ok-soft: rgba(21, 128, 61, 0.08);
@@ -90,7 +94,7 @@ a { color: var(--accent); }
 .narrow { max-width: 760px; }
 .muted { color: var(--text-muted); }
 .skip { position: absolute; left: -9999px; }
-.skip:focus { left: 16px; top: 12px; z-index: 100; background: var(--accent); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px; }
+.skip:focus { left: 16px; top: 12px; z-index: 100; background: var(--accent-fill); color: var(--accent-ink); padding: 8px 14px; border-radius: 8px; }
 
 /* ---- Header ---- */
 .site-header {
@@ -138,7 +142,7 @@ html.light .logo-light { display: block !important; }
 }
 .btn-sm { padding: 8px 16px; font-size: 14px; }
 .btn-lg { padding: 15px 28px; font-size: 16px; }
-.btn-primary { background: var(--accent); color: var(--accent-ink); }
+.btn-primary { background: var(--accent-fill); color: var(--accent-ink); }
 .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 12px 28px -8px rgba(245, 158, 11, 0.5); }
 .btn-ghost { border-color: var(--border-strong); color: var(--text-primary); background: transparent; }
 .btn-ghost:hover { border-color: var(--accent-border); }
@@ -226,7 +230,7 @@ html.light .pillar:hover { box-shadow: 0 24px 48px -12px rgba(15, 23, 42, .08); 
 .voice-pills { display: flex; flex-wrap: wrap; gap: 8px; }
 .voice-pill { padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border-subtle); background: transparent; color: var(--text-secondary); font: 600 13px var(--font-sans); cursor: pointer; }
 .voice-pill:hover { color: var(--text-primary); }
-.voice-pill[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); color: var(--text-primary); }
+.voice-pill[aria-pressed="true"] { border-color: var(--accent-fill); background: var(--accent-soft); color: var(--text-primary); }
 .voice-preview { margin: 0; padding: 32px 36px; border: 1px solid var(--border-strong); border-radius: 18px; background: var(--bg-primary); }
 .voice-head, .voice-foot { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 12.5px; color: var(--text-muted); }
 .voice-head { padding-bottom: 18px; margin-bottom: 22px; border-bottom: 1px solid var(--border-subtle); }
@@ -282,12 +286,12 @@ html.light .pillar:hover { box-shadow: 0 24px 48px -12px rgba(15, 23, 42, .08); 
 /* ---- Pricing ---- */
 .billing-switch { display: inline-flex; padding: 4px; border: 1px solid var(--border-strong); border-radius: 999px; margin: 0 auto 36px; }
 .billing-switch button { border: 0; background: transparent; color: var(--text-secondary); padding: 8px 18px; border-radius: 999px; cursor: pointer; font: 500 14px var(--font-sans); }
-.billing-switch button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); }
+.billing-switch button[aria-pressed="true"] { background: var(--accent-fill); color: var(--accent-ink); }
 .plans { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); align-items: stretch; text-align: left; }
 .plan { position: relative; display: flex; flex-direction: column; background: var(--bg-secondary); border: 1px solid var(--border-subtle); border-radius: 18px; padding: 28px; }
 .section-alt .plan { background: var(--bg-primary); }
 .plan.featured { border-color: var(--accent-border); box-shadow: 0 30px 60px -30px rgba(245, 158, 11, 0.35); }
-.plan .badge { position: absolute; top: -12px; left: 28px; padding: 3px 12px; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 12px; font-weight: 600; }
+.plan .badge { position: absolute; top: -12px; left: 28px; padding: 3px 12px; border-radius: 999px; background: var(--accent-fill); color: var(--accent-ink); font-size: 12px; font-weight: 600; }
 .plan h3 { margin: 0 0 6px; font-family: var(--font-serif); font-weight: 400; font-size: 30px; line-height: 1.15; }
 .plan .for { margin: 0 0 20px; color: var(--text-secondary); font-size: 14.5px; min-height: 2.8em; }
 .plan .price { margin: 0; font-family: var(--font-serif); font-size: 52px; font-weight: 500; line-height: 1; color: var(--accent); }
