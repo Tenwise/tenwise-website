@@ -1,5 +1,5 @@
-Newsreader: Copyright 2020 The Newsreader Project Authors.
-It is licensed under the SIL Open Font License, Version 1.1, which follows.
+IBM Plex Sans: Copyright © 2017 IBM Corp. Newsreader: Copyright 2020 The Newsreader Project Authors.
+Both are licensed under the SIL Open Font License, Version 1.1, which follows.
 
 Copyright 2019 IBM Corp. All rights reserved. IBMPlexSans-Italic[wdth,wght].ttf: Copyright 2019 IBM Corp. All rights reserved.
 
