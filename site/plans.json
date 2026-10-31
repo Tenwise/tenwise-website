@@ -1,5 +1,5 @@
 {
-  "_about": "Plans and prices for the whole website, in one place. node scripts/site.mjs writes them into every page's <!-- site:plans --> block. While published is false, prices show as 'Price to be announced'. Stripe holds the amount actually charged (STRIPE_PRICE_* in the platform), so change both together. Proposed by the maintainer on 30 Oct for review with Vinay (DEC-1, Tenwise/tenwise-platform#87, still open): Reader $6/month or $60/year, Plus $12/month or $120/year.",
+  "_about": "Plans and prices for the whole website, in one place. node scripts/site.mjs writes them into every page's <!-- site:plans --> block. While published is false, prices show as 'Price to be announced'. Stripe holds the amount actually charged (STRIPE_PRICE_* in the platform), so change both together. Proposed by the maintainer on 30 Oct for review with Vinay (DEC-1, Tenwise/tenwise-platform#87, still open): Free, Reader $6/month or $60/year, Plus $12/month or $120/year. The Free plan (price 0) is proposed in DEC-6 (Tenwise/tenwise-platform#385), also open; the trial ends on Free instead of read-only.",
   "published": true,
   "currency": "$",
   "trialDays": 14,
@@ -7,20 +7,34 @@
   "annualNote": "2 months free",
   "plans": [
     {
+      "id": "free",
+      "name": "Free",
+      "for": "Follow your sources, read calmly and keep what matters, for as long as you like.",
+      "monthly": 0,
+      "features": [
+        "Up to 100 feeds, blogs and Google News searches",
+        "A dense list or a grid, and a calm docked reader",
+        "Unlimited saves with notes and highlights",
+        "A weekly digest email",
+        "AI with Gemini Nano in Chrome",
+        "One brief a month, to try them",
+        "Read, save and highlight on your phone",
+        "Download your whole library and your feeds (OPML), any time"
+      ]
+    },
+    {
       "id": "reader",
       "name": "Reader",
-      "for": "Your feeds and your library, hosted for you, with AI from your own key or your browser.",
+      "for": "For heavy readers: no limit on sources, your library organised and cited, and AI from your own key.",
       "monthly": 6,
       "annual": 60,
+      "includes": "Everything in Free",
       "features": [
-        "Feeds, blogs and Google News searches, refreshed when you open Tenwise",
-        "A dense list or a grid, and a calm docked reader",
-        "Saves with notes, highlights and collections",
-        "APA citations; export to Markdown, HTML and OPML",
+        "Unlimited feeds, blogs and Google News searches",
+        "Collections and APA citations",
+        "Export your saves to Markdown and HTML",
         "A daily digest email of what's new",
-        "AI with your own key, or Gemini Nano in Chrome",
-        "Read, save and highlight on your phone",
-        "Download your whole library, any time"
+        "AI with your own key, as well as Gemini Nano"
       ]
     },
     {
