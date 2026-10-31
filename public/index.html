@@ -69,17 +69,41 @@
       </div>
       <p class="hero-note">No card needed. Your library stays readable and downloadable for 90 days if you don't subscribe.</p>
 
-      <div class="showcase">
+      <div class="showcase" id="showcase">
         <div class="showcase-tabs" role="tablist" aria-label="Screens from Tenwise">
-          <button type="button" class="showcase-tab" role="tab" aria-selected="true" aria-controls="showcase-panel" data-src="/assets/images/screenshots/01-saved-reader-dark.png" data-alt="The Tenwise reader: a saved article with your note, its collection and its APA citation above the text" data-title="Read, and note why it matters." data-desc="Save an article with a line on why it caught your eye. Your note, its collections and a ready citation sit above the text.">Read and note</button>
-          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/02-rows-reader-dark.png" data-alt="The article list in Rows view, with the reader docked beside it" data-title="Scan every source in one dense list." data-desc="Two lines per article under day headings, with the reader docked beside the list. Keyboard first: j and k to move, b to save.">Scan</button>
-          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/03-collection-dark.png" data-alt="A collection of saved articles with notes, ready to cite" data-title="Collect evidence for what you're working on." data-desc="A collection groups saves for a project or a brief, with a reference list you can copy and a Markdown download.">Collect</button>
-          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/04-studio-dark.png" data-alt="Studio: a newsletter in Markdown beside its typeset preview" data-title="Write it up in Studio." data-desc="Draft in Markdown beside a typeset preview, then export Markdown, Word, a PNG or a PDF with real text.">Studio</button>
+          <button type="button" class="showcase-tab" role="tab" aria-selected="true" aria-controls="showcase-panel" data-src="/assets/images/screenshots/01-saved-reader-dark.png" data-alt="The Tenwise reader: a saved article with your note, its collection and its APA citation above the text" data-title="Read in calm focus. Note why it matters." data-desc="Save an article with a line on why it caught your eye. Your note, its collections and a ready citation sit above the text.">
+            <span class="tab-label">01 · Read and note</span>
+            <span class="tab-title">Capture why it matters</span>
+            <span class="tab-progress"></span>
+          </button>
+          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/02-rows-reader-dark.png" data-alt="The article list in Rows view, with the reader docked beside it" data-title="Scan every source in one dense list." data-desc="Two lines per article under day headings, with the reader docked beside the list. Keyboard first: j and k to move, b to save.">
+            <span class="tab-label">02 · Scan</span>
+            <span class="tab-title">All your sources, one list</span>
+            <span class="tab-progress"></span>
+          </button>
+          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/03-collection-dark.png" data-alt="A collection of saved articles with notes, ready to cite" data-title="Collect the evidence for what you are working on." data-desc="A collection groups saves for a project or a brief, with a reference list to copy, a Markdown download and Send to NotebookLM.">
+            <span class="tab-label">03 · Curate and cite</span>
+            <span class="tab-title">Collections and NotebookLM</span>
+            <span class="tab-progress"></span>
+          </button>
+          <button type="button" class="showcase-tab" role="tab" aria-selected="false" aria-controls="showcase-panel" data-src="/assets/images/screenshots/04-studio-dark.png" data-alt="Studio: a newsletter in Markdown beside its typeset preview" data-title="Write it up in Studio." data-desc="Draft in Markdown beside a typeset preview, then export Markdown, Word, a PNG or a PDF with real text.">
+            <span class="tab-label">04 · Studio</span>
+            <span class="tab-title">Newsletters and PDFs</span>
+            <span class="tab-progress"></span>
+          </button>
         </div>
         <div id="showcase-panel" class="showcase-frame" role="tabpanel">
-          <img id="showcase-image" src="/assets/images/screenshots/01-saved-reader-dark.png" alt="The Tenwise reader: a saved article with your note, its collection and its APA citation above the text" width="2000" height="1250">
+          <div class="showcase-stage">
+            <img id="showcase-image" src="/assets/images/screenshots/01-saved-reader-dark.png" alt="The Tenwise reader: a saved article with your note, its collection and its APA citation above the text" width="2000" height="1250">
+          </div>
+          <div class="showcase-bar">
+            <div>
+              <p id="showcase-title" class="showcase-title">Read in calm focus. Note why it matters.</p>
+              <p id="showcase-desc" class="showcase-desc">Save an article with a line on why it caught your eye. Your note, its collections and a ready citation sit above the text.</p>
+            </div>
+            <a class="showcase-cta" href="/login?ref=site-showcase">Start your free trial →</a>
+          </div>
         </div>
-        <p id="showcase-caption" class="showcase-caption"><strong>Read, and note why it matters.</strong> Save an article with a line on why it caught your eye. Your note, its collections and a ready citation sit above the text.</p>
       </div>
     </div>
   </section>
@@ -87,74 +111,88 @@
   <!-- ============================== Read ============================== -->
   <section id="read" class="section section-alt">
     <div class="wrap">
-      <p class="eyebrow">Read</p>
-      <h2 class="section-title">All your sources, read calmly.</h2>
-      <p class="section-lede">Follow publications, blogs, research and Google News searches in one place. Scan fast, then read in a reader that stays out of the way.</p>
-      <div class="grid grid-3 reveal">
-        <div class="card">
-          <span class="tag">Follow</span>
-          <h3>Feeds that catch up when you arrive</h3>
-          <p>Add any site's feed, browse sources by topic, or follow a Google News search. Your feeds refresh as soon as you open Tenwise, and a card says what came in since your last visit.</p>
+      <p class="eyebrow">For people who read for work</p>
+      <h2 class="section-title">Built for keeping, not just skimming.</h2>
+      <p class="section-lede">Saved links pile up and get forgotten. Tenwise carries what you read from daily discovery to a cited brief you can send, in one workspace.</p>
+
+      <div class="loop reveal">
+        <div class="loop-head">
+          <span class="loop-title">From feed to brief</span>
+          <span class="loop-note">Five steps, one workspace</span>
         </div>
-        <div class="card">
-          <span class="tag">Scan</span>
-          <h3>A dense list, or a grid</h3>
-          <p>Rows shows two lines per article; Grid shows pictures. Rule filters keep views like <em>"AI Act" AND NOT opinion</em>, and mute rules hide what you never want to see.</p>
+        <div class="loop-steps">
+          <div class="loop-step"><span>01 · Scan</span><strong>Feeds in one dense list</strong></div>
+          <div class="loop-step"><span>02 · Think</span><strong>Notes and highlights</strong></div>
+          <div class="loop-step warm"><span>03 · Curate</span><strong>Topic collections</strong></div>
+          <div class="loop-step warm"><span>04 · Cite</span><strong>APA citations</strong></div>
+          <div class="loop-step hot"><span>05 · Brief</span><strong>Checked, approved, sent</strong></div>
         </div>
-        <div class="card">
-          <span class="tag">Read</span>
-          <h3>A docked reader</h3>
-          <p>The full article when the site allows it. Some sites block fetching: then you read the feed's text, Tenwise says so, and <kbd>o</kbd> opens the original.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div>
+            <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span>
+            <h3>Fast scanning meets calm reading.</h3>
+            <p>Follow publications, blogs, research and Google News searches in one place. Scan headlines in a dense list, then read in a docked reader: the full article when the site allows it, the feed&#39;s text when it doesn&#39;t.</p>
+          </div>
+          <p class="pillar-tags">Rows and Grid · Rule filters · Docked reader</p>
         </div>
-        <div class="card">
-          <span class="tag">Digest</span>
-          <h3>A morning email</h3>
-          <p>The newest unread articles from your feeds, once a day at the hour you choose. Each one opens straight in Tenwise. Turn it off any time.</p>
+        <div class="pillar reveal reveal-delay-1">
+          <div>
+            <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></span>
+            <h3>Save with notes and instant citations.</h3>
+            <p>Never wonder why you saved an article months later. Capture your takeaway as you read, file saves into collections, and copy an APA citation or a whole reference list.</p>
+          </div>
+          <p class="pillar-tags">Notes · Highlights · APA citations</p>
         </div>
-        <div class="card">
-          <span class="tag">Phone</span>
-          <h3>On your phone, too</h3>
-          <p>Tenwise works in your phone's browser: read, save, and highlight by holding on a word. Your library is the same everywhere you sign in.</p>
-        </div>
-        <div class="card">
-          <span class="tag">Switch</span>
-          <h3>Bring your feeds with you</h3>
-          <p>Export an OPML file from Feedly, Inoreader or any reader and import it, folders included. Saves, boards, tags and read state stay in your old reader.</p>
+        <div class="pillar reveal reveal-delay-2">
+          <div>
+            <span class="pillar-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg></span>
+            <h3>Turn reading into briefings and print.</h3>
+            <p>Select articles to compare perspectives, or draft a briefing that answers your question from them. Send a collection to NotebookLM, or typeset a newsletter in Studio and export a PDF.</p>
+          </div>
+          <p class="pillar-tags">Compare · NotebookLM · Studio PDF</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============================== Keep ============================== -->
+  <!-- ============================== Daily reading ============================== -->
   <section id="keep" class="section">
     <div class="wrap">
-      <p class="eyebrow">Keep</p>
-      <h2 class="section-title">Keep what matters, and why.</h2>
-      <p class="section-lede">Months later, you'll know why you saved it. Every save can carry your note, your highlights and a citation.</p>
+      <p class="eyebrow">Every day</p>
+      <h2 class="section-title">The details that make it a habit.</h2>
       <div class="grid grid-3 reveal">
         <div class="card">
-          <h3>Save with a note</h3>
-          <p><kbd>b</kbd> saves, <kbd>n</kbd> saves with a note. Highlight in four colours; highlighting an article saves it too.</p>
+          <span class="tag">Follow</span>
+          <h3>Feeds that catch up when you arrive</h3>
+          <p>Your feeds refresh as soon as you open Tenwise, and a card says what came in since your last visit, and where.</p>
         </div>
         <div class="card">
-          <h3>Collections and To file</h3>
-          <p>Group saves by project or brief with <kbd>c</kbd>. To file shows what isn't in a collection yet.</p>
+          <span class="tag">Digest</span>
+          <h3>A morning email</h3>
+          <p>The newest unread articles from your feeds, once a day at the hour you choose. Each one opens straight in Tenwise.</p>
         </div>
         <div class="card">
-          <h3>Save any page</h3>
+          <span class="tag">Phone</span>
+          <h3>On your phone, too</h3>
+          <p>Read, save, and highlight by holding on a word, in your phone&#39;s browser. Your library is the same everywhere you sign in.</p>
+        </div>
+        <div class="card">
+          <span class="tag">Save</span>
+          <h3>Keep any page</h3>
           <p>Paste a link, or press the Save to Tenwise bookmarklet on any page, to keep it with a note like any article.</p>
         </div>
         <div class="card">
-          <h3>Citations</h3>
-          <p>Every save carries an APA 7 citation. A collection copies its reference list, A to Z.</p>
+          <span class="tag">Switch</span>
+          <h3>Bring your feeds with you</h3>
+          <p>Import an OPML file from Feedly, Inoreader or any reader, folders included. Saves, boards, tags and read state stay in your old reader.</p>
         </div>
         <div class="card">
-          <h3>Export</h3>
-          <p>Your saves, notes and highlights as HTML for OneNote or Word, or Markdown for Obsidian. Feeds as OPML.</p>
-        </div>
-        <div class="card">
-          <h3>NotebookLM</h3>
-          <p>Send a collection to NotebookLM as a file of its articles, or copy their links.</p>
+          <span class="tag">Export</span>
+          <h3>Take out what you made</h3>
+          <p>Your saves, notes and highlights as HTML for OneNote or Word, or Markdown for Obsidian. Feeds as OPML, highlights as CSV.</p>
         </div>
       </div>
     </div>
@@ -229,7 +267,27 @@
           <p>The model built into desktop Chrome runs in your browser, so the text never leaves your computer. Free, with no limit from us.</p>
         </div>
       </div>
-      <p class="muted small mt-sm">Your voice: pick reading personas and a tone, and every summary, chat and draft follows them.</p>
+      <div class="voice reveal mt-xl">
+        <div class="voice-copy">
+          <p class="eyebrow">AI in your voice</p>
+          <h3>Synthesis shaped by your voice.</h3>
+          <p>Pick reading personas and a tone, and add your own instructions, so every summary, source comparison and brief draft reads the way you think. Change it any time in Settings.</p>
+          <p class="voice-hint">Preview how Tenwise adapts to your voice:</p>
+          <div class="voice-pills" role="group" aria-label="Voices">
+            <button type="button" class="voice-pill" data-voice="executive" aria-pressed="true">Executive · Formal</button>
+            <button type="button" class="voice-pill" data-voice="analyst" aria-pressed="false">Analyst · Sharp</button>
+            <button type="button" class="voice-pill" data-voice="journalist" aria-pressed="false">Journalist · Neutral</button>
+          </div>
+        </div>
+        <figure class="voice-preview" aria-live="polite">
+          <div class="voice-head"><span id="voice-tag-slot">Executive · Formal</span><span>Example · drafted from 4 saved articles</span></div>
+          <p id="voice-text" class="voice-text">Model cards are becoming standard practice: three of the five vendors we track now publish one with each release <span class="src">[S2]</span>. Reports on enterprise adoption disagree, so treat growth figures with caution until they are confirmed <span class="src">[S3]</span>.</p>
+          <div class="voice-foot"><span>Each [S] tag links to the passage it relies on</span><span>Export to Studio · Word · Markdown</span></div>
+          <template id="voice-executive"><p class="voice-tag">Executive · Formal</p><p class="voice-text">Model cards are becoming standard practice: three of the five vendors we track now publish one with each release <span class="src">[S2]</span>. Reports on enterprise adoption disagree, so treat growth figures with caution until they are confirmed <span class="src">[S3]</span>.</p></template>
+          <template id="voice-analyst"><p class="voice-tag">Analyst · Sharp</p><p class="voice-text">Three of five vendors now ship model cards <span class="src">[S2]</span>. That is disclosure, not accountability: none of them publish evaluation data. The growth numbers conflict, 40% in one source and doubled in another <span class="src">[S3]</span>; lean on the survey with the method.</p></template>
+          <template id="voice-journalist"><p class="voice-tag">Journalist · Neutral</p><p class="voice-text">This week, three of the five largest AI vendors released model cards alongside new models <span class="src">[S2]</span>. Accounts of enterprise adoption vary: one survey puts growth at 40% this quarter <span class="src">[S3]</span>.</p></template>
+        </figure>
+      </div>
     </div>
   </section>
 
