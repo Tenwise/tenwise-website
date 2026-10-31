@@ -100,21 +100,22 @@ a { color: var(--accent); }
   backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
 }
-.site-header .wrap { height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+/* The logo on the left; the menu and the actions together on the right, spaced as on tenwise.app. */
+.site-header .wrap { height: 68px; display: flex; align-items: center; gap: 16px; }
 .brand { display: flex; align-items: center; }
 .brand img { height: 30px; width: auto; display: block; }
 .logo-light, html.light .logo-dark { display: none !important; }
 html.light .logo-light { display: block !important; }
-.site-nav { display: flex; align-items: center; gap: 26px; font-size: 14px; font-weight: 500; }
+.site-nav { display: flex; align-items: center; gap: 40px; margin-left: auto; font-size: 14px; font-weight: 500; }
 .site-nav a { color: var(--text-secondary); text-decoration: none; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--text-primary); }
-.header-actions { display: flex; align-items: center; gap: 10px; }
+.header-actions { display: flex; align-items: center; gap: 16px; margin-left: 56px; }
 .theme-toggle, .menu-toggle {
   border: 1px solid var(--border-strong); background: transparent; color: var(--text-secondary);
   border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 15px;
 }
 .menu-toggle { display: none; }
-.signin-link { color: var(--text-secondary); text-decoration: none; font-size: 14.5px; padding: 0 6px; }
+.signin-link { color: var(--text-secondary); text-decoration: none; font-size: 14px; font-weight: 500; }
 .signin-link:hover { color: var(--text-primary); }
 .mobile-nav { display: none; border-top: 1px solid var(--border-subtle); padding: 12px 16px 20px; }
 .mobile-nav a { display: block; padding: 10px 0; color: var(--text-secondary); text-decoration: none; border-bottom: 1px solid var(--border-subtle); }
@@ -370,6 +371,7 @@ html.annual .price-annual { display: inline; }
 /* ---- Responsive ---- */
 @media (max-width: 960px) {
   .site-nav { display: none; }
+  .header-actions { margin-left: auto; }
   .menu-toggle { display: inline-block; }
   .split { grid-template-columns: 1fr; gap: 36px; }
   .grid-3 { grid-template-columns: 1fr 1fr; }
