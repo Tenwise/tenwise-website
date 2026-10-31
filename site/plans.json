@@ -1,5 +1,5 @@
 {
-  "_about": "Plans and prices for the whole website, in one place. node scripts/site.mjs writes them into every page's <!-- site:plans --> block. While published is false, prices show as 'Price to be announced'. Stripe holds the amount actually charged (STRIPE_PRICE_* in the platform), so change both together. Proposed by the maintainer on 30 Oct for review with Vinay (DEC-1, Tenwise/tenwise-platform#87, still open): Reader $5/month or $50/year, Plus $12/month or $120/year.",
+  "_about": "Plans and prices for the whole website, in one place. node scripts/site.mjs writes them into every page's <!-- site:plans --> block. While published is false, prices show as 'Price to be announced'. Stripe holds the amount actually charged (STRIPE_PRICE_* in the platform), so change both together. Proposed by the maintainer on 30 Oct for review with Vinay (DEC-1, Tenwise/tenwise-platform#87, still open): Reader $6/month or $60/year, Plus $12/month or $120/year.",
   "published": true,
   "currency": "$",
   "trialDays": 14,
@@ -10,8 +10,8 @@
       "id": "reader",
       "name": "Reader",
       "for": "Your feeds and your library, hosted for you, with AI from your own key or your browser.",
-      "monthly": 5,
-      "annual": 50,
+      "monthly": 6,
+      "annual": 60,
       "features": [
         "Feeds, blogs and Google News searches, refreshed when you open Tenwise",
         "A dense list or a grid, and a calm docked reader",
