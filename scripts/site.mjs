@@ -13,7 +13,8 @@
 //        node scripts/site.mjs --check   exit 1 if a page is out of step
 //
 // Prices: while plans.json says "published": false, every price shows as
-// "Price to be announced", whatever the numbers say.
+// "Price to be announced", whatever the numbers say. A plan priced 0 is
+// the Free plan: $0, and its button starts a free account.
 import { readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 
@@ -46,6 +47,10 @@ function price(plan) {
     return `<p class="price"><span>Price to be announced</span></p>
           <p class="price-note">Set before launch</p>`;
   }
+  if (plan.monthly === 0) {
+    return `<p class="price">${money(0)}</p>
+          <p class="price-note">No card, no time limit</p>`;
+  }
   if (!plan.annual) {
     return `<p class="price">${money(plan.monthly)}<small> /month</small></p>
           <p class="price-note">Billed monthly</p>`;
@@ -59,6 +64,7 @@ function price(plan) {
 
 function planCard(plan, ref) {
   const badge = plan.badge ? `\n          <span class="badge">${esc(plan.badge)}</span>` : '';
+  const action = plan.monthly === 0 ? 'Start free' : `Start your ${plans.trialDays}-day free trial`;
   const features = plan.features.map((feature, index) => {
     const all = plan.includes && index === 0 ? ' class="plus-all"' : '';
     return `            <li${all}>${esc(feature)}</li>`;
@@ -70,7 +76,7 @@ function planCard(plan, ref) {
           <ul>
 ${features}
           </ul>
-          <a class="btn ${plan.featured ? 'btn-primary' : 'btn-ghost'}" href="/login?ref=${esc(ref)}-${esc(plan.id)}">Start your ${plans.trialDays}-day free trial</a>
+          <a class="btn ${plan.featured ? 'btn-primary' : 'btn-ghost'}" href="/login?ref=${esc(ref)}-${esc(plan.id)}">${action}</a>
         </article>`;
 }
 
