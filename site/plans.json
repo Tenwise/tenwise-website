@@ -32,8 +32,9 @@
       "features": [
         "Unlimited feeds, blogs and Google News searches",
         "Collections and APA citations",
+        "Send a collection to NotebookLM as one source file, with its citations, your notes and highlights",
         "Export your saves to Markdown and HTML",
-        "A daily digest email of what's new",
+        "A weekly digest email, or a daily one if you choose",
         "AI with your own key, as well as Gemini Nano"
       ]
     },
@@ -52,7 +53,8 @@
         "Unsupported or conflicting claims flagged before you send",
         "Approve, export, or share a brief by link",
         "Tenwise AI included each month, no key needed",
-        "Studio newsletters and PDFs; Send to NotebookLM"
+        "A daily digest email of what's new, on unless you turn it off",
+        "Studio newsletters and PDFs"
       ]
     }
   ]
